@@ -1,0 +1,10 @@
+node_modules/
+dist/
+app/backend/uploads/*
+!app/backend/uploads/.gitkeep
+app/backend/data/*.db
+app/backend/data/*.db-journal
+app/backend/data/*.db-wal
+app/backend/data/*.db-shm
+Photos/
+*.log

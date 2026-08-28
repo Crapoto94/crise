@@ -1,0 +1,327 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --text: #1c1e21;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --danger: #dc2626;
+  --success: #16a34a;
+  --border: #e2e4e9;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--bg);
+  position: relative;
+}
+
+.app-main {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 8px;
+}
+
+.page {
+  padding: 16px;
+}
+
+.page h1 {
+  font-size: 1.25rem;
+  margin: 0 0 16px;
+}
+
+.bottom-nav {
+  display: flex;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 0 8px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.nav-item.active {
+  color: var(--primary);
+}
+
+.nav-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+/* Upload page */
+.file-drop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.file-preview {
+  width: 100%;
+  height: 100%;
+  max-height: 320px;
+  object-fit: cover;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 6px 0;
+}
+
+.success-hint {
+  color: var(--success);
+}
+
+.error-text {
+  color: var(--danger);
+  font-size: 0.9rem;
+  margin: 10px 0;
+}
+
+.success-text {
+  color: var(--success);
+  font-size: 0.9rem;
+  margin: 10px 0;
+}
+
+.address-form input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+  margin: 8px 0;
+}
+
+.suggestions {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.suggestions li button {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.suggestions li:last-child button {
+  border-bottom: none;
+}
+
+.suggestions li button:active {
+  background: var(--bg);
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.primary-btn:disabled {
+  background: var(--border);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.primary-btn:not(:disabled):active {
+  background: var(--primary-dark);
+}
+
+/* Map page */
+.map-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 0;
+}
+
+.map-wrapper {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 320px;
+}
+
+.photo-marker img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.popup-photo {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.popup-date {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* List page */
+.photo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.photo-list-item {
+  display: flex;
+  gap: 12px;
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid var(--border);
+}
+
+.thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.photo-list-info {
+  min-width: 0;
+}
+
+.photo-list-info p {
+  margin: 0 0 4px;
+}
+
+.address {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.uploader {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.meta {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal-card, .lightbox-card {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 20px;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-card h2 {
+  margin: 0;
+}
+
+.modal-card input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+}
+
+.modal-card button, .lightbox-card button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.modal-card button:disabled {
+  background: var(--border);
+  color: var(--muted);
+}
+
+.lightbox-card img {
+  width: 100%;
+  border-radius: 8px;
+}
