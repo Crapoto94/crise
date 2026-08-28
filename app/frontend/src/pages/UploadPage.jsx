@@ -6,8 +6,8 @@ import AddressConfirmMap from "../components/AddressConfirmMap";
 
 export default function UploadPage() {
   const [meta, setMeta] = useState({ categories: [], severities: [] });
-  const [file, setFile] = useState(null);
-  const [previewUrl, setPreviewUrl] = useState(null);
+  const [files, setFiles] = useState([]);
+  const [previewUrls, setPreviewUrls] = useState([]);
   const [checkingExif, setCheckingExif] = useState(false);
 
   // mode: idle | manual_search | confirming | confirmed
@@ -27,6 +27,7 @@ export default function UploadPage() {
   const [description, setDescription] = useState("");
 
   const [uploading, setUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
@@ -42,9 +43,9 @@ export default function UploadPage() {
 
   useEffect(() => {
     return () => {
-      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      previewUrls.forEach((url) => URL.revokeObjectURL(url));
     };
-  }, [previewUrl]);
+  }, [previewUrls]);
 
   function getBrowserLocation() {
     return new Promise((resolve, reject) => {
@@ -71,13 +72,13 @@ export default function UploadPage() {
   }
 
   async function handleFileChange(e, isLiveCapture) {
-    const selected = e.target.files?.[0];
-    if (!selected) return;
+    const selected = Array.from(e.target.files || []);
+    if (selected.length === 0) return;
 
     setError("");
     setSuccess("");
-    setFile(selected);
-    setPreviewUrl(URL.createObjectURL(selected));
+    setFiles(selected);
+    setPreviewUrls(selected.map((f) => URL.createObjectURL(f)));
     setAddressQuery("");
     setSuggestions([]);
     setConfirmSeed(null);
@@ -91,8 +92,10 @@ export default function UploadPage() {
     setCheckingExif(true);
     setSuggestingCategory(true);
 
+    const primary = selected[0];
+
     exifr
-      .gps(selected)
+      .gps(primary)
       .then(async (location) => {
         const lat = location?.latitude;
         const lon = location?.longitude;
@@ -103,7 +106,7 @@ export default function UploadPage() {
         }
 
         if (!isLiveCapture) {
-          // Photo choisie dans la galerie sans EXIF exploitable : on ne doit surtout pas
+          // Photo(s) choisie(s) dans la galerie sans EXIF exploitable : on ne doit surtout pas
           // utiliser la position actuelle de l'appareil, elle n'a aucun rapport avec la photo.
           setMode("manual_search");
           return;
@@ -121,7 +124,7 @@ export default function UploadPage() {
       .catch(() => setMode("manual_search"))
       .finally(() => setCheckingExif(false));
 
-    classifyPhoto(selected)
+    classifyPhoto(primary)
       .then((res) => {
         if (res.category) setCategory(res.category);
       })
@@ -155,8 +158,8 @@ export default function UploadPage() {
   }
 
   function resetForm() {
-    setFile(null);
-    setPreviewUrl(null);
+    setFiles([]);
+    setPreviewUrls([]);
     setMode("idle");
     setConfirmSeed(null);
     setConfirmed(null);
@@ -189,26 +192,30 @@ export default function UploadPage() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!file || !confirmed) return;
+    if (!files.length || !confirmed) return;
     setError("");
     setSuccess("");
-
-    const formData = new FormData();
-    formData.append("photo", file);
-    formData.append("uploaderName", getUploaderName());
-    formData.append("deviceId", getDeviceId());
-    if (category) formData.append("category", category);
-    if (severity) formData.append("severity", severity);
-    formData.append("lat", confirmed.lat);
-    formData.append("lon", confirmed.lon);
-    formData.append("addressLabel", confirmed.addressLabel || "");
-    formData.append("source", confirmed.source);
-    if (description.trim()) formData.append("description", description.trim());
-
     setUploading(true);
+    setUploadProgress(0);
+
     try {
-      await uploadPhoto(formData);
-      setSuccess("Photo envoyee !");
+      for (let i = 0; i < files.length; i++) {
+        const formData = new FormData();
+        formData.append("photo", files[i]);
+        formData.append("uploaderName", getUploaderName());
+        formData.append("deviceId", getDeviceId());
+        if (category) formData.append("category", category);
+        if (severity) formData.append("severity", severity);
+        formData.append("lat", confirmed.lat);
+        formData.append("lon", confirmed.lon);
+        formData.append("addressLabel", confirmed.addressLabel || "");
+        formData.append("source", confirmed.source);
+        if (description.trim()) formData.append("description", description.trim());
+
+        await uploadPhoto(formData);
+        setUploadProgress(i + 1);
+      }
+      setSuccess(files.length > 1 ? `${files.length} photos envoyees !` : "Photo envoyee !");
       resetForm();
     } catch (err) {
       setError(err.message);
@@ -217,15 +224,17 @@ export default function UploadPage() {
     }
   }
 
-  const readyToSubmit = file && mode === "confirmed" && confirmed && category && severity;
+  const readyToSubmit = files.length > 0 && mode === "confirmed" && confirmed && category && severity;
 
   return (
     <div className="page upload-page">
       <h1>Envoyer une photo</h1>
 
-      {previewUrl && (
-        <div className="file-drop">
-          <img src={previewUrl} alt="Apercu" className="file-preview" />
+      {previewUrls.length > 0 && (
+        <div className="file-preview-grid">
+          {previewUrls.map((url, i) => (
+            <img key={i} src={url} alt="Apercu" className="file-preview-thumb" />
+          ))}
         </div>
       )}
 
@@ -247,11 +256,19 @@ export default function UploadPage() {
             ref={galleryInputRef}
             type="file"
             accept="image/*"
+            multiple
             onChange={(e) => handleFileChange(e, false)}
             hidden
           />
         </label>
       </div>
+
+      {files.length > 1 && (
+        <p className="hint">
+          {files.length} photos selectionnees — meme adresse, categorie et gravite appliquees a
+          toutes.
+        </p>
+      )}
 
       {checkingExif && <p className="hint">Recherche de la position (photo puis appareil)...</p>}
 
@@ -309,7 +326,7 @@ export default function UploadPage() {
         </p>
       )}
 
-      {file && mode === "confirmed" && (
+      {files.length > 0 && mode === "confirmed" && (
         <>
           <div className="field-block">
             <p className="field-label">
@@ -383,7 +400,11 @@ export default function UploadPage() {
         onClick={handleSubmit}
         disabled={!readyToSubmit || uploading}
       >
-        {uploading ? "Envoi en cours..." : "Envoyer la photo"}
+        {uploading
+          ? `Envoi ${uploadProgress}/${files.length}...`
+          : files.length > 1
+            ? `Envoyer ${files.length} photos`
+            : "Envoyer la photo"}
       </button>
     </div>
   );
