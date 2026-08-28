@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const dataPath = path.join(__dirname, "..", "data", "sites.json");
+const dataPath = path.join(__dirname, "..", "seed-data", "sites.json");
 
 let sites = [];
 try {

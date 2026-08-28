@@ -337,7 +337,8 @@ app.post("/api/photos", upload.single("photo"), checkNotBanned, async (req, res)
     // pour un rendu correct partout (miniatures, carte, zoom) quel que soit le navigateur.
     const filePath = path.join(uploadsDir, req.file.filename);
     try {
-      const rotated = await sharp(filePath).rotate().toBuffer();
+      const original = await fs.promises.readFile(filePath);
+      const rotated = await sharp(original).rotate().toBuffer();
       await fs.promises.writeFile(filePath, rotated);
     } catch (err) {
       console.error("Normalisation orientation photo echouee:", err);

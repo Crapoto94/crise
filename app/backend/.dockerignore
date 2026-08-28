@@ -1,6 +1,4 @@
 node_modules
 uploads
-data/*
-!data/voiries.json
-!data/sites.json
+data
 npm-debug.log
