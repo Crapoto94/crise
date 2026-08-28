@@ -11,7 +11,16 @@ const confirmIcon = L.divIcon({
   iconAnchor: [12, 12],
 });
 
-export default function AddressConfirmMap({ lat, lon, addressLabel, inIvry, source, onConfirm, onCancel }) {
+export default function AddressConfirmMap({
+  lat,
+  lon,
+  addressLabel,
+  inIvry,
+  source,
+  accuracy,
+  onConfirm,
+  onCancel,
+}) {
   const [position, setPosition] = useState([lat, lon]);
   const [label, setLabel] = useState(addressLabel);
   const [ivry, setIvry] = useState(inIvry);
@@ -37,6 +46,12 @@ export default function AddressConfirmMap({ lat, lon, addressLabel, inIvry, sour
         <p className="hint">
           Deplacez le repere si besoin pour ajuster la position exacte de la photo.
         </p>
+        {Number.isFinite(accuracy) && accuracy > 50 && (
+          <p className="error-text">
+            Position peu precise (± {Math.round(accuracy)} m) — verifiez et ajustez le repere si
+            besoin.
+          </p>
+        )}
 
         <div className="confirm-map-wrapper">
           <MapContainer

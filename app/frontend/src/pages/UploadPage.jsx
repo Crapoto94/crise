@@ -3,6 +3,7 @@ import exifr from "exifr";
 import { uploadPhoto, searchIvryAddress, fetchMeta, classifyPhoto, locateGps, fetchSites } from "../lib/api";
 import { getDeviceId, getUploaderName } from "../lib/device";
 import { nearestSites } from "../lib/geoDistance";
+import { getBestLocation } from "../lib/geoWarmup";
 import AddressConfirmMap from "../components/AddressConfirmMap";
 
 export default function UploadPage() {
@@ -53,26 +54,19 @@ export default function UploadPage() {
     };
   }, [previewUrls]);
 
-  function getBrowserLocation() {
-    return new Promise((resolve, reject) => {
-      if (!navigator.geolocation) {
-        reject(new Error("Geolocalisation non supportee"));
-        return;
-      }
-      navigator.geolocation.getCurrentPosition(
-        (pos) => resolve({ lat: pos.coords.latitude, lon: pos.coords.longitude }),
-        (err) => reject(err),
-        { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 }
-      );
-    });
-  }
-
-  async function seedConfirmFromLocation(lat, lon, source) {
+  async function seedConfirmFromLocation(lat, lon, source, accuracy) {
     try {
       const result = await locateGps(lat, lon);
-      setConfirmSeed({ lat, lon, addressLabel: result.addressLabel, inIvry: result.inIvry, source });
+      setConfirmSeed({
+        lat,
+        lon,
+        addressLabel: result.addressLabel,
+        inIvry: result.inIvry,
+        source,
+        accuracy,
+      });
     } catch {
-      setConfirmSeed({ lat, lon, addressLabel: null, inIvry: true, source });
+      setConfirmSeed({ lat, lon, addressLabel: null, inIvry: true, source, accuracy });
     }
     setMode("confirming");
   }
@@ -122,8 +116,8 @@ export default function UploadPage() {
         // Prise en direct sans EXIF (frequent avec la capture caméra du navigateur) :
         // on tente la position live de l'appareil avant de demander une saisie manuelle.
         try {
-          const geo = await getBrowserLocation();
-          return seedConfirmFromLocation(geo.lat, geo.lon, "manual");
+          const geo = await getBestLocation(15000);
+          return seedConfirmFromLocation(geo.lat, geo.lon, "manual", geo.accuracy);
         } catch {
           setMode("manual_search");
         }
@@ -284,7 +278,11 @@ export default function UploadPage() {
         </p>
       )}
 
-      {checkingExif && <p className="hint">Recherche de la position (photo puis appareil)...</p>}
+      {checkingExif && (
+        <p className="hint">
+          Recherche de la position precise (peut prendre jusqu'a 15 secondes pour un signal GPS)...
+        </p>
+      )}
 
       {mode === "confirming" && confirmSeed && (
         <AddressConfirmMap
