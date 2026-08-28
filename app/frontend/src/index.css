@@ -51,6 +51,21 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.app-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 .app-title {
   font-weight: 600;
   font-size: 0.95rem;

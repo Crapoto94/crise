@@ -22,7 +22,10 @@ export default function AdminBar() {
 
   return (
     <header className="app-header">
-      <span className="app-title">Photos Ivry-sur-Seine</span>
+      <div className="app-brand">
+        <img src="/logo.jpg" alt="" className="app-logo" />
+        <span className="app-title">Photos Ivry-sur-Seine</span>
+      </div>
       <div className="header-actions">
         {isAdmin ? (
           <>
