@@ -57,32 +57,16 @@ function buildClusterIcon(photos) {
   const commentBadge =
     totalComments > 0 ? `<span class="comment-badge">${totalComments}</span>` : "";
 
-  if (photos.length === 1) {
-    return L.divIcon({
-      className: "photo-marker-wrapper",
-      html: `
-        <div class="photo-marker"><img src="/uploads/${photos[0].filename}" alt="" /></div>
-        ${initialsBadge}
-        ${commentBadge}
-      `,
-      iconSize: [MARKER_SIZE, MARKER_SIZE],
-      iconAnchor: [MARKER_ANCHOR, MARKER_ANCHOR],
-    });
-  }
-
-  const previewCount = Math.min(photos.length, 4);
-  const imgs = photos
-    .slice(0, previewCount)
-    .map((p) => `<img src="/uploads/${p.filename}" alt="" />`)
-    .join("");
+  const countBadge =
+    photos.length > 1 ? `<span class="cluster-badge">${photos.length}</span>` : "";
 
   return L.divIcon({
-    className: "photo-cluster-wrapper",
+    className: "photo-marker-wrapper",
     html: `
-      <div class="photo-cluster collage-${previewCount}">${imgs}</div>
+      <div class="photo-marker"><img src="/uploads/${photos[0].filename}" alt="" /></div>
       ${initialsBadge}
       ${commentBadge}
-      <span class="cluster-badge">${photos.length}</span>
+      ${countBadge}
     `,
     iconSize: [MARKER_SIZE, MARKER_SIZE],
     iconAnchor: [MARKER_ANCHOR, MARKER_ANCHOR],
