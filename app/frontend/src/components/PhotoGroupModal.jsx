@@ -10,7 +10,7 @@ export default function PhotoGroupModal({ photos, onClose, onSelectPhoto }) {
         <div className="group-grid">
           {photos.map((photo) => (
             <button key={photo.id} className="group-thumb" onClick={() => onSelectPhoto(photo)}>
-              <img src={`/uploads/${photo.filename}`} alt="" />
+              <img src={photo.thumbnailUrl || `/uploads/${photo.filename}`} alt="" />
               <span className="group-thumb-caption">
                 {photo.uploaderName} · {formatDate(photo.createdAt)}
               </span>

@@ -63,7 +63,7 @@ function buildClusterIcon(photos) {
   return L.divIcon({
     className: "photo-marker-wrapper",
     html: `
-      <div class="photo-marker"><img src="/uploads/${photos[0].filename}" alt="" /></div>
+      <div class="photo-marker"><img src="${photos[0].thumbnailUrl || `/uploads/${photos[0].filename}`}" alt="" /></div>
       ${initialsBadge}
       ${commentBadge}
       ${countBadge}

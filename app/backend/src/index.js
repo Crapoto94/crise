@@ -33,6 +33,20 @@ function sanitizeDescription(value) {
   return trimmed || null;
 }
 
+function thumbFilenameFor(filename) {
+  return `${filename.replace(/\.[^.]+$/, "")}-thumb.jpg`;
+}
+
+async function generateThumbnail(filename, buffer) {
+  const thumbPath = path.join(uploadsDir, thumbFilenameFor(filename));
+  const thumb = await sharp(buffer).resize(320, 320, { fit: "cover" }).jpeg({ quality: 72 }).toBuffer();
+  await fs.promises.writeFile(thumbPath, thumb);
+}
+
+function withThumbnail(photo) {
+  return { ...photo, thumbnailUrl: `/uploads/${thumbFilenameFor(photo.filename)}` };
+}
+
 const app = express();
 app.set("trust proxy", true);
 app.use(cors());
@@ -201,10 +215,12 @@ function buildVoirie(photo) {
 }
 
 app.get("/api/photos", (_req, res) => {
-  const photos = selectAllStmt.all().map((p) => ({
-    ...p,
-    voirie: buildVoirie(p),
-  }));
+  const photos = selectAllStmt.all().map((p) =>
+    withThumbnail({
+      ...p,
+      voirie: buildVoirie(p),
+    })
+  );
   res.json(photos);
 });
 
@@ -214,6 +230,7 @@ app.delete("/api/photos/:id", requireAdmin, (req, res) => {
 
   deletePhotoStmt.run(req.params.id);
   fs.unlink(path.join(uploadsDir, photo.filename), () => {});
+  fs.unlink(path.join(uploadsDir, thumbFilenameFor(photo.filename)), () => {});
   res.status(204).end();
 });
 
@@ -340,8 +357,9 @@ app.post("/api/photos", upload.single("photo"), checkNotBanned, async (req, res)
       const original = await fs.promises.readFile(filePath);
       const rotated = await sharp(original).rotate().toBuffer();
       await fs.promises.writeFile(filePath, rotated);
+      await generateThumbnail(req.file.filename, rotated);
     } catch (err) {
-      console.error("Normalisation orientation photo echouee:", err);
+      console.error("Normalisation/miniature photo echouee:", err);
     }
 
     const info = insertStmt.run({
@@ -359,14 +377,35 @@ app.post("/api/photos", upload.single("photo"), checkNotBanned, async (req, res)
       relatedSite: sanitizeDescription(relatedSite),
     });
 
-    res.status(201).json(selectOneStmt.get(info.lastInsertRowid));
+    res.status(201).json(withThumbnail(selectOneStmt.get(info.lastInsertRowid)));
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Erreur serveur lors de l'upload" });
   }
 });
 
+async function backfillMissingThumbnails() {
+  let files;
+  try {
+    files = fs.readdirSync(uploadsDir);
+  } catch {
+    return;
+  }
+  const originals = files.filter((f) => f !== ".gitkeep" && !f.endsWith("-thumb.jpg"));
+  for (const filename of originals) {
+    const thumbPath = path.join(uploadsDir, thumbFilenameFor(filename));
+    if (fs.existsSync(thumbPath)) continue;
+    try {
+      const buffer = await fs.promises.readFile(path.join(uploadsDir, filename));
+      await generateThumbnail(filename, buffer);
+    } catch (err) {
+      console.error("Backfill miniature echoue pour", filename, err.message);
+    }
+  }
+}
+
 const PORT = process.env.PORT || 4010;
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Backend photos Ivry-sur-Seine sur http://localhost:${PORT}`);
+  backfillMissingThumbnails();
 });

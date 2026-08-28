@@ -171,7 +171,7 @@ export default function ListPage() {
             {group.items.map((photo) => (
               <li key={photo.id} className="photo-list-item">
                 <img
-                  src={`/uploads/${photo.filename}`}
+                  src={photo.thumbnailUrl || `/uploads/${photo.filename}`}
                   alt=""
                   className="thumb"
                   onClick={() => setSelected(photo)}
