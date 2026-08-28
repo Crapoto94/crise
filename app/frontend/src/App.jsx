@@ -2,10 +2,12 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BottomNav from "./components/BottomNav";
 import NameModal from "./components/NameModal";
+import AdminBar from "./components/AdminBar";
 import UploadPage from "./pages/UploadPage";
 import MapPage from "./pages/MapPage";
 import ListPage from "./pages/ListPage";
 import { getUploaderName, setUploaderName } from "./lib/device";
+import { AdminProvider } from "./lib/AdminContext";
 
 export default function App() {
   const [name, setName] = useState(getUploaderName());
@@ -22,17 +24,20 @@ export default function App() {
   }
 
   return (
-    <BrowserRouter>
-      <div className="app-shell">
-        <main className="app-main">
-          <Routes>
-            <Route path="/" element={<UploadPage />} />
-            <Route path="/carte" element={<MapPage />} />
-            <Route path="/liste" element={<ListPage />} />
-          </Routes>
-        </main>
-        <BottomNav />
-      </div>
-    </BrowserRouter>
+    <AdminProvider>
+      <BrowserRouter>
+        <div className="app-shell">
+          <AdminBar />
+          <main className="app-main">
+            <Routes>
+              <Route path="/" element={<UploadPage />} />
+              <Route path="/carte" element={<MapPage />} />
+              <Route path="/liste" element={<ListPage />} />
+            </Routes>
+          </main>
+          <BottomNav />
+        </div>
+      </BrowserRouter>
+    </AdminProvider>
   );
 }

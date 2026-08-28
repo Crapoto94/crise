@@ -22,3 +22,16 @@ db.exec(`
     created_at TEXT NOT NULL DEFAULT (datetime('now'))
   )
 `);
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS comments (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    photo_id INTEGER NOT NULL REFERENCES photos(id) ON DELETE CASCADE,
+    author_name TEXT NOT NULL,
+    device_id TEXT NOT NULL,
+    text TEXT NOT NULL,
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+  )
+`);
+
+db.pragma("foreign_keys = ON");

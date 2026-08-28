@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { fetchPhotos } from "../lib/api";
+import PhotoDetailModal from "../components/PhotoDetailModal";
 
 const IVRY_CENTER = [48.8137, 2.3868];
 
@@ -10,21 +11,26 @@ function thumbnailIcon(filename) {
   return L.divIcon({
     className: "photo-marker",
     html: `<img src="/uploads/${filename}" alt="" />`,
-    iconSize: [46, 46],
-    iconAnchor: [23, 23],
-    popupAnchor: [0, -23],
+    iconSize: [44, 44],
+    iconAnchor: [22, 22],
+    popupAnchor: [0, -22],
   });
 }
 
 export default function MapPage() {
   const [photos, setPhotos] = useState([]);
   const [error, setError] = useState("");
+  const [selected, setSelected] = useState(null);
 
   useEffect(() => {
     fetchPhotos()
       .then(setPhotos)
       .catch((err) => setError(err.message));
   }, []);
+
+  function handlePhotoDeleted(id) {
+    setPhotos((prev) => prev.filter((p) => p.id !== id));
+  }
 
   return (
     <div className="page map-page">
@@ -47,11 +53,22 @@ export default function MapPage() {
                 <p className="popup-date">
                   {new Date(photo.createdAt.replace(" ", "T") + "Z").toLocaleString("fr-FR")}
                 </p>
+                <button className="link-btn" onClick={() => setSelected(photo)}>
+                  Voir / commenter{photo.commentCount > 0 ? ` (${photo.commentCount})` : ""}
+                </button>
               </Popup>
             </Marker>
           ))}
         </MapContainer>
       </div>
+
+      {selected && (
+        <PhotoDetailModal
+          photo={selected}
+          onClose={() => setSelected(null)}
+          onPhotoDeleted={handlePhotoDeleted}
+        />
+      )}
     </div>
   );
 }

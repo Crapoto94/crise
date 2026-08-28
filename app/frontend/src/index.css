@@ -36,6 +36,42 @@ body {
   position: relative;
 }
 
+@media (min-width: 768px) {
+  .app-shell {
+    max-width: 1400px;
+  }
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.app-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.admin-toggle {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.admin-toggle.admin-active {
+  background: var(--success);
+  color: #fff;
+  border-color: var(--success);
+}
+
 .app-main {
   flex: 1;
   overflow-y: auto;
@@ -44,6 +80,9 @@ body {
 
 .page {
   padding: 16px;
+  max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .page h1 {
@@ -190,6 +229,8 @@ body {
   flex-direction: column;
   height: 100%;
   padding-bottom: 0;
+  max-width: none;
+  width: 100%;
 }
 
 .map-wrapper {
@@ -199,13 +240,21 @@ body {
   min-height: 320px;
 }
 
-.photo-marker img {
+.photo-marker {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  object-fit: cover;
+  overflow: hidden;
   border: 2px solid #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  background: #fff;
+}
+
+.photo-marker img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .popup-photo {
@@ -283,7 +332,7 @@ body {
   z-index: 1000;
 }
 
-.modal-card, .lightbox-card {
+.modal-card {
   background: var(--surface);
   border-radius: 14px;
   padding: 20px;
@@ -305,7 +354,7 @@ body {
   font-size: 1rem;
 }
 
-.modal-card button, .lightbox-card button {
+.modal-card button {
   padding: 12px;
   border-radius: 10px;
   border: none;
@@ -321,7 +370,142 @@ body {
   color: var(--muted);
 }
 
-.lightbox-card img {
+/* Photo detail modal */
+.detail-card {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 16px;
   width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-photo {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 320px;
+  object-fit: cover;
+}
+
+.detail-photo.zoomable {
+  cursor: zoom-in;
+}
+
+.zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  cursor: zoom-out;
+  padding: 20px;
+}
+
+.zoom-overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.detail-info .meta {
+  margin-top: 2px;
+}
+
+.comments-section h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.comments-list {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  background: var(--bg);
   border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.comment-text {
+  margin: 0 0 2px;
+  font-size: 0.9rem;
+}
+
+.comment-form {
+  display: flex;
+  gap: 8px;
+}
+
+.comment-form input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.comment-form button {
+  padding: 0 16px;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.comment-form button:disabled {
+  background: var(--border);
+  color: var(--muted);
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 0.85rem;
+  padding: 0;
+  cursor: pointer;
+}
+
+.link-btn.danger {
+  color: var(--danger);
+  flex-shrink: 0;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.detail-actions button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.danger-btn {
+  background: var(--danger) !important;
+  color: #fff;
+  border: none !important;
 }
