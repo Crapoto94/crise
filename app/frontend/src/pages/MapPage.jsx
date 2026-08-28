@@ -1,26 +1,75 @@
-import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { useEffect, useMemo, useState } from "react";
+import { MapContainer, TileLayer, Marker, useMap, useMapEvents } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { fetchPhotos } from "../lib/api";
+import { computeClusters } from "../lib/cluster";
 import PhotoDetailModal from "../components/PhotoDetailModal";
+import PhotoGroupModal from "../components/PhotoGroupModal";
 
 const IVRY_CENTER = [48.8137, 2.3868];
 
-function thumbnailIcon(filename) {
+function buildClusterIcon(photos) {
+  if (photos.length === 1) {
+    return L.divIcon({
+      className: "photo-marker",
+      html: `<img src="/uploads/${photos[0].filename}" alt="" />`,
+      iconSize: [44, 44],
+      iconAnchor: [22, 22],
+    });
+  }
+
+  const previewCount = Math.min(photos.length, 4);
+  const imgs = photos
+    .slice(0, previewCount)
+    .map((p) => `<img src="/uploads/${p.filename}" alt="" />`)
+    .join("");
+
   return L.divIcon({
-    className: "photo-marker",
-    html: `<img src="/uploads/${filename}" alt="" />`,
+    className: "photo-cluster-wrapper",
+    html: `
+      <div class="photo-cluster collage-${previewCount}">${imgs}</div>
+      <span class="cluster-badge">${photos.length}</span>
+    `,
     iconSize: [44, 44],
     iconAnchor: [22, 22],
-    popupAnchor: [0, -22],
   });
+}
+
+function ClusterMarkers({ photos, onOpenPhoto, onOpenGroup }) {
+  const map = useMap();
+  const [tick, setTick] = useState(0);
+
+  useMapEvents({
+    zoomend: () => setTick((t) => t + 1),
+    moveend: () => setTick((t) => t + 1),
+  });
+
+  const clusters = useMemo(() => computeClusters(map, photos), [map, photos, tick]);
+
+  return clusters.map((cluster) => (
+    <Marker
+      key={cluster.id}
+      position={[cluster.lat, cluster.lon]}
+      icon={buildClusterIcon(cluster.photos)}
+      eventHandlers={{
+        click: () => {
+          if (cluster.photos.length === 1) {
+            onOpenPhoto(cluster.photos[0]);
+          } else {
+            onOpenGroup(cluster.photos);
+          }
+        },
+      }}
+    />
+  ));
 }
 
 export default function MapPage() {
   const [photos, setPhotos] = useState([]);
   const [error, setError] = useState("");
   const [selected, setSelected] = useState(null);
+  const [group, setGroup] = useState(null);
 
   useEffect(() => {
     fetchPhotos()
@@ -30,6 +79,7 @@ export default function MapPage() {
 
   function handlePhotoDeleted(id) {
     setPhotos((prev) => prev.filter((p) => p.id !== id));
+    setGroup((prev) => (prev ? prev.filter((p) => p.id !== id) : prev));
   }
 
   return (
@@ -42,25 +92,24 @@ export default function MapPage() {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          {photos.map((photo) => (
-            <Marker key={photo.id} position={[photo.lat, photo.lon]} icon={thumbnailIcon(photo.filename)}>
-              <Popup>
-                <img src={`/uploads/${photo.filename}`} alt="" className="popup-photo" />
-                <p>
-                  <strong>{photo.uploaderName}</strong>
-                </p>
-                <p>{photo.addressLabel || "Adresse inconnue"}</p>
-                <p className="popup-date">
-                  {new Date(photo.createdAt.replace(" ", "T") + "Z").toLocaleString("fr-FR")}
-                </p>
-                <button className="link-btn" onClick={() => setSelected(photo)}>
-                  Voir / commenter{photo.commentCount > 0 ? ` (${photo.commentCount})` : ""}
-                </button>
-              </Popup>
-            </Marker>
-          ))}
+          <ClusterMarkers
+            photos={photos}
+            onOpenPhoto={setSelected}
+            onOpenGroup={setGroup}
+          />
         </MapContainer>
       </div>
+
+      {group && (
+        <PhotoGroupModal
+          photos={group}
+          onClose={() => setGroup(null)}
+          onSelectPhoto={(photo) => {
+            setGroup(null);
+            setSelected(photo);
+          }}
+        />
+      )}
 
       {selected && (
         <PhotoDetailModal
