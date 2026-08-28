@@ -2,28 +2,28 @@ import { useEffect, useRef, useState } from "react";
 import exifr from "exifr";
 import { uploadPhoto, searchIvryAddress, fetchMeta, classifyPhoto, locateGps } from "../lib/api";
 import { getDeviceId, getUploaderName } from "../lib/device";
+import AddressConfirmMap from "../components/AddressConfirmMap";
 
 export default function UploadPage() {
   const [meta, setMeta] = useState({ categories: [], severities: [] });
   const [file, setFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [checkingExif, setCheckingExif] = useState(false);
-  const [gps, setGps] = useState(null); // { lat, lon } | null
-  const [hasGps, setHasGps] = useState(null); // null = pas encore decide, true = on utilise le GPS, false = adresse manuelle
-  const [gpsPending, setGpsPending] = useState(null); // { inIvry, addressLabel, quartier } en attente de confirmation
-  const [ignoreExifGps, setIgnoreExifGps] = useState(false);
-  const [confirmedAddressLabel, setConfirmedAddressLabel] = useState(null);
+
+  // mode: idle | manual_search | confirming | confirmed
+  const [mode, setMode] = useState("idle");
+  const [confirmSeed, setConfirmSeed] = useState(null); // seed passe a AddressConfirmMap
+  const [confirmed, setConfirmed] = useState(null); // position + adresse validees
 
   const [addressQuery, setAddressQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
-  const [selectedAddress, setSelectedAddress] = useState(null);
   const [searching, setSearching] = useState(false);
 
   const [category, setCategory] = useState(null);
   const [suggestingCategory, setSuggestingCategory] = useState(false);
   const [showCustomCategory, setShowCustomCategory] = useState(false);
   const [customCategoryText, setCustomCategoryText] = useState("");
-  const [severity, setSeverity] = useState(null);
+  const [severity, setSeverity] = useState("mineur");
 
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
@@ -44,6 +44,16 @@ export default function UploadPage() {
     };
   }, [previewUrl]);
 
+  async function seedConfirmFromLocation(lat, lon, source) {
+    try {
+      const result = await locateGps(lat, lon);
+      setConfirmSeed({ lat, lon, addressLabel: result.addressLabel, inIvry: result.inIvry, source });
+    } catch {
+      setConfirmSeed({ lat, lon, addressLabel: null, inIvry: true, source });
+    }
+    setMode("confirming");
+  }
+
   async function handleFileChange(e) {
     const selected = e.target.files?.[0];
     if (!selected) return;
@@ -52,43 +62,32 @@ export default function UploadPage() {
     setSuccess("");
     setFile(selected);
     setPreviewUrl(URL.createObjectURL(selected));
-    setSelectedAddress(null);
     setAddressQuery("");
     setSuggestions([]);
-    setHasGps(null);
-    setGps(null);
-    setGpsPending(null);
-    setIgnoreExifGps(false);
-    setConfirmedAddressLabel(null);
+    setConfirmSeed(null);
+    setConfirmed(null);
+    setMode("idle");
     setCategory(null);
     setShowCustomCategory(false);
     setCustomCategoryText("");
-    setSeverity(null);
+    setSeverity("mineur");
     setCheckingExif(true);
     setSuggestingCategory(true);
 
     exifr
       .gps(selected)
-      .then(async (location) => {
+      .then((location) => {
         const lat = location?.latitude;
         const lon = location?.longitude;
         const isNullIsland = lat === 0 && lon === 0;
 
         if (!location || !Number.isFinite(lat) || !Number.isFinite(lon) || isNullIsland) {
-          setHasGps(false);
+          setMode("manual_search");
           return;
         }
-
-        setGps({ lat, lon });
-        try {
-          const result = await locateGps(lat, lon);
-          setGpsPending(result);
-        } catch {
-          // localisation indisponible : on fait confiance au GPS de la photo
-          setHasGps(true);
-        }
+        return seedConfirmFromLocation(lat, lon, "exif");
       })
-      .catch(() => setHasGps(false))
+      .catch(() => setMode("manual_search"))
       .finally(() => setCheckingExif(false));
 
     classifyPhoto(selected)
@@ -100,7 +99,6 @@ export default function UploadPage() {
 
   function handleAddressQueryChange(value) {
     setAddressQuery(value);
-    setSelectedAddress(null);
     if (debounceRef.current) clearTimeout(debounceRef.current);
     if (value.trim().length < 3) {
       setSuggestions([]);
@@ -119,36 +117,24 @@ export default function UploadPage() {
     }, 350);
   }
 
-  function confirmGpsPosition() {
-    setConfirmedAddressLabel(gpsPending?.addressLabel || null);
-    setGpsPending(null);
-    setHasGps(true);
-  }
-
-  function switchToManualAddress() {
-    if (gpsPending?.addressLabel) {
-      setAddressQuery(gpsPending.addressLabel);
-    }
-    setGpsPending(null);
-    setIgnoreExifGps(true);
-    setHasGps(false);
+  async function handleSelectSuggestion(s) {
+    setAddressQuery(s.label);
+    setSuggestions([]);
+    await seedConfirmFromLocation(s.lat, s.lon, "manual");
   }
 
   function resetForm() {
     setFile(null);
     setPreviewUrl(null);
-    setHasGps(null);
-    setGps(null);
-    setGpsPending(null);
-    setIgnoreExifGps(false);
-    setConfirmedAddressLabel(null);
+    setMode("idle");
+    setConfirmSeed(null);
+    setConfirmed(null);
     setAddressQuery("");
     setSuggestions([]);
-    setSelectedAddress(null);
     setCategory(null);
     setShowCustomCategory(false);
     setCustomCategoryText("");
-    setSeverity(null);
+    setSeverity("mineur");
     if (fileInputRef.current) fileInputRef.current.value = "";
   }
 
@@ -170,7 +156,7 @@ export default function UploadPage() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!file) return;
+    if (!file || !confirmed) return;
     setError("");
     setSuccess("");
 
@@ -180,18 +166,10 @@ export default function UploadPage() {
     formData.append("deviceId", getDeviceId());
     if (category) formData.append("category", category);
     if (severity) formData.append("severity", severity);
-
-    if (!hasGps) {
-      if (!selectedAddress) {
-        setError("Choisissez une adresse dans la liste proposee.");
-        return;
-      }
-      if (ignoreExifGps) formData.append("ignoreExifGps", "true");
-      formData.append("addressLabel", selectedAddress.label);
-      formData.append("lat", selectedAddress.lat);
-      formData.append("lon", selectedAddress.lon);
-      formData.append("citycode", selectedAddress.citycode);
-    }
+    formData.append("lat", confirmed.lat);
+    formData.append("lon", confirmed.lon);
+    formData.append("addressLabel", confirmed.addressLabel || "");
+    formData.append("source", confirmed.source);
 
     setUploading(true);
     try {
@@ -205,8 +183,7 @@ export default function UploadPage() {
     }
   }
 
-  const readyToSubmit =
-    file && !checkingExif && !gpsPending && (hasGps || selectedAddress) && category && severity;
+  const readyToSubmit = file && mode === "confirmed" && confirmed && category && severity;
 
   return (
     <div className="page upload-page">
@@ -230,49 +207,23 @@ export default function UploadPage() {
 
       {checkingExif && <p className="hint">Lecture des donnees GPS de la photo...</p>}
 
-      {gpsPending && gpsPending.inIvry && (
-        <div className="modal-backdrop" onClick={() => {}}>
-          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-            <h2>Adresse trouvee</h2>
-            <p>{gpsPending.addressLabel || "Position GPS trouvee, adresse inconnue"}</p>
-            <button onClick={confirmGpsPosition}>Confirmer cette adresse</button>
-            <button className="secondary-btn" onClick={switchToManualAddress}>
-              Modifier l'adresse
-            </button>
-          </div>
-        </div>
+      {mode === "confirming" && confirmSeed && (
+        <AddressConfirmMap
+          {...confirmSeed}
+          onConfirm={(result) => {
+            setConfirmed(result);
+            setMode("confirmed");
+          }}
+          onCancel={() => {
+            setConfirmSeed(null);
+            setMode("manual_search");
+          }}
+        />
       )}
 
-      {gpsPending && !gpsPending.inIvry && (
-        <div className="modal-backdrop" onClick={() => {}}>
-          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-            <h2>Position hors Ivry-sur-Seine</h2>
-            <p>
-              La position GPS de cette photo semble se situer en dehors d'Ivry-sur-Seine
-              {gpsPending.addressLabel ? ` (${gpsPending.addressLabel})` : ""}.
-            </p>
-            <button onClick={confirmGpsPosition}>Continuer quand meme</button>
-            <button className="secondary-btn" onClick={switchToManualAddress}>
-              Saisir une adresse manuellement
-            </button>
-          </div>
-        </div>
-      )}
-
-      {hasGps === true && gps && (
-        <p className="hint success-hint">
-          Position GPS confirmee ({gps.lat.toFixed(5)}, {gps.lon.toFixed(5)})
-          {confirmedAddressLabel ? ` — ${confirmedAddressLabel}` : ""}.
-        </p>
-      )}
-
-      {hasGps === false && (
+      {mode === "manual_search" && (
         <div className="address-form">
-          <p className="hint">
-            {ignoreExifGps
-              ? "Modifiez ou confirmez l'adresse ci-dessous."
-              : "Pas de position GPS dans cette photo. Indiquez l'adresse a Ivry-sur-Seine."}
-          </p>
+          <p className="hint">Indiquez l'adresse a Ivry-sur-Seine.</p>
           <input
             type="text"
             placeholder="Rechercher une adresse a Ivry-sur-Seine..."
@@ -284,27 +235,33 @@ export default function UploadPage() {
             <ul className="suggestions">
               {suggestions.map((s) => (
                 <li key={s.label}>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSelectedAddress(s);
-                      setAddressQuery(s.label);
-                      setSuggestions([]);
-                    }}
-                  >
+                  <button type="button" onClick={() => handleSelectSuggestion(s)}>
                     {s.label}
                   </button>
                 </li>
               ))}
             </ul>
           )}
-          {selectedAddress && (
-            <p className="hint success-hint">Adresse retenue : {selectedAddress.label}</p>
-          )}
         </div>
       )}
 
-      {file && (
+      {mode === "confirmed" && confirmed && (
+        <p className="hint success-hint">
+          Position confirmee : {confirmed.addressLabel || "adresse inconnue"}{" "}
+          <button
+            type="button"
+            className="link-btn"
+            onClick={() => {
+              setConfirmSeed(confirmed);
+              setMode("confirming");
+            }}
+          >
+            Modifier
+          </button>
+        </p>
+      )}
+
+      {file && mode === "confirmed" && (
         <>
           <div className="field-block">
             <p className="field-label">

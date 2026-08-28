@@ -5,10 +5,9 @@ import path from "node:path";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import { fileURLToPath } from "node:url";
-import exifr from "exifr";
 
 import { db } from "./db.js";
-import { reverseGeocode, IVRY_CITYCODE } from "./geocode.js";
+import { reverseGeocode } from "./geocode.js";
 import { CATEGORIES, SEVERITIES, DEFAULT_VISION_MODEL, SUGGESTED_VISION_MODELS } from "./constants.js";
 import { getSetting, setSetting } from "./settings.js";
 import { classifyDamage } from "./vision.js";
@@ -294,17 +293,7 @@ app.post("/api/classify", uploadMemory.single("photo"), async (req, res) => {
 
 app.post("/api/photos", upload.single("photo"), checkNotBanned, async (req, res) => {
   try {
-    const {
-      uploaderName,
-      deviceId,
-      addressLabel,
-      lat: manualLat,
-      lon: manualLon,
-      citycode,
-      category,
-      severity,
-      ignoreExifGps,
-    } = req.body || {};
+    const { uploaderName, deviceId, addressLabel, lat, lon, source, category, severity } = req.body || {};
 
     if (!req.file) {
       return res.status(400).json({ error: "Photo manquante" });
@@ -313,48 +302,23 @@ app.post("/api/photos", upload.single("photo"), checkNotBanned, async (req, res)
       return res.status(400).json({ error: "uploaderName et deviceId requis" });
     }
 
-    const filePath = path.join(uploadsDir, req.file.filename);
-    let lat = null;
-    let lon = null;
-    let source = null;
-    let label = null;
-
-    const gps = ignoreExifGps ? null : await exifr.gps(filePath).catch(() => null);
-    const hasNullIslandGps = gps && gps.latitude === 0 && gps.longitude === 0;
-
-    if (gps && !hasNullIslandGps && Number.isFinite(gps.latitude) && Number.isFinite(gps.longitude)) {
-      lat = gps.latitude;
-      lon = gps.longitude;
-      source = "exif";
-      label = await reverseGeocode(lat, lon);
-    } else {
-      const parsedLat = Number(manualLat);
-      const parsedLon = Number(manualLon);
-      if (!Number.isFinite(parsedLat) || !Number.isFinite(parsedLon) || !addressLabel) {
-        return res.status(400).json({
-          error: "Aucune position GPS dans la photo : adresse (lat/lon/addressLabel) requise",
-        });
-      }
-      if (citycode && citycode !== IVRY_CITYCODE) {
-        return res.status(400).json({ error: "L'adresse doit se situer a Ivry-sur-Seine" });
-      }
-      lat = parsedLat;
-      lon = parsedLon;
-      source = "manual";
-      label = addressLabel;
+    const parsedLat = Number(lat);
+    const parsedLon = Number(lon);
+    if (!Number.isFinite(parsedLat) || !Number.isFinite(parsedLon) || !addressLabel) {
+      return res.status(400).json({ error: "Position et adresse confirmees requises" });
     }
 
     const info = insertStmt.run({
       filename: req.file.filename,
       uploaderName,
       deviceId,
-      lat,
-      lon,
-      addressLabel: label,
-      source,
+      lat: parsedLat,
+      lon: parsedLon,
+      addressLabel,
+      source: source === "exif" ? "exif" : "manual",
       category: sanitizeCategory(category),
       severity: SEVERITY_VALUES.includes(severity) ? severity : null,
-      quartier: getQuartier(lat, lon),
+      quartier: getQuartier(parsedLat, parsedLon),
     });
 
     res.status(201).json(selectOneStmt.get(info.lastInsertRowid));
