@@ -56,6 +56,11 @@ body {
   font-size: 0.95rem;
 }
 
+.header-actions {
+  display: flex;
+  gap: 6px;
+}
+
 .admin-toggle {
   padding: 6px 12px;
   border-radius: 20px;
@@ -64,6 +69,8 @@ body {
   color: var(--muted);
   font-size: 0.8rem;
   cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .admin-toggle.admin-active {
@@ -200,6 +207,53 @@ body {
   background: var(--bg);
 }
 
+.field-block {
+  margin: 14px 0;
+}
+
+.field-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.chip.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.chip.severity-urgent.active {
+  background: var(--danger);
+  border-color: var(--danger);
+}
+
+.chip.severity-majeur.active {
+  background: #d97706;
+  border-color: #d97706;
+}
+
+.chip.severity-mineur.active {
+  background: var(--success);
+  border-color: var(--success);
+}
+
 .primary-btn {
   width: 100%;
   padding: 14px;
@@ -240,6 +294,12 @@ body {
   min-height: 320px;
 }
 
+.photo-marker-wrapper {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
 .photo-marker {
   width: 44px;
   height: 44px;
@@ -261,6 +321,43 @@ body {
   position: relative;
   width: 44px;
   height: 44px;
+}
+
+.initials-badge {
+  position: absolute;
+  top: -4px;
+  left: -6px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  background: var(--text);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  letter-spacing: 0.02em;
+}
+
+.comment-badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 8px;
+  background: var(--success);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
 }
 
 .photo-cluster {
@@ -342,6 +439,58 @@ body {
   border: 1px solid var(--border);
   font-size: 0.9rem;
   margin-bottom: 10px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.filter-row select {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.badge-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.badge.category-badge {
+  background: var(--bg);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.badge.severity-mineur {
+  background: rgba(22, 163, 74, 0.15);
+  color: var(--success);
+}
+
+.badge.severity-majeur {
+  background: rgba(217, 119, 6, 0.15);
+  color: #d97706;
+}
+
+.badge.severity-urgent {
+  background: rgba(220, 38, 38, 0.15);
+  color: var(--danger);
 }
 
 .segmented {
@@ -662,4 +811,47 @@ body {
   font-size: 0.7rem;
   color: var(--muted);
   line-height: 1.2;
+}
+
+/* Admin page */
+.log-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.log-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.log-device {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 0 2px;
+  font-family: monospace;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.settings-form input,
+.settings-form select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
 }

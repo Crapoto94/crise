@@ -6,6 +6,7 @@ import AdminBar from "./components/AdminBar";
 import UploadPage from "./pages/UploadPage";
 import MapPage from "./pages/MapPage";
 import ListPage from "./pages/ListPage";
+import AdminPage from "./pages/AdminPage";
 import { getUploaderName, setUploaderName } from "./lib/device";
 import { AdminProvider } from "./lib/AdminContext";
 
@@ -33,6 +34,7 @@ export default function App() {
               <Route path="/" element={<UploadPage />} />
               <Route path="/carte" element={<MapPage />} />
               <Route path="/liste" element={<ListPage />} />
+              <Route path="/admin" element={<AdminPage />} />
             </Routes>
           </main>
           <BottomNav />

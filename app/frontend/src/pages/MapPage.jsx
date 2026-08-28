@@ -8,14 +8,33 @@ import PhotoDetailModal from "../components/PhotoDetailModal";
 import PhotoGroupModal from "../components/PhotoGroupModal";
 
 const IVRY_CENTER = [48.8137, 2.3868];
+const MARKER_SIZE = 44;
+const MARKER_ANCHOR = MARKER_SIZE / 2;
+
+function getInitials(name) {
+  if (!name) return "?";
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
 
 function buildClusterIcon(photos) {
+  const mainAuthor = photos[0].uploaderName;
+  const initialsBadge = `<span class="initials-badge">${getInitials(mainAuthor)}</span>`;
+  const totalComments = photos.reduce((sum, p) => sum + (p.commentCount || 0), 0);
+  const commentBadge =
+    totalComments > 0 ? `<span class="comment-badge">${totalComments}</span>` : "";
+
   if (photos.length === 1) {
     return L.divIcon({
-      className: "photo-marker",
-      html: `<img src="/uploads/${photos[0].filename}" alt="" />`,
-      iconSize: [44, 44],
-      iconAnchor: [22, 22],
+      className: "photo-marker-wrapper",
+      html: `
+        <div class="photo-marker"><img src="/uploads/${photos[0].filename}" alt="" /></div>
+        ${initialsBadge}
+        ${commentBadge}
+      `,
+      iconSize: [MARKER_SIZE, MARKER_SIZE],
+      iconAnchor: [MARKER_ANCHOR, MARKER_ANCHOR],
     });
   }
 
@@ -29,10 +48,12 @@ function buildClusterIcon(photos) {
     className: "photo-cluster-wrapper",
     html: `
       <div class="photo-cluster collage-${previewCount}">${imgs}</div>
+      ${initialsBadge}
+      ${commentBadge}
       <span class="cluster-badge">${photos.length}</span>
     `,
-    iconSize: [44, 44],
-    iconAnchor: [22, 22],
+    iconSize: [MARKER_SIZE, MARKER_SIZE],
+    iconAnchor: [MARKER_ANCHOR, MARKER_ANCHOR],
   });
 }
 

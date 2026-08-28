@@ -34,4 +34,42 @@ db.exec(`
   )
 `);
 
+db.exec(`
+  CREATE TABLE IF NOT EXISTS settings (
+    key TEXT PRIMARY KEY,
+    value TEXT NOT NULL
+  )
+`);
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS access_logs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    device_id TEXT,
+    uploader_name TEXT,
+    ip TEXT,
+    user_agent TEXT,
+    method TEXT NOT NULL,
+    path TEXT NOT NULL,
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+  )
+`);
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS banned_devices (
+    device_id TEXT PRIMARY KEY,
+    reason TEXT,
+    banned_at TEXT NOT NULL DEFAULT (datetime('now'))
+  )
+`);
+
 db.pragma("foreign_keys = ON");
+
+function ensureColumn(table, column, type) {
+  const columns = db.prepare(`PRAGMA table_info(${table})`).all();
+  if (!columns.some((c) => c.name === column)) {
+    db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${type}`);
+  }
+}
+
+ensureColumn("photos", "category", "TEXT");
+ensureColumn("photos", "severity", "TEXT");

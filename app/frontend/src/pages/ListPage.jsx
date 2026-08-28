@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchPhotos } from "../lib/api";
 import { streetFromAddress } from "../lib/address";
+import { CATEGORY_LABELS, SEVERITY_LABELS } from "../lib/meta";
 import PhotoDetailModal from "../components/PhotoDetailModal";
+import PhotoBadges from "../components/PhotoBadges";
 
 function formatDate(sqliteDate) {
   return new Date(sqliteDate.replace(" ", "T") + "Z").toLocaleString("fr-FR");
@@ -31,6 +33,8 @@ export default function ListPage() {
   const [selected, setSelected] = useState(null);
   const [query, setQuery] = useState("");
   const [groupBy, setGroupBy] = useState("address");
+  const [categoryFilter, setCategoryFilter] = useState("");
+  const [severityFilter, setSeverityFilter] = useState("");
 
   useEffect(() => {
     fetchPhotos()
@@ -44,13 +48,16 @@ export default function ListPage() {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return photos;
-    return photos.filter(
-      (p) =>
+    return photos.filter((p) => {
+      const matchesQuery =
+        !q ||
         (p.addressLabel || "").toLowerCase().includes(q) ||
-        (p.uploaderName || "").toLowerCase().includes(q)
-    );
-  }, [photos, query]);
+        (p.uploaderName || "").toLowerCase().includes(q);
+      const matchesCategory = !categoryFilter || p.category === categoryFilter;
+      const matchesSeverity = !severityFilter || p.severity === severityFilter;
+      return matchesQuery && matchesCategory && matchesSeverity;
+    });
+  }, [photos, query, categoryFilter, severityFilter]);
 
   const groups = useMemo(() => groupPhotos(filtered, groupBy), [filtered, groupBy]);
 
@@ -65,6 +72,25 @@ export default function ListPage() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
+
+      <div className="filter-row">
+        <select value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)}>
+          <option value="">Toutes categories</option>
+          {Object.entries(CATEGORY_LABELS).map(([value, label]) => (
+            <option key={value} value={value}>
+              {label}
+            </option>
+          ))}
+        </select>
+        <select value={severityFilter} onChange={(e) => setSeverityFilter(e.target.value)}>
+          <option value="">Toutes gravites</option>
+          {Object.entries(SEVERITY_LABELS).map(([value, label]) => (
+            <option key={value} value={value}>
+              {label}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <div className="segmented">
         <button className={groupBy === "address" ? "active" : ""} onClick={() => setGroupBy("address")}>
@@ -98,6 +124,7 @@ export default function ListPage() {
                   onClick={() => setSelected(photo)}
                 />
                 <div className="photo-list-info">
+                  <PhotoBadges category={photo.category} severity={photo.severity} />
                   <p className="address">{photo.addressLabel || "Adresse inconnue"}</p>
                   <p className="uploader">{photo.uploaderName}</p>
                   <p className="meta">

@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import exifr from "exifr";
-import { uploadPhoto, searchIvryAddress } from "../lib/api";
+import { uploadPhoto, searchIvryAddress, fetchMeta, classifyPhoto } from "../lib/api";
 import { getDeviceId, getUploaderName } from "../lib/device";
 
 export default function UploadPage() {
+  const [meta, setMeta] = useState({ categories: [], severities: [] });
   const [file, setFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [checkingExif, setCheckingExif] = useState(false);
@@ -15,12 +16,22 @@ export default function UploadPage() {
   const [selectedAddress, setSelectedAddress] = useState(null);
   const [searching, setSearching] = useState(false);
 
+  const [category, setCategory] = useState(null);
+  const [suggestingCategory, setSuggestingCategory] = useState(false);
+  const [severity, setSeverity] = useState(null);
+
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
   const debounceRef = useRef(null);
   const fileInputRef = useRef(null);
+
+  useEffect(() => {
+    fetchMeta()
+      .then(setMeta)
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     return () => {
@@ -41,21 +52,29 @@ export default function UploadPage() {
     setSuggestions([]);
     setHasGps(null);
     setGps(null);
+    setCategory(null);
+    setSeverity(null);
     setCheckingExif(true);
+    setSuggestingCategory(true);
 
-    try {
-      const location = await exifr.gps(selected);
-      if (location && Number.isFinite(location.latitude) && Number.isFinite(location.longitude)) {
-        setGps({ lat: location.latitude, lon: location.longitude });
-        setHasGps(true);
-      } else {
-        setHasGps(false);
-      }
-    } catch {
-      setHasGps(false);
-    } finally {
-      setCheckingExif(false);
-    }
+    exifr
+      .gps(selected)
+      .then((location) => {
+        if (location && Number.isFinite(location.latitude) && Number.isFinite(location.longitude)) {
+          setGps({ lat: location.latitude, lon: location.longitude });
+          setHasGps(true);
+        } else {
+          setHasGps(false);
+        }
+      })
+      .catch(() => setHasGps(false))
+      .finally(() => setCheckingExif(false));
+
+    classifyPhoto(selected)
+      .then((res) => {
+        if (res.category) setCategory(res.category);
+      })
+      .finally(() => setSuggestingCategory(false));
   }
 
   function handleAddressQueryChange(value) {
@@ -87,6 +106,8 @@ export default function UploadPage() {
     setAddressQuery("");
     setSuggestions([]);
     setSelectedAddress(null);
+    setCategory(null);
+    setSeverity(null);
     if (fileInputRef.current) fileInputRef.current.value = "";
   }
 
@@ -100,6 +121,8 @@ export default function UploadPage() {
     formData.append("photo", file);
     formData.append("uploaderName", getUploaderName());
     formData.append("deviceId", getDeviceId());
+    if (category) formData.append("category", category);
+    if (severity) formData.append("severity", severity);
 
     if (!hasGps) {
       if (!selectedAddress) {
@@ -124,7 +147,7 @@ export default function UploadPage() {
     }
   }
 
-  const readyToSubmit = file && !checkingExif && (hasGps || selectedAddress);
+  const readyToSubmit = file && !checkingExif && (hasGps || selectedAddress) && category && severity;
 
   return (
     <div className="page upload-page">
@@ -189,6 +212,45 @@ export default function UploadPage() {
             <p className="hint success-hint">Adresse retenue : {selectedAddress.label}</p>
           )}
         </div>
+      )}
+
+      {file && (
+        <>
+          <div className="field-block">
+            <p className="field-label">
+              Categorie du degat{" "}
+              {suggestingCategory && <span className="hint">(analyse de la photo...)</span>}
+            </p>
+            <div className="chip-group">
+              {meta.categories.map((c) => (
+                <button
+                  key={c.value}
+                  type="button"
+                  className={"chip" + (category === c.value ? " active" : "")}
+                  onClick={() => setCategory(c.value)}
+                >
+                  {c.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="field-block">
+            <p className="field-label">Gravite</p>
+            <div className="chip-group">
+              {meta.severities.map((s) => (
+                <button
+                  key={s.value}
+                  type="button"
+                  className={"chip severity-" + s.value + (severity === s.value ? " active" : "")}
+                  onClick={() => setSeverity(s.value)}
+                >
+                  {s.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </>
       )}
 
       {error && <p className="error-text">{error}</p>}

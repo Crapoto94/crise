@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchComments, addComment, deletePhoto, deleteComment } from "../lib/api";
 import { getDeviceId, getUploaderName } from "../lib/device";
 import { useAdmin } from "../lib/AdminContext";
+import PhotoBadges from "./PhotoBadges";
 
 function formatDate(sqliteDate) {
   return new Date(sqliteDate.replace(" ", "T") + "Z").toLocaleString("fr-FR");
@@ -77,6 +78,7 @@ export default function PhotoDetailModal({ photo, onClose, onPhotoDeleted }) {
           onClick={() => setZoomed(true)}
         />
         <div className="detail-info">
+          <PhotoBadges category={photo.category} severity={photo.severity} />
           <p className="address">{photo.addressLabel || "Adresse inconnue"}</p>
           <p className="meta">
             {photo.uploaderName} · {formatDate(photo.createdAt)}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useAdmin } from "../lib/AdminContext";
 
 export default function AdminBar() {
@@ -22,15 +23,22 @@ export default function AdminBar() {
   return (
     <header className="app-header">
       <span className="app-title">Photos Ivry-sur-Seine</span>
-      {isAdmin ? (
-        <button className="admin-toggle admin-active" onClick={logout}>
-          Admin ✓
-        </button>
-      ) : (
-        <button className="admin-toggle" onClick={() => setShowLogin(true)}>
-          Admin
-        </button>
-      )}
+      <div className="header-actions">
+        {isAdmin ? (
+          <>
+            <Link to="/admin" className="admin-toggle">
+              Administration
+            </Link>
+            <button className="admin-toggle admin-active" onClick={logout}>
+              Deconnexion
+            </button>
+          </>
+        ) : (
+          <button className="admin-toggle" onClick={() => setShowLogin(true)}>
+            Admin
+          </button>
+        )}
+      </div>
 
       {showLogin && (
         <div className="modal-backdrop" onClick={() => setShowLogin(false)}>
