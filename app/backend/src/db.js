@@ -75,3 +75,4 @@ ensureColumn("photos", "category", "TEXT");
 ensureColumn("photos", "severity", "TEXT");
 ensureColumn("photos", "quartier", "TEXT");
 ensureColumn("photos", "description", "TEXT");
+ensureColumn("photos", "related_site", "TEXT");

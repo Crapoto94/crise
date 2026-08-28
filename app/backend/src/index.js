@@ -13,6 +13,7 @@ import { getSetting, setSetting } from "./settings.js";
 import { classifyDamage } from "./vision.js";
 import { matchVoirie } from "./voirie.js";
 import { getVoirieStatus, getQuartier, getQuartiersGeoJson } from "./geo.js";
+import { getSites } from "./sites.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const uploadsDir = path.join(__dirname, "..", "uploads");
@@ -105,17 +106,17 @@ const uploadMemory = multer({
 const selectAllStmt = db.prepare(`
   SELECT p.id, p.filename, p.uploader_name AS uploaderName, p.device_id AS deviceId, p.lat, p.lon,
          p.address_label AS addressLabel, p.source, p.category, p.severity, p.quartier, p.description,
-         p.created_at AS createdAt,
+         p.related_site AS relatedSite, p.created_at AS createdAt,
          (SELECT COUNT(*) FROM comments c WHERE c.photo_id = p.id) AS commentCount
   FROM photos p
   ORDER BY p.created_at DESC
 `);
 const insertStmt = db.prepare(
-  `INSERT INTO photos (filename, uploader_name, device_id, lat, lon, address_label, source, category, severity, quartier, description)
-   VALUES (@filename, @uploaderName, @deviceId, @lat, @lon, @addressLabel, @source, @category, @severity, @quartier, @description)`
+  `INSERT INTO photos (filename, uploader_name, device_id, lat, lon, address_label, source, category, severity, quartier, description, related_site)
+   VALUES (@filename, @uploaderName, @deviceId, @lat, @lon, @addressLabel, @source, @category, @severity, @quartier, @description, @relatedSite)`
 );
 const selectOneStmt = db.prepare(
-  "SELECT id, filename, uploader_name AS uploaderName, device_id AS deviceId, lat, lon, address_label AS addressLabel, source, category, severity, quartier, description, created_at AS createdAt FROM photos WHERE id = ?"
+  "SELECT id, filename, uploader_name AS uploaderName, device_id AS deviceId, lat, lon, address_label AS addressLabel, source, category, severity, quartier, description, related_site AS relatedSite, created_at AS createdAt FROM photos WHERE id = ?"
 );
 const deletePhotoStmt = db.prepare("DELETE FROM photos WHERE id = ?");
 const selectPhotosMissingQuartierStmt = db.prepare(
@@ -168,6 +169,10 @@ app.get("/api/meta", (_req, res) => {
 
 app.get("/api/geo/quartiers", (_req, res) => {
   res.json(getQuartiersGeoJson());
+});
+
+app.get("/api/sites", (_req, res) => {
+  res.json(getSites());
 });
 
 app.post("/api/geo/locate", async (req, res) => {
@@ -300,8 +305,18 @@ app.post("/api/classify", uploadMemory.single("photo"), async (req, res) => {
 
 app.post("/api/photos", upload.single("photo"), checkNotBanned, async (req, res) => {
   try {
-    const { uploaderName, deviceId, addressLabel, lat, lon, source, category, severity, description } =
-      req.body || {};
+    const {
+      uploaderName,
+      deviceId,
+      addressLabel,
+      lat,
+      lon,
+      source,
+      category,
+      severity,
+      description,
+      relatedSite,
+    } = req.body || {};
 
     if (!req.file) {
       return res.status(400).json({ error: "Photo manquante" });
@@ -328,6 +343,7 @@ app.post("/api/photos", upload.single("photo"), checkNotBanned, async (req, res)
       severity: SEVERITY_VALUES.includes(severity) ? severity : null,
       quartier: getQuartier(parsedLat, parsedLon),
       description: sanitizeDescription(description),
+      relatedSite: sanitizeDescription(relatedSite),
     });
 
     res.status(201).json(selectOneStmt.get(info.lastInsertRowid));

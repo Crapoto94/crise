@@ -19,6 +19,12 @@ export async function locateGps(lat, lon) {
   return res.json();
 }
 
+export async function fetchSites() {
+  const res = await fetch("/api/sites", { headers: deviceHeaders() });
+  if (!res.ok) throw new Error("Erreur de chargement des sites");
+  return res.json();
+}
+
 export async function fetchQuartiersGeoJson() {
   const res = await fetch("/api/geo/quartiers", { headers: deviceHeaders() });
   if (!res.ok) throw new Error("Erreur de chargement des quartiers");

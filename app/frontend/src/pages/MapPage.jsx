@@ -1,9 +1,16 @@
 import { useEffect, useMemo, useState } from "react";
-import { MapContainer, TileLayer, Marker, GeoJSON, useMap, useMapEvents } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, GeoJSON, Tooltip, useMap, useMapEvents } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { fetchPhotos, fetchQuartiersGeoJson } from "../lib/api";
+import { fetchPhotos, fetchQuartiersGeoJson, fetchSites } from "../lib/api";
 import { computeClusters } from "../lib/cluster";
+import {
+  SITE_CATEGORIES,
+  OTHER_SITE_CATEGORY,
+  resolveSiteCategory,
+  legendCategoryKey,
+  DEFAULT_VISIBLE_CATEGORIES,
+} from "../lib/siteCategories";
 import PhotoDetailModal from "../components/PhotoDetailModal";
 import PhotoGroupModal from "../components/PhotoGroupModal";
 
@@ -82,6 +89,54 @@ function buildClusterIcon(photos) {
   });
 }
 
+const SITE_ICON_SIZE = 22;
+
+function buildSiteIcon(category) {
+  const meta = resolveSiteCategory(category);
+  return L.divIcon({
+    className: "site-marker",
+    html: `<div class="site-marker-dot" style="background:${meta.color}"><svg viewBox="0 0 16 16" width="13" height="13" fill="#fff">${meta.icon}</svg></div>`,
+    iconSize: [SITE_ICON_SIZE, SITE_ICON_SIZE],
+    iconAnchor: [SITE_ICON_SIZE / 2, SITE_ICON_SIZE / 2],
+  });
+}
+
+const siteIconCache = new Map();
+function getSiteIcon(category) {
+  if (!siteIconCache.has(category)) siteIconCache.set(category, buildSiteIcon(category));
+  return siteIconCache.get(category);
+}
+
+function SiteMarkers({ sites, visibleCategories }) {
+  return sites
+    .filter((s) => visibleCategories.has(legendCategoryKey(s.category)))
+    .map((s) => (
+      <Marker key={s.code} position={[s.lat, s.lon]} icon={getSiteIcon(s.category)} zIndexOffset={-1000}>
+        <Tooltip>{s.name}</Tooltip>
+      </Marker>
+    ));
+}
+
+function SiteLegend({ visibleCategories, onToggle }) {
+  const items = [...SITE_CATEGORIES, OTHER_SITE_CATEGORY];
+  return (
+    <div className="site-legend">
+      {items.map((c) => (
+        <button
+          key={c.value}
+          type="button"
+          className={"legend-chip" + (visibleCategories.has(c.value) ? " active" : "")}
+          style={visibleCategories.has(c.value) ? { borderColor: c.color, color: c.color } : undefined}
+          onClick={() => onToggle(c.value)}
+        >
+          <span className="legend-dot" style={{ background: c.color }} />
+          {c.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 function ClusterMarkers({ photos, onOpenPhoto, onOpenGroup }) {
   const map = useMap();
   const [tick, setTick] = useState(0);
@@ -98,6 +153,7 @@ function ClusterMarkers({ photos, onOpenPhoto, onOpenGroup }) {
       key={cluster.id}
       position={[cluster.lat, cluster.lon]}
       icon={buildClusterIcon(cluster.photos)}
+      zIndexOffset={1000}
       eventHandlers={{
         click: () => {
           if (cluster.photos.length === 1) {
@@ -117,6 +173,8 @@ export default function MapPage() {
   const [selected, setSelected] = useState(null);
   const [group, setGroup] = useState(null);
   const [quartiersGeoJson, setQuartiersGeoJson] = useState(null);
+  const [sites, setSites] = useState([]);
+  const [visibleCategories, setVisibleCategories] = useState(DEFAULT_VISIBLE_CATEGORIES);
 
   useEffect(() => {
     fetchPhotos()
@@ -125,7 +183,19 @@ export default function MapPage() {
     fetchQuartiersGeoJson()
       .then(setQuartiersGeoJson)
       .catch(() => {});
+    fetchSites()
+      .then(setSites)
+      .catch(() => {});
   }, []);
+
+  function toggleCategory(value) {
+    setVisibleCategories((prev) => {
+      const next = new Set(prev);
+      if (next.has(value)) next.delete(value);
+      else next.add(value);
+      return next;
+    });
+  }
 
   const maskFeature = useMemo(() => buildMaskFeature(quartiersGeoJson), [quartiersGeoJson]);
 
@@ -146,6 +216,7 @@ export default function MapPage() {
           />
           {maskFeature && <GeoJSON data={maskFeature} style={maskStyle} interactive={false} />}
           {quartiersGeoJson && <GeoJSON data={quartiersGeoJson} style={quartierStyle} />}
+          <SiteMarkers sites={sites} visibleCategories={visibleCategories} />
           <ClusterMarkers
             photos={photos}
             onOpenPhoto={setSelected}
@@ -153,6 +224,8 @@ export default function MapPage() {
           />
         </MapContainer>
       </div>
+
+      <SiteLegend visibleCategories={visibleCategories} onToggle={toggleCategory} />
 
       {group && (
         <PhotoGroupModal

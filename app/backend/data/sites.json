@@ -1,0 +1,1973 @@
+[
+ {
+  "code": "S001",
+  "name": "ESPLANADE GEORGES MARRANE",
+  "category": "autre",
+  "categoryLabel": "Autre",
+  "address": "ESPLANADE GEORGES MARRANE",
+  "lat": 48.8124,
+  "lon": 2.3872
+ },
+ {
+  "code": "S002",
+  "name": "CENTRE ADMINISTRATIF DENISE MILLERIOUX (ex-SAINT JUST)",
+  "category": "administratif",
+  "categoryLabel": "ADMINISTRATIF",
+  "address": "37 RUE SAINT JUST",
+  "lat": 48.8099152,
+  "lon": 2.3877823
+ },
+ {
+  "code": "S004",
+  "name": "CENTRE ADMINISTRATIF CACHIN",
+  "category": "administratif",
+  "categoryLabel": "ADMINISTRATIF",
+  "address": "3 PLACE MARCEL CACHIN",
+  "lat": 48.813917,
+  "lon": 2.391195
+ },
+ {
+  "code": "S005",
+  "name": "CENTRE ADMINISTRATIF CASANOVA",
+  "category": "administratif",
+  "categoryLabel": "ADMINISTRATIF",
+  "address": "79 AVENUE DANIELLE CASANOVA",
+  "lat": 48.8135097,
+  "lon": 2.385288
+ },
+ {
+  "code": "S006",
+  "name": "42BIS RUE SAINT JUST",
+  "category": "administratif",
+  "categoryLabel": "ADMINISTRATIF",
+  "address": "42 BIS RUE SAINT JUST",
+  "lat": 48.8124805,
+  "lon": 2.3922532
+ },
+ {
+  "code": "S007",
+  "name": "SPINOZA",
+  "category": "autre",
+  "categoryLabel": "Autre",
+  "address": "AVENUE SPINOZA",
+  "lat": 48.8124154,
+  "lon": 2.3893448
+ },
+ {
+  "code": "S008",
+  "name": "6 RUE RASPAIL",
+  "category": "administratif",
+  "categoryLabel": "ADMINISTRATIF",
+  "address": "6 RUE RASPAIL",
+  "lat": 48.8116615,
+  "lon": 2.3869965
+ },
+ {
+  "code": "S009",
+  "name": "35 RUE SAINT JUST",
+  "category": "administratif",
+  "categoryLabel": "ADMINISTRATIF",
+  "address": "35 RUE SAINT JUST",
+  "lat": 48.8101873,
+  "lon": 2.3882532
+ },
+ {
+  "code": "S010",
+  "name": "3 5 7 RUE RASPAIL",
+  "category": "autre",
+  "categoryLabel": "Autre",
+  "address": "7 RUE RASPAIL",
+  "lat": 48.8111915,
+  "lon": 2.3878434
+ },
+ {
+  "code": "S012",
+  "name": "28-30 RUE SAINT JUST_17 RUE RASPAIL",
+  "category": "autre",
+  "categoryLabel": "Autre",
+  "address": "30 RUE SAINT JUST",
+  "lat": 48.8108458,
+  "lon": 2.3890098
+ },
+ {
+  "code": "S013",
+  "name": "MEDIATHÈQUE",
+  "category": "culturel",
+  "categoryLabel": "CULTUREL",
+  "address": "AVENUE DANIELLE CASANOVA",
+  "lat": 48.8130478,
+  "lon": 2.3856024
+ },
+ {
+  "code": "S014",
+  "name": "CHAUFFERIE CASANOVA",
+  "category": "technique",
+  "categoryLabel": "TECHNIQUE",
+  "address": "AVENUE DANIELLE CASANOVA",
+  "lat": 48.8130478,
+  "lon": 2.3856024
+ },
+ {
+  "code": "S015",
+  "name": "THEATRE ANTOINE VITEZ",
+  "category": "culturel",
+  "categoryLabel": "CULTUREL",
+  "address": "RUE SIMON DEUREURE",
+  "lat": 48.810682,
+  "lon": 2.386208
+ },
+ {
+  "code": "S016",
+  "name": "CINEMA LE LUXY",
+  "category": "culturel",
+  "categoryLabel": "CULTUREL",
+  "address": "AVENUE GEORGES GOSNAT",
+  "lat": 48.811795,
+  "lon": 2.3851926
+ },
+ {
+  "code": "S017",
+  "name": "CHEVALERET",
+  "category": "foyer",
+  "categoryLabel": "FOYER",
+  "address": "3 BIS PLACE DE L'INSURRECTION",
+  "lat": 48.807,
+  "lon": 2.384
+ },
+ {
+  "code": "S018",
+  "name": "LE MOULIN DE LA TOUR",
+  "category": "culturel",
+  "categoryLabel": "CULTUREL",
+  "address": "PLACE DU 8 MAI 1945",
+  "lat": 48.8177744,
+  "lon": 2.3733405
+ },
+ {
+  "code": "S019",
+  "name": "MANUFACTURE DES ŒILLETS",
+  "category": "culturel",
+  "categoryLabel": "CULTUREL",
+  "address": "1 PLACE PIERRE GOSNAT",
+  "lat": 48.8092102,
+  "lon": 2.3905
+ },
+ {
+  "code": "S020",
+  "name": "CENTRE TECHNIQUE RIGAUD",
+  "category": "technique",
+  "categoryLabel": "TECHNIQUE",
+  "address": "28 RUE PIERRE RIGAUD",
+  "lat": 48.8130093,
+  "lon": 2.3989761
+ },
+ {
+  "code": "S021",
+  "name": "CENTRE TECHNIQUE GUILLOU",
+  "category": "technique",
+  "categoryLabel": "TECHNIQUE",
+  "address": "14 RUE EDMEE GUILLOU",
+  "lat": 48.8162192,
+  "lon": 2.3984956
+ },
+ {
+  "code": "S022",
+  "name": "CENTRE TECHNIQUE LEDRU ROLLIN",
+  "category": "technique",
+  "categoryLabel": "TECHNIQUE",
+  "address": "49 RUE LEDRU-ROLLIN",
+  "lat": 48.8171315,
+  "lon": 2.3866069
+ },
+ {
+  "code": "S023",
+  "name": "1 A 5 RUE RENE ROBIN",
+  "category": "technique",
+  "categoryLabel": "TECHNIQUE",
+  "address": "1 RUE RENE ROBIN",
+  "lat": 48.814236,
+  "lon": 2.3788577
+ },
+ {
+  "code": "S024",
+  "name": "CENTRE TECHNIQUE WESTERMEYER",
+  "category": "technique",
+  "categoryLabel": "TECHNIQUE",
+  "address": "47 RUE WESTERMEYER",
+  "lat": 48.8174463,
+  "lon": 2.3928697
+ },
+ {
+  "code": "S025",
+  "name": "DEPOT MONMOUSSEAU",
+  "category": "technique",
+  "categoryLabel": "TECHNIQUE",
+  "address": "7 RUE GASTON MONMOUSSEAU",
+  "lat": 48.8076317,
+  "lon": 2.3781328
+ },
+ {
+  "code": "S026",
+  "name": "CENTRE TECHNIQUE LAMANT",
+  "category": "technique",
+  "categoryLabel": "TECHNIQUE",
+  "address": "6 RUE MARCEL LAMANT",
+  "lat": 48.8063905,
+  "lon": 2.3835678
+ },
+ {
+  "code": "S027",
+  "name": "LES MATHES",
+  "category": "centre_de_vacances",
+  "categoryLabel": "CENTRE DE VACANCES",
+  "address": "67 AVENUEDE LA RESINERIE   17570 LES MATHES",
+  "lat": 45.710429,
+  "lon": -1.1621
+ },
+ {
+  "code": "S028",
+  "name": "HERY SUR UGINE",
+  "category": "centre_de_vacances",
+  "categoryLabel": "CENTRE DE VACANCES",
+  "address": "73400 UGINE LE PONTET HERY SUR UGINE",
+  "lat": 45.758762,
+  "lon": 6.436508
+ },
+ {
+  "code": "S029",
+  "name": "LES VIGNES",
+  "category": "centre_de_vacances",
+  "categoryLabel": "CENTRE DE VACANCES",
+  "address": "48210 LES VIGNES",
+  "lat": 44.2802277,
+  "lon": 3.2290955
+ },
+ {
+  "code": "S031",
+  "name": "FOYER AMBROISE CROIZAT",
+  "category": "foyer",
+  "categoryLabel": "FOYER",
+  "address": "21 RUE JEAN-MARIE POULMARCH",
+  "lat": 48.8160333,
+  "lon": 2.3736923
+ },
+ {
+  "code": "S032",
+  "name": "FOYER CASANOVA",
+  "category": "foyer",
+  "categoryLabel": "FOYER",
+  "address": "140 AVENUE DANIELLE CASANOVA",
+  "lat": 48.8154244,
+  "lon": 2.3833432
+ },
+ {
+  "code": "S033",
+  "name": "CITE PIERRE ET MARIE CURIE",
+  "category": "cite",
+  "categoryLabel": "CITE",
+  "address": "1 ALLEE IRENE JOLIOT-CURIE",
+  "lat": 48.8123595,
+  "lon": 2.3747135
+ },
+ {
+  "code": "S034",
+  "name": "MAISON DES FEMMES",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "4 PLACE DE L'INSURRECTION",
+  "lat": 48.8149659,
+  "lon": 2.3975869
+ },
+ {
+  "code": "S036",
+  "name": "CITE GAGARINE TRUILLOT",
+  "category": "cite",
+  "categoryLabel": "CITE",
+  "address": "RUE SAINT JUST",
+  "lat": 48.8124805,
+  "lon": 2.3922532
+ },
+ {
+  "code": "S037",
+  "name": "MULTI-ACCUEIL ROSA BONHEUR",
+  "category": "petite_enfance",
+  "categoryLabel": "PETITE ENFANCE",
+  "address": "65 AVENUE DE VERDUN",
+  "lat": 48.8139874,
+  "lon": 2.3699265
+ },
+ {
+  "code": "S038",
+  "name": "MARAT PARMENTIER",
+  "category": "autre",
+  "categoryLabel": "Autre",
+  "address": "RUE RASPAIL-MARAT-REPUBLIQUE",
+  "lat": 48.809645,
+  "lon": 2.389429
+ },
+ {
+  "code": "S039",
+  "name": "WESTERMEYER",
+  "category": "petite_enfance",
+  "categoryLabel": "PETITE ENFANCE",
+  "address": "28 RUE WESTERMEYER",
+  "lat": 48.8176233,
+  "lon": 2.39303
+ },
+ {
+  "code": "S040",
+  "name": "HALTE GARDERIE DU MOULIN",
+  "category": "petite_enfance",
+  "categoryLabel": "PETITE ENFANCE",
+  "address": "1 TER RUE JULES FERRY",
+  "lat": 48.8157379,
+  "lon": 2.3727282
+ },
+ {
+  "code": "S041",
+  "name": "GROUPE SCOLAIRE ROSALIND FRANKLIN",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "7 RUE EMILE BLIN",
+  "lat": 48.8097286,
+  "lon": 2.4029418
+ },
+ {
+  "code": "S042",
+  "name": "GROUPE SCOLAIRE ROSA PARKS",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "84 AVENUE DE VERDUN",
+  "lat": 48.8077745,
+  "lon": 2.3741823
+ },
+ {
+  "code": "S043",
+  "name": "GROUPE SCOLAIRE HENRI BARBUSSE",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "7 RUE GEORGETTE ROSTAING",
+  "lat": 48.8101605,
+  "lon": 2.3776916
+ },
+ {
+  "code": "S044",
+  "name": "CMPP JENNY AUBRY - CASANOVA",
+  "category": "sante",
+  "categoryLabel": "SANTE",
+  "address": "81 BIS AVENUE DANIELE CASANOVA",
+  "lat": 48.812824,
+  "lon": 2.386085
+ },
+ {
+  "code": "S045",
+  "name": "GROUPE SCOLAIRE JOLIOT CURIE",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "19 RUE RASPAIL",
+  "lat": 48.8102648,
+  "lon": 2.3896563
+ },
+ {
+  "code": "S046",
+  "name": "GROUPE SCOLAIRE PAUL LANGEVIN",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "218 RUE MARCEL HARTMANN",
+  "lat": 48.8057264,
+  "lon": 2.3871134
+ },
+ {
+  "code": "S047",
+  "name": "GROUPE SCOLAIRE MAKARENKO",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "2 RUE JEAN PERRIN",
+  "lat": 48.8118734,
+  "lon": 2.3767358
+ },
+ {
+  "code": "S048",
+  "name": "GROUPE SCOLAIRE DULCIE SEPTEMBER",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "5 ALLEE CHANTECLAIR",
+  "lat": 48.8198613,
+  "lon": 2.3906712
+ },
+ {
+  "code": "S049",
+  "name": "GROUPE SCOLAIRE ET COMPLEXE SPORTIF ORME AU CHAT",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "3 PLACE DE L'ORME AU CHAT, 13 RUE PIERRE GALAIS",
+  "lat": 48.8088,
+  "lon": 2.3887
+ },
+ {
+  "code": "S050",
+  "name": "MATERNELLE GABRIEL PERI",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "47 RUE GABRIEL PERI",
+  "lat": 48.8144805,
+  "lon": 2.3819338
+ },
+ {
+  "code": "S051",
+  "name": "MATERNELLE JACQUES PREVERT",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "8 ALLEE DU VIEUX MOULIN",
+  "lat": 48.8185223,
+  "lon": 2.3732576
+ },
+ {
+  "code": "S052",
+  "name": "MATERNELLE ROBESPIERRE",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "7 TER RUE ROBESPIERRE",
+  "lat": 48.8094401,
+  "lon": 2.38586
+ },
+ {
+  "code": "S053",
+  "name": "JEAN JACQUES ROUSSEAU",
+  "category": "autre",
+  "categoryLabel": "Autre",
+  "address": "40 RUE JEAN JACQUES ROUSSEAU",
+  "lat": 48.8176456,
+  "lon": 2.3942445
+ },
+ {
+  "code": "S054",
+  "name": "GROUPE SCOLAIRE GUY MOQUET",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "28 RUE MIRABEAU",
+  "lat": 48.8180502,
+  "lon": 2.3786067
+ },
+ {
+  "code": "S055",
+  "name": "GROUPE SCOLAIRE JACQUES SOLOMON",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "25 RUE GAGNEE, 126 BLD DE STALINGRAD",
+  "lat": 48.802719,
+  "lon": 2.381551
+ },
+ {
+  "code": "S056",
+  "name": "GROUPE SCOLAIRE MAURICE THOREZ",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "29 RUE BAUDIN, 66 AV. M. THOREZ,5/9 RUE POULMARCH",
+  "lat": 48.816357,
+  "lon": 2.374647
+ },
+ {
+  "code": "S057",
+  "name": "ECOLE MATERNELLE EUGENIE COTTON",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "47 RUE MAURICE COUTANT",
+  "lat": 48.8051193,
+  "lon": 2.3830697
+ },
+ {
+  "code": "S058",
+  "name": "MAISON QUARTIER ET MEDIATHEQUE MONMOUSSEAU",
+  "category": "social",
+  "categoryLabel": "SOCIAL",
+  "address": "17 RUE GASTON MONMOUSSEAU",
+  "lat": 48.8043144,
+  "lon": 2.3820491
+ },
+ {
+  "code": "S059",
+  "name": "CIMETIÈRE NOUVEAU",
+  "category": "cimetiere",
+  "categoryLabel": "CIMETIERE",
+  "address": "13 RUE GASTON MONMOUSSEAU",
+  "lat": 48.8068402,
+  "lon": 2.379126
+ },
+ {
+  "code": "S060",
+  "name": "CIMETIÈRE ANCIEN",
+  "category": "cimetiere",
+  "categoryLabel": "CIMETIERE",
+  "address": "87 RUE JEAN LE GALLEU",
+  "lat": 48.8139213,
+  "lon": 2.3768864
+ },
+ {
+  "code": "S061",
+  "name": "MAISON DES ANCIENS COMBATTANTS",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "1 PLACE DE L'EGLISE",
+  "lat": 48.811239,
+  "lon": 2.3827821
+ },
+ {
+  "code": "S062",
+  "name": "ECOLE ELEMENTAIRE EINSTEIN",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "9 ALLEE DU PARC",
+  "lat": 48.8142304,
+  "lon": 2.3848943
+ },
+ {
+  "code": "S063",
+  "name": "SALLE COMMUNALE PARMENTIER",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "6 AVENUE DE LA REPUBLIQUE",
+  "lat": 48.8067146,
+  "lon": 2.392166
+ },
+ {
+  "code": "S064",
+  "name": "ROBESPIERRE",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "2 RUE ROBESPIERRE",
+  "lat": 48.8107282,
+  "lon": 2.3833893
+ },
+ {
+  "code": "S065",
+  "name": "PASSERELLE MULLER",
+  "category": "autre",
+  "categoryLabel": "Autre",
+  "address": "PASSERELLE MULLER",
+  "lat": 48.8177952,
+  "lon": 2.3887671
+ },
+ {
+  "code": "S066",
+  "name": "SYCTOM",
+  "category": "prive",
+  "categoryLabel": "PRIVE",
+  "address": "16 RUE FRANCOIS MITERRAND",
+  "lat": 48.823383,
+  "lon": 2.388182
+ },
+ {
+  "code": "S067",
+  "name": "CITE  DENIS PAPIN",
+  "category": "autre",
+  "categoryLabel": "Autre",
+  "address": "24 RUE SAINT JUST",
+  "lat": 48.811262,
+  "lon": 2.3898003
+ },
+ {
+  "code": "S068",
+  "name": "ALLEE CHANTECLAIR",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "34 RUE JULES VANZUPPE",
+  "lat": 48.8187067,
+  "lon": 2.3912156
+ },
+ {
+  "code": "S069",
+  "name": "CITE DES FAUCONNIERES",
+  "category": "cite",
+  "categoryLabel": "CITE",
+  "address": "PLACETTE DES FAUCONNIERES",
+  "lat": 48.8174508,
+  "lon": 2.3964064
+ },
+ {
+  "code": "S070",
+  "name": "13 RUE BARBES",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "13 RUE BARBES",
+  "lat": 48.8159187,
+  "lon": 2.3685522
+ },
+ {
+  "code": "S071",
+  "name": "35 RUE LOUIS BERTRAND",
+  "category": "logement",
+  "categoryLabel": "LOGEMENT",
+  "address": "35 RUE LOUIS BERTRAND",
+  "lat": 48.8167976,
+  "lon": 2.3779605
+ },
+ {
+  "code": "S072",
+  "name": "1 RUE MOISE",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "1 RUE MOISE",
+  "lat": 48.8168855,
+  "lon": 2.3999881
+ },
+ {
+  "code": "S073",
+  "name": "SALLE DE QUARTIER LOUIS ARAGON",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "53 RUE GABRIEL PERI",
+  "lat": 48.8156393,
+  "lon": 2.3807124
+ },
+ {
+  "code": "S075",
+  "name": "HARTMANN",
+  "category": "petite_enfance",
+  "categoryLabel": "PETITE ENFANCE",
+  "address": "171 BIS RUE MARCEL HARTMANN",
+  "lat": 48.8074972,
+  "lon": 2.3846275
+ },
+ {
+  "code": "S076",
+  "name": "14 RUE LENINE",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "14 RUE LENINE",
+  "lat": 48.8178804,
+  "lon": 2.397388
+ },
+ {
+  "code": "S077",
+  "name": "SALLE DE QUARTIER VOLTAIRE",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "PLACE VOLTAIRE",
+  "lat": 48.8125719,
+  "lon": 2.3848934
+ },
+ {
+  "code": "S078",
+  "name": "CITE THOREZ",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "70 AVENUE GEORGES GOSNAT",
+  "lat": 48.8133836,
+  "lon": 2.3882267
+ },
+ {
+  "code": "S079",
+  "name": "MULTI- ACCUEIL ADA LOVELACE",
+  "category": "petite_enfance",
+  "categoryLabel": "PETITE ENFANCE",
+  "address": "11 RUE PIERRE RIGAUD",
+  "lat": 48.8136587,
+  "lon": 2.4005651
+ },
+ {
+  "code": "S080",
+  "name": "SALLE DE QUARTIER MICHELET",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "29 RUE MICHELET",
+  "lat": 48.8070292,
+  "lon": 2.3756021
+ },
+ {
+  "code": "S081",
+  "name": "SALLE DES LONGS SILLONS",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "21 RUE BARBES",
+  "lat": 48.8172573,
+  "lon": 2.3722849
+ },
+ {
+  "code": "S082",
+  "name": "EGLISE ST-PIERRE ST-PAUL",
+  "category": "culturel",
+  "categoryLabel": "CULTUREL",
+  "address": "5 PLACE DE L'EGLISE,112 AV. MAURICE THOREZ",
+  "lat": 48.815887,
+  "lon": 2.377432
+ },
+ {
+  "code": "S083",
+  "name": "7 PROMENEE DU LIEGAT",
+  "category": "culturel",
+  "categoryLabel": "CULTUREL",
+  "address": "7 PROMENEE DU LIEGAT",
+  "lat": 48.8134287,
+  "lon": 2.3842818
+ },
+ {
+  "code": "S084",
+  "name": "MARCHE COUVERT DU PLATEAU",
+  "category": "activites",
+  "categoryLabel": "ACTIVITES",
+  "address": "39 AVENUE HENRI BARBUSSE",
+  "lat": 48.8079781,
+  "lon": 2.3754273
+ },
+ {
+  "code": "S085",
+  "name": "CARRIERES DELACROIX",
+  "category": "culturel",
+  "categoryLabel": "CULTUREL",
+  "address": "2 AVENUE DU GENERAL LECLERC",
+  "lat": 48.8129439,
+  "lon": 2.3798476
+ },
+ {
+  "code": "S086",
+  "name": "1 RUE JEAN BAPTISTE CLEMENT",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "1 RUE JEAN-BAPTISTE CLEMENT",
+  "lat": 48.8114635,
+  "lon": 2.3870652
+ },
+ {
+  "code": "S088",
+  "name": "13-15-17 RUE ERNEST RENAN",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "13 RUE ERNEST RENAN",
+  "lat": 48.8113006,
+  "lon": 2.3980673
+ },
+ {
+  "code": "S089",
+  "name": "25 AVENUE JEAN JAURES",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "25 AVENUE JEAN JAURES",
+  "lat": 48.8130213,
+  "lon": 2.4026332
+ },
+ {
+  "code": "S090",
+  "name": "25 RUE PIERRE RIGAUD",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "25 RUE PIERRE RIGAUD",
+  "lat": 48.8121599,
+  "lon": 2.3975827
+ },
+ {
+  "code": "S091",
+  "name": "MAISON DE  LA CITOYENNETE JJ ROUSSEAU",
+  "category": "social_associatif",
+  "categoryLabel": "SOCIAL / ASSOCIATIF",
+  "address": "25 RUE JEAN-JACQUES ROUSSEAU",
+  "lat": 48.817344,
+  "lon": 2.3947599
+ },
+ {
+  "code": "S092",
+  "name": "COMPLEXE SPORTIF LENINE",
+  "category": "sportif",
+  "categoryLabel": "SPORTIF",
+  "address": "52 BOULEVARD BRANDEBOURG",
+  "lat": 48.8148961,
+  "lon": 2.3964509
+ },
+ {
+  "code": "S093",
+  "name": "COMPLEXE SPORTIF VENISE GOSNAT",
+  "category": "sportif",
+  "categoryLabel": "SPORTIF",
+  "address": "28 RUE AMEDEE HUON",
+  "lat": 48.804784,
+  "lon": 2.3872574
+ },
+ {
+  "code": "S094",
+  "name": "MAISON QUARTIER PETIT IVRY CENTRE SPORTIF PIERRE ET MARIE CURIE",
+  "category": "sportif",
+  "categoryLabel": "SPORTIF",
+  "address": "44 44 RUE JEAN LE GALLEU",
+  "lat": 48.8139213,
+  "lon": 2.3768864
+ },
+ {
+  "code": "S095",
+  "name": "CLERVILLE",
+  "category": "sportif",
+  "categoryLabel": "SPORTIF",
+  "address": "3 RUE LUCIEN SELVA",
+  "lat": 48.8087705,
+  "lon": 2.3836844
+ },
+ {
+  "code": "S096",
+  "name": "GYMNASE DES EPINETTES",
+  "category": "sportif",
+  "categoryLabel": "SPORTIF",
+  "address": "52 RUE LENINE, 60 RUE MOLIERE",
+  "lat": 48.815133,
+  "lon": 2.393926
+ },
+ {
+  "code": "S098",
+  "name": "51 RUE DES FRERES BLAIS",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "51 RUE DES FRERES BLAIS",
+  "lat": 48.8054317,
+  "lon": 2.3861399
+ },
+ {
+  "code": "S099",
+  "name": "PLATEAU SPORTIF AMEDEE HUON",
+  "category": "sportif",
+  "categoryLabel": "SPORTIF",
+  "address": "7 RUE AMEDEE HUON",
+  "lat": 48.8040757,
+  "lon": 2.3846744
+ },
+ {
+  "code": "S101",
+  "name": "PLATEAU SPORTIF HENRI WALLON",
+  "category": "sportif",
+  "categoryLabel": "SPORTIF",
+  "address": "3 PLACE DANTON",
+  "lat": 48.8148181,
+  "lon": 2.3808178
+ },
+ {
+  "code": "S102",
+  "name": "23 RUE DE LA PAIX",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "23 RUE DE LA PAIX",
+  "lat": 48.8074137,
+  "lon": 2.3696288
+ },
+ {
+  "code": "S104",
+  "name": "STADE DE GOURNAY",
+  "category": "sportif",
+  "categoryLabel": "SPORTIF",
+  "address": "183 BOULEVARD DE STALINGRAD",
+  "lat": 48.8065434,
+  "lon": 2.3751677
+ },
+ {
+  "code": "S105",
+  "name": "STADE DES LILAS",
+  "category": "sportif",
+  "categoryLabel": "SPORTIF",
+  "address": "16 BIS RUE GASTON MONMOUSSEAU",
+  "lat": 48.8057429,
+  "lon": 2.3803909
+ },
+ {
+  "code": "S106",
+  "name": "6 AVENUE DE LA REPUBLIQUE",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "6 AVENUE DE LA REPUBLIQUE",
+  "lat": 48.8067146,
+  "lon": 2.392166
+ },
+ {
+  "code": "S107",
+  "name": "VOLTAIRE",
+  "category": "autre",
+  "categoryLabel": "Autre",
+  "address": "84 AVENUE GEORGES GOSNAT",
+  "lat": 48.8141711,
+  "lon": 2.3898485
+ },
+ {
+  "code": "S108",
+  "name": "PONT LENINE",
+  "category": "autre",
+  "categoryLabel": "Autre",
+  "address": "19 PROMENEE VENISE GOSNAT",
+  "lat": 48.8119743,
+  "lon": 2.3855758
+ },
+ {
+  "code": "S109",
+  "name": "OUVRAGE DE LIAISON",
+  "category": "autre",
+  "categoryLabel": "Autre",
+  "address": "101 AVENUE GEORGES GOSNAT",
+  "lat": 48.811795,
+  "lon": 2.3851926
+ },
+ {
+  "code": "S110",
+  "name": "MARAT",
+  "category": "autre",
+  "categoryLabel": "Autre",
+  "address": "RUE MARAT",
+  "lat": 48.8074592,
+  "lon": 2.3902915
+ },
+ {
+  "code": "S111",
+  "name": "LES PARALLELLES",
+  "category": "technique",
+  "categoryLabel": "TECHNIQUE",
+  "address": "12 RUEJEAN BAPTISTE CLEMENT",
+  "lat": 48.811201,
+  "lon": 2.385934
+ },
+ {
+  "code": "S113",
+  "name": "JEANNE HACHETTE",
+  "category": "sans_affectation",
+  "categoryLabel": "SANS AFFECTATION",
+  "address": "AVENUE GOSNAT RUE RASPAIL",
+  "lat": 48.809645,
+  "lon": 2.389429
+ },
+ {
+  "code": "S114",
+  "name": "CITE GABRIEL PERI",
+  "category": "cite",
+  "categoryLabel": "CITE",
+  "address": "RUE GABRIEL PERI",
+  "lat": 48.8160212,
+  "lon": 2.380404
+ },
+ {
+  "code": "S115",
+  "name": "AERATION PARKING",
+  "category": "technique",
+  "categoryLabel": "TECHNIQUE",
+  "address": "RUE DUCHAUFFOUR",
+  "lat": 48.8102873,
+  "lon": 2.3768786
+ },
+ {
+  "code": "S117",
+  "name": "CENTRE MUNICIPAL DE SANTE FANNY DEWERPE",
+  "category": "sante",
+  "categoryLabel": "SANTE",
+  "address": "64 AVENUE GEORGES GOSNAT",
+  "lat": 48.8140816,
+  "lon": 2.3886545
+ },
+ {
+  "code": "S118",
+  "name": "PARC AUTOMOBILE",
+  "category": "technique",
+  "categoryLabel": "TECHNIQUE",
+  "address": "26 RUE RASPAIL",
+  "lat": 48.8101066,
+  "lon": 2.3892025
+ },
+ {
+  "code": "S119",
+  "name": "SQUARE JULES COUTANT",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "83 AVENUE GEORGES GOSNAT",
+  "lat": 48.8127787,
+  "lon": 2.3875011
+ },
+ {
+  "code": "S120",
+  "name": "SQUARE DE L'INSURRECTION",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "PLACE DE L'INSURRECTION",
+  "lat": 48.8147869,
+  "lon": 2.3980268
+ },
+ {
+  "code": "S121",
+  "name": "SQUARE DES ALLIES",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "19 RUE JEAN-MARIE POULMARCH ,18RUE PIERRE CURIE",
+  "lat": 48.816357,
+  "lon": 2.374647
+ },
+ {
+  "code": "S122",
+  "name": "SQUARE DES ACACIAS",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "9 9 IMPASSE HENRI MARTIN",
+  "lat": 48.806563,
+  "lon": 2.3724351
+ },
+ {
+  "code": "S123",
+  "name": "SQUARE DU COLOMBIER",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "69 RUE MARAT",
+  "lat": 48.8079697,
+  "lon": 2.3886956
+ },
+ {
+  "code": "S124",
+  "name": "ESPACE VERT MONMOUSSEAU",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "15 RUE MONMOUSSEAU",
+  "lat": 48.8022775,
+  "lon": 2.3805973
+ },
+ {
+  "code": "S125",
+  "name": "SQUARE TOUSSAINT LOUVERTURE",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "12 RUE RAYMOND LEFEVRE",
+  "lat": 48.8076291,
+  "lon": 2.3686243
+ },
+ {
+  "code": "S126",
+  "name": "FONTAINE JEUX EAUX",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "0 PLACE JEAN FERRAT",
+  "lat": 48.8188359,
+  "lon": 2.3743143
+ },
+ {
+  "code": "S127",
+  "name": "PROMENADE DU FORT",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "RUE TREMOULET ET RENOULT",
+  "lat": 48.803894,
+  "lon": 2.394083
+ },
+ {
+  "code": "S128",
+  "name": "SQUARE MARAT",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "32 RUE MARAT",
+  "lat": 48.8090138,
+  "lon": 2.3865394
+ },
+ {
+  "code": "S129",
+  "name": "HALTE DES PEUPLIERS",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "168 BOULEVARD DE STALINGRAD",
+  "lat": 48.8057068,
+  "lon": 2.3763113
+ },
+ {
+  "code": "S130",
+  "name": "PROMENADE DU PETIT BOIS",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "RUE GABRIEL PERI",
+  "lat": 48.8160212,
+  "lon": 2.380404
+ },
+ {
+  "code": "S131",
+  "name": "JARDIN QUINCEY",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "RUE EDOUARD QUINCEY",
+  "lat": 48.810023,
+  "lon": 2.386708
+ },
+ {
+  "code": "S132",
+  "name": "82 AVENUE DE VERDUN",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "82 AVENUE DE VERDUN",
+  "lat": 48.8079135,
+  "lon": 2.3740733
+ },
+ {
+  "code": "S133",
+  "name": "56 QUAI AUGUSTE DESHAIES",
+  "category": "local_technique",
+  "categoryLabel": "LOCAL TECHNIQUE",
+  "address": "56 QUAI AUGUSTE DESHAIES",
+  "lat": 48.8176683,
+  "lon": 2.4033478
+ },
+ {
+  "code": "S134",
+  "name": "91-93 BIS RUE MIRABEAU",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "91 BIS RUE MIRABEAU",
+  "lat": 48.8184822,
+  "lon": 2.3781886
+ },
+ {
+  "code": "S135",
+  "name": "35-37 RUE CARNOT",
+  "category": "maison_de_quartier",
+  "categoryLabel": "MAISON DE QUARTIER",
+  "address": "35 RUE CARNOT",
+  "lat": 48.8086531,
+  "lon": 2.3685238
+ },
+ {
+  "code": "S136",
+  "name": "MARCHE FORAIN DE L'HOTEL DE VILLE",
+  "category": "activites",
+  "categoryLabel": "ACTIVITES",
+  "address": "ESPLANADE GEORGES MARRANE",
+  "lat": 48.8123666,
+  "lon": 2.3871235
+ },
+ {
+  "code": "S137",
+  "name": "MARCHE FORAIN PLACE JEAN FERRAT",
+  "category": "activites",
+  "categoryLabel": "ACTIVITES",
+  "address": "PLACE JEAN FERRAT",
+  "lat": 48.8188359,
+  "lon": 2.3743143
+ },
+ {
+  "code": "S138",
+  "name": "PARC MAURICE THOREZ",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "72 AVENUE GEORGES GOSNAT",
+  "lat": 48.8131461,
+  "lon": 2.3877083
+ },
+ {
+  "code": "S139",
+  "name": "LOCAL TECHNIQUE MARAT",
+  "category": "local_technique",
+  "categoryLabel": "LOCAL TECHNIQUE",
+  "address": "2 RUE MARAT",
+  "lat": 48.810425,
+  "lon": 2.3837741
+ },
+ {
+  "code": "S140",
+  "name": "LOCAL TECHNIQUE CHEMIN DU THÊATRE",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "CHEMIN DU THEATRE",
+  "lat": 48.8104152,
+  "lon": 2.3857539
+ },
+ {
+  "code": "S141",
+  "name": "MULTI ACCUEIL MARIA MERIAN",
+  "category": "petite_enfance",
+  "categoryLabel": "PETITE ENFANCE",
+  "address": "37 RUE MARCEL LAMANT",
+  "lat": 48.8065956,
+  "lon": 2.3834026
+ },
+ {
+  "code": "S142",
+  "name": "CITE DES PETITS BOIS",
+  "category": "cite",
+  "categoryLabel": "CITE",
+  "address": "RUE CELESTINO ALFONSO",
+  "lat": 48.8165083,
+  "lon": 2.3774586
+ },
+ {
+  "code": "S143",
+  "name": "SQUARE MARIA MERIAN",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "RUE MARCEL LAMANT",
+  "lat": 48.8065956,
+  "lon": 2.3834026
+ },
+ {
+  "code": "S144",
+  "name": "CITE MARAT PARMENTIER",
+  "category": "cite",
+  "categoryLabel": "CITE",
+  "address": "12 RUE MARAT",
+  "lat": 48.8104763,
+  "lon": 2.3848273
+ },
+ {
+  "code": "S145",
+  "name": "CITE JULIAN GRIMAU",
+  "category": "cite",
+  "categoryLabel": "CITE",
+  "address": "RUE JULIAN GRIMAU",
+  "lat": 48.807442,
+  "lon": 2.381489
+ },
+ {
+  "code": "S146",
+  "name": "CITE JEAN BAPTISTE RENOULT",
+  "category": "cite",
+  "categoryLabel": "CITE",
+  "address": "RUE JEAN BAPTISTE RENOULT",
+  "lat": 48.8044752,
+  "lon": 2.3913978
+ },
+ {
+  "code": "S147",
+  "name": "SILVER INNOV PLATEFORME CHARLES FOIX SEINE AMONT",
+  "category": "activites",
+  "categoryLabel": "ACTIVITES",
+  "address": "54 RUE MOLIERE",
+  "lat": 48.8153379,
+  "lon": 2.3936617
+ },
+ {
+  "code": "S148",
+  "name": "IMMEUBLE 90 BOULEVARD DE BRANDEBOURG",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "90 BOULEVARD DE BRANDEBOURG",
+  "lat": 48.8146529,
+  "lon": 2.3920113
+ },
+ {
+  "code": "S149",
+  "name": "PAVILLON 9 RUE DES CHALETS",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "9 RUE DES CHALETS",
+  "lat": 48.81603,
+  "lon": 2.364507
+ },
+ {
+  "code": "S150",
+  "name": "60-62 RUE MIRABEAU",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "60 RUE MIRABEAU",
+  "lat": 48.8194398,
+  "lon": 2.3777454
+ },
+ {
+  "code": "S151",
+  "name": "IMMEUBLE 25 RUE WESTERMEYER",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "25 RUE WESTERMEYER",
+  "lat": 48.8181592,
+  "lon": 2.3949734
+ },
+ {
+  "code": "S152",
+  "name": "PAVILLON 11 RUE RASPAIL",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "11 RUE RASPAIL",
+  "lat": 48.8109989,
+  "lon": 2.3881738
+ },
+ {
+  "code": "S153",
+  "name": "PAVILLON 9 RUE MAURICE GUNSBOURG",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "9 RUE MAURICE GUNSBOURG",
+  "lat": 48.8144051,
+  "lon": 2.4083075
+ },
+ {
+  "code": "S154",
+  "name": "PAVILLON 5 RUE MAURICE GUNSBOURG",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "5 RUE MAURICE GUNSBOURG",
+  "lat": 48.8143915,
+  "lon": 2.4085203
+ },
+ {
+  "code": "S155",
+  "name": "CUISINE CENTRALE LA CERISAIE",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "15 RUE VICTOR HUGO",
+  "lat": 48.8218928,
+  "lon": 2.3915315
+ },
+ {
+  "code": "S156",
+  "name": "PAVILLON 13 RUE RASPAIL",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "13 RUE RASPAIL",
+  "lat": 48.8108987,
+  "lon": 2.3882463
+ },
+ {
+  "code": "S158",
+  "name": "ACTIVITE 23 RUE WESTERMEYER",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "23 RUE WESTERMEYER",
+  "lat": 48.818204,
+  "lon": 2.3951059
+ },
+ {
+  "code": "S161",
+  "name": "PAVILLON 9 RUE RASPAIL",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "9 RUE RASPAIL",
+  "lat": 48.8110629,
+  "lon": 2.3880215
+ },
+ {
+  "code": "S162",
+  "name": "GENDARMERIE 4 RUE DE LA GARE",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "4 RUE DE LA GARE",
+  "lat": 48.8149635,
+  "lon": 2.3915302
+ },
+ {
+  "code": "S163",
+  "name": "6 PLACE DE L EGLISE",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "6 PLACE DE L EGLISE",
+  "lat": 48.8108634,
+  "lon": 2.382684
+ },
+ {
+  "code": "S164",
+  "name": "8-10 PLACE DE L EGLISE",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "8 PLACE DE L EGLISE",
+  "lat": 48.8110981,
+  "lon": 2.3823904
+ },
+ {
+  "code": "S165",
+  "name": "TERRAIN 10 AVENUE JEAN JAURES",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "10 AVENUE JEAN JAURES",
+  "lat": 48.8135724,
+  "lon": 2.4023487
+ },
+ {
+  "code": "S166",
+  "name": "COLLEGE POLITZER",
+  "category": "autre_administration",
+  "categoryLabel": "AUTRE ADMINISTRATION",
+  "address": "5 RUE FOUILLOUX",
+  "lat": 48.8078786,
+  "lon": 2.3927879
+ },
+ {
+  "code": "S167",
+  "name": "MAISON HOTES 30 RUE DESCARTES",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "30 RUE DESCARTES",
+  "lat": 48.8132726,
+  "lon": 2.3895054
+ },
+ {
+  "code": "S168",
+  "name": "CHRS 19-23 RUE MARCEL LAMANT",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "19 RUE MARCEL LAMANT",
+  "lat": 48.8059127,
+  "lon": 2.3842716
+ },
+ {
+  "code": "S169",
+  "name": "TERRAIN 68-70 RUE JEAN JACQUES ROUSSEAU",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "68 RUE JEAN JACQUES ROUSSEAU",
+  "lat": 48.8157844,
+  "lon": 2.3962173
+ },
+ {
+  "code": "S170",
+  "name": "IMMEUBLE 12-16 RUE PIERRE GALAIS",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "12 RUE PIERRE GALAIS",
+  "lat": 48.8157223,
+  "lon": 2.3986213
+ },
+ {
+  "code": "S171",
+  "name": "ESPACE DES CONFLUENCES",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "50 RUE LENINE",
+  "lat": 48.8161662,
+  "lon": 2.3942355
+ },
+ {
+  "code": "S172",
+  "name": "CRECHE NIKI DE SAINT PHALLE",
+  "category": "petite_enfance",
+  "categoryLabel": "PETITE ENFANCE",
+  "address": "36 BIS RUE GABRIEL PERI",
+  "lat": 48.8160212,
+  "lon": 2.380404
+ },
+ {
+  "code": "S173",
+  "name": "TERRAIN COLLEGE MOLIERE",
+  "category": "autre_administration",
+  "categoryLabel": "AUTRE ADMINISTRATION",
+  "address": "62 RUE MOLIERE",
+  "lat": 48.8160288,
+  "lon": 2.3929356
+ },
+ {
+  "code": "S174",
+  "name": "SALLE DE QUARTIER CARNOT VEROLLOT",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "10 ALLEE MULATRESSE SOLITUDE",
+  "lat": 48.8084942,
+  "lon": 2.3688539
+ },
+ {
+  "code": "S175",
+  "name": "TERRAIN 19 RUE RENE VILLARS",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "19 RUE RENE VILLARS",
+  "lat": 48.8193142,
+  "lon": 2.3761524
+ },
+ {
+  "code": "S176",
+  "name": "PAVILLON 28 RUE RENE VILLARS",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "26 RUE RENE VILLARS",
+  "lat": 48.8192958,
+  "lon": 2.3761063
+ },
+ {
+  "code": "S177",
+  "name": "PAVILLON 32 RUE RENE VILLARS",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "32 RUE RENE VILLARS",
+  "lat": 48.8191039,
+  "lon": 2.3761758
+ },
+ {
+  "code": "S179",
+  "name": "TERRAIN COLLEGE WALLON",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "1 PLACE DANTON",
+  "lat": 48.8149368,
+  "lon": 2.3813385
+ },
+ {
+  "code": "S181",
+  "name": "PAVILLON 23 RUE ANTOINE THOMAS",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "23 RUE ANTOINE THOMAS",
+  "lat": 48.8179285,
+  "lon": 2.3778151
+ },
+ {
+  "code": "S182",
+  "name": "IMMEUBLE PMI 9 BIS-11 RUE MICHELET",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "9 BIS-11 RUE MICHELET",
+  "lat": 48.807624,
+  "lon": 2.377158
+ },
+ {
+  "code": "S183",
+  "name": "IMMEUBLE 3 RUE AMEDEE HUON",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "3 RUE AMEDEE HUON",
+  "lat": 48.8038666,
+  "lon": 2.3840055
+ },
+ {
+  "code": "S184",
+  "name": "IMMEUBLE 9 BIS AVENUE DE LA REPUBLIQUE",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "9 BIS AVENUE DE LA REPUBLIQUE",
+  "lat": 48.8051523,
+  "lon": 2.3941713
+ },
+ {
+  "code": "S185",
+  "name": "IMMEUBLE 9 A 13 RUE TRUILLOT",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "9 A 13 RUE TRUILLOT",
+  "lat": 48.8101096,
+  "lon": 2.3918332
+ },
+ {
+  "code": "S187",
+  "name": "IMMEUBLE 49 RUE LENINE",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "49 RUE LENINE",
+  "lat": 48.815997,
+  "lon": 2.3942656
+ },
+ {
+  "code": "S188",
+  "name": "IMMEUBLE 80 BOULEVARD PAUL VAILLANT COUTURIER",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "80 BOULEVARD PAUL VAILLANT COUTURIER",
+  "lat": 48.8169343,
+  "lon": 2.3991888
+ },
+ {
+  "code": "S189",
+  "name": "IMMEUBLE 111 BOULEVARD PAUL VAILLANT COUTURIER",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "111 BOULEVARD PAUL VAILLANT COUTURIER",
+  "lat": 48.8154815,
+  "lon": 2.401224
+ },
+ {
+  "code": "S190",
+  "name": "IMMEUBLE 113 BOULEVARD PAUL VAILLANT COUTURIER",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "113 BOULEVARD PAUL VAILLANT COUTURIER",
+  "lat": 48.8154142,
+  "lon": 2.4013036
+ },
+ {
+  "code": "S192",
+  "name": "IMMEUBLE 19 RUE GALILEE",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "19 RUE GALILEE",
+  "lat": 48.8148972,
+  "lon": 2.4025108
+ },
+ {
+  "code": "S193",
+  "name": "IMMEUBLE 32 RUE LENINE",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "32 RUE LENINE",
+  "lat": 48.8170123,
+  "lon": 2.3957914
+ },
+ {
+  "code": "S194",
+  "name": "IMMEUBLE 21 RUE WESTERMEYER",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "21 RUE WESTERMEYER",
+  "lat": 48.8182473,
+  "lon": 2.395233
+ },
+ {
+  "code": "S195",
+  "name": "IMMEUBLE 67-71 AVENUE DANIELLE CASANOVA",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "67 AVENUE DANIELLE CASANOVA",
+  "lat": 48.8149764,
+  "lon": 2.3839386
+ },
+ {
+  "code": "S196",
+  "name": "IMMEUBLE 63 AVENUE MAURICE THOREZ",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "63 AVENUE MAURICE THOREZ",
+  "lat": 48.8184725,
+  "lon": 2.3750535
+ },
+ {
+  "code": "S197",
+  "name": "IMMEUBLE 21 PASSAGE HOCHE",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "21 PASSAGE HOCHE",
+  "lat": 48.8115785,
+  "lon": 2.3721877
+ },
+ {
+  "code": "S199",
+  "name": "IMMEUBLE 29 RUE BARBES",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "29 RUE BARBES",
+  "lat": 48.817064,
+  "lon": 2.3717753
+ },
+ {
+  "code": "S200",
+  "name": "IMMEUBLE 7 RUE ERNEST RENAN",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "7 RUE ERNEST RENAN",
+  "lat": 48.8115395,
+  "lon": 2.3978584
+ },
+ {
+  "code": "S201",
+  "name": "IMMEUBLE 18 RUE PIERRE GALAIS",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "18 RUE PIERRE GALAIS",
+  "lat": 48.8155061,
+  "lon": 2.3984166
+ },
+ {
+  "code": "S202",
+  "name": "IMMEUBLE 120 BOULEVARD PAUL VAILLANT COUTURIER",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "120 BOULEVARD PAUL VAILLANT COUTURIER",
+  "lat": 48.8149539,
+  "lon": 2.4014927
+ },
+ {
+  "code": "S203",
+  "name": "IMMEUBLE 7 RUE GALILEE",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "7 RUE GALILEE",
+  "lat": 48.8161819,
+  "lon": 2.4035406
+ },
+ {
+  "code": "S204",
+  "name": "TERRAIN 68-70 RUE JEAN JACQUES ROUSSEAU",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "68 RUE JEAN JACQUES ROUSSEAU",
+  "lat": 48.8157844,
+  "lon": 2.3962173
+ },
+ {
+  "code": "S205",
+  "name": "IMMEUBLE 9 AVENUE JEAN JAURES",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "9 AVENUE JEAN JAURES",
+  "lat": 48.8136664,
+  "lon": 2.402512
+ },
+ {
+  "code": "S206",
+  "name": "11-13 RUE JULES FERRY",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "11 RUE JULES FERRY",
+  "lat": 48.8154881,
+  "lon": 2.3730347
+ },
+ {
+  "code": "S208",
+  "name": "IMMEUBLE 4-6 RUE FOUILLOUX",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "4 RUE FOUILLOUX",
+  "lat": 48.8075539,
+  "lon": 2.3923047
+ },
+ {
+  "code": "S209",
+  "name": "IMMEUBLE 11 RUE GALILEE",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "11 RUE GALILEE",
+  "lat": 48.8154838,
+  "lon": 2.4029819
+ },
+ {
+  "code": "S210",
+  "name": "IMMEUBLE 12 BOULEVARD DE BRANDEBOURG",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "12 BOULEVARD DE BRANDEBOURG",
+  "lat": 48.8146451,
+  "lon": 2.400898
+ },
+ {
+  "code": "S212",
+  "name": "6 IMMEUBLE BOULEVARD DE BRANDEBOURG",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "6 BOULEVARD DE BRANDEBOURG",
+  "lat": 48.8146441,
+  "lon": 2.401257
+ },
+ {
+  "code": "S213",
+  "name": "IMMEUBLE 14 AVENU JEAN JAURES",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "14 AVENUE JEAN JAURES",
+  "lat": 48.8133764,
+  "lon": 2.402409
+ },
+ {
+  "code": "S214",
+  "name": "IMMEUBLE 104-112 BOULEVARD PAUL VAILLANT COUTURIER",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "104 BOULEVARD PAUL VAILLANT COUTURIER",
+  "lat": 48.8152416,
+  "lon": 2.400083
+ },
+ {
+  "code": "S215",
+  "name": "IMMEUBLE 80-82  BOULEVARD PAUL VAILLANT COUTURIER",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "80 BOULEVARD PAUL VAILLANT COUTURIER",
+  "lat": 48.8169343,
+  "lon": 2.3991888
+ },
+ {
+  "code": "S216",
+  "name": "IMMEUBLE 115  BOULEVARD PAUL VAILLANT COUTURIER",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "115 BOULEVARD PAUL VAILLANT COUTURIER",
+  "lat": 48.8153322,
+  "lon": 2.4013987
+ },
+ {
+  "code": "S218",
+  "name": "IMMEUBLE 95 BIS RUE HOCHE",
+  "category": "prive_operationnel",
+  "categoryLabel": "PRIVE OPERATIONNEL",
+  "address": "95 BIS AVENUE DE VERDUN",
+  "lat": 48.8144616,
+  "lon": 2.3693772
+ },
+ {
+  "code": "S219",
+  "name": "GALERIE SOUTERRAINE RUE GEORGETTE ROSTAING",
+  "category": "culturel",
+  "categoryLabel": "CULTUREL",
+  "address": "RUE GEORGETTE ROSTAING",
+  "lat": 48.8100651,
+  "lon": 2.3778693
+ },
+ {
+  "code": "S220",
+  "name": "TERRAIN NU",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "ROUTE DU FORT",
+  "lat": 48.8043839,
+  "lon": 2.3890416
+ },
+ {
+  "code": "S221",
+  "name": "KIOSQUE LENINE",
+  "category": "culturel",
+  "categoryLabel": "CULTUREL",
+  "address": "76 AVENUE GEORGES GOSNAT",
+  "lat": 48.8126841,
+  "lon": 2.3867349
+ },
+ {
+  "code": "S222",
+  "name": "KIOSQUE PLACE GERARD PHILIPE",
+  "category": "culturel",
+  "categoryLabel": "CULTUREL",
+  "address": "PLACE GERARD PHILIPE",
+  "lat": 48.811784,
+  "lon": 2.3862161
+ },
+ {
+  "code": "S223",
+  "name": "IMM 92 AVENUE M.THOREZ",
+  "category": "prive_hors_operation",
+  "categoryLabel": "PRIVE HORS OPERATION",
+  "address": "92 AVENUE MAURICE THOREZ",
+  "lat": 48.812377,
+  "lon": 2.3812872
+ },
+ {
+  "code": "S224",
+  "name": "SQUARE JUSTES PARMI NATIONS",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "53 RUE ROGER BUESSARD",
+  "lat": 48.81067,
+  "lon": 2.374659
+ },
+ {
+  "code": "S225",
+  "name": "COMPLEXE SPORTIF ALICE MILLIAT",
+  "category": "sportif",
+  "categoryLabel": "SPORTIF",
+  "address": "3 ALLEE ALLAIN LEPREST",
+  "lat": 48.8194466,
+  "lon": 2.3751247
+ },
+ {
+  "code": "S227",
+  "name": "SQUARE PRUDON",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "IMPASSE PRUDHON",
+  "lat": 48.8104866,
+  "lon": 2.4020947
+ },
+ {
+  "code": "S228",
+  "name": "GROUPE SCOLAIRE ANNE SYLVESTRE",
+  "category": "scolaire",
+  "categoryLabel": "SCOLAIRE",
+  "address": "6 ALLEE TERESA TENG",
+  "lat": 48.816031,
+  "lon": 2.40285
+ },
+ {
+  "code": "S229",
+  "name": "144 RUE CASANOVA",
+  "category": "associatif",
+  "categoryLabel": "ASSOCIATIF",
+  "address": "144 AVENUE CASANOVA",
+  "lat": 48.8130478,
+  "lon": 2.3856024
+ },
+ {
+  "code": "S231",
+  "name": "CRECHE  MADELEINE BRES",
+  "category": "petite_enfance",
+  "categoryLabel": "PETITE ENFANCE",
+  "address": "71 BOULEVARD DE BRANDEBOURG",
+  "lat": 48.8145495,
+  "lon": 2.3976205
+ },
+ {
+  "code": "S232",
+  "name": "60 RUE GASTON PICARD",
+  "category": "logement",
+  "categoryLabel": "LOGEMENT",
+  "address": "60 RUE GASTON PICARD",
+  "lat": 48.8095335,
+  "lon": 2.3735989
+ },
+ {
+  "code": "S233",
+  "name": "22 RUE PIERRE ET MARIE CURIE",
+  "category": "logement",
+  "categoryLabel": "LOGEMENT",
+  "address": "22 RUE PIERRE ET MARIE CURIE",
+  "lat": 48.8147259,
+  "lon": 2.3742768
+ },
+ {
+  "code": "S234",
+  "name": "BOXES 58 RUE GASTON PICARD",
+  "category": "stationnement",
+  "categoryLabel": "STATIONNEMENT",
+  "address": "58 RUE GASTON PICARD",
+  "lat": 48.809589,
+  "lon": 2.3737537
+ },
+ {
+  "code": "S235",
+  "name": "PMI DEPARTEMENTALE VOLTAIRE",
+  "category": "petite_enfance",
+  "categoryLabel": "PETITE ENFANCE",
+  "address": "5 PLACE VOLTAIRE",
+  "lat": 48.8125719,
+  "lon": 2.3848934
+ },
+ {
+  "code": "S236",
+  "name": "27 RUE WESTERMEYER",
+  "category": "activites",
+  "categoryLabel": "ACTIVITES",
+  "address": "27 RUE WESTERMEYER",
+  "lat": 48.8181151,
+  "lon": 2.3948445
+ },
+ {
+  "code": "S238",
+  "name": "3 RUE EDMEE GUILLOU",
+  "category": "activites",
+  "categoryLabel": "ACTIVITES",
+  "address": "3 RUE EDMEE GUILLOU",
+  "lat": 48.8162643,
+  "lon": 2.398867
+ },
+ {
+  "code": "S239",
+  "name": "PARC DES CONFLUENCES - PARC NORD",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "BOULEVARD COLONEL FABIEN",
+  "lat": 48.8145589,
+  "lon": 2.4034053
+ },
+ {
+  "code": "S240",
+  "name": "PLAINE GAMBETTA",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "ALLEE STEPHANIE BOUVARD",
+  "lat": 48.8139899,
+  "lon": 2.4041465
+ },
+ {
+  "code": "S241",
+  "name": "OBSERVATOIRE",
+  "category": "logement",
+  "categoryLabel": "LOGEMENT",
+  "address": "76 AVENUE GEORGES GOSNAT",
+  "lat": 48.8126841,
+  "lon": 2.3867349
+ },
+ {
+  "code": "S242",
+  "name": "COLLEGE GISELE HALIMI",
+  "category": "autre_administration",
+  "categoryLabel": "AUTRE ADMINISTRATION",
+  "address": "12 RUE DU 19 mars 1962",
+  "lat": 48.809603,
+  "lon": 2.3749485
+ },
+ {
+  "code": "S243",
+  "name": "ESPACE DE LA MINOTERIE",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "SQUARE DE LA MINOTERIE",
+  "lat": 48.8139844,
+  "lon": 2.3995724
+ },
+ {
+  "code": "S244",
+  "name": "ESPACE RECREATIF DES LAMPES",
+  "category": "espaces_verts",
+  "categoryLabel": "ESPACES VERTS",
+  "address": "RUE DES LAMPES",
+  "lat": 48.8124306,
+  "lon": 2.4009759
+ }
+]

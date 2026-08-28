@@ -12,6 +12,7 @@ RUN npm install --omit=dev
 COPY src ./src
 COPY GeoJson ./GeoJson
 COPY data/voiries.json ./data/voiries.json
+COPY data/sites.json ./data/sites.json
 
 RUN mkdir -p uploads data
 

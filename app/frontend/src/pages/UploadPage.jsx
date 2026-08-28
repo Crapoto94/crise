@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import exifr from "exifr";
-import { uploadPhoto, searchIvryAddress, fetchMeta, classifyPhoto, locateGps } from "../lib/api";
+import { uploadPhoto, searchIvryAddress, fetchMeta, classifyPhoto, locateGps, fetchSites } from "../lib/api";
 import { getDeviceId, getUploaderName } from "../lib/device";
+import { nearestSites } from "../lib/geoDistance";
 import AddressConfirmMap from "../components/AddressConfirmMap";
 
 export default function UploadPage() {
@@ -25,6 +26,8 @@ export default function UploadPage() {
   const [customCategoryText, setCustomCategoryText] = useState("");
   const [severity, setSeverity] = useState("mineur");
   const [description, setDescription] = useState("");
+  const [sites, setSites] = useState([]);
+  const [relatedSite, setRelatedSite] = useState(null);
 
   const [uploading, setUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -38,6 +41,9 @@ export default function UploadPage() {
   useEffect(() => {
     fetchMeta()
       .then(setMeta)
+      .catch(() => {});
+    fetchSites()
+      .then(setSites)
       .catch(() => {});
   }, []);
 
@@ -89,6 +95,7 @@ export default function UploadPage() {
     setCustomCategoryText("");
     setSeverity("mineur");
     setDescription("");
+    setRelatedSite(null);
     setCheckingExif(true);
     setSuggestingCategory(true);
 
@@ -170,6 +177,7 @@ export default function UploadPage() {
     setCustomCategoryText("");
     setSeverity("mineur");
     setDescription("");
+    setRelatedSite(null);
     if (cameraInputRef.current) cameraInputRef.current.value = "";
     if (galleryInputRef.current) galleryInputRef.current.value = "";
   }
@@ -211,6 +219,7 @@ export default function UploadPage() {
         formData.append("addressLabel", confirmed.addressLabel || "");
         formData.append("source", confirmed.source);
         if (description.trim()) formData.append("description", description.trim());
+        if (relatedSite) formData.append("relatedSite", relatedSite);
 
         await uploadPhoto(formData);
         setUploadProgress(i + 1);
@@ -223,6 +232,11 @@ export default function UploadPage() {
       setUploading(false);
     }
   }
+
+  const nearbySites = useMemo(() => {
+    if (!confirmed || sites.length === 0) return [];
+    return nearestSites(sites, confirmed.lat, confirmed.lon, 3);
+  }, [confirmed, sites]);
 
   const readyToSubmit = files.length > 0 && mode === "confirmed" && confirmed && category && severity;
 
@@ -389,6 +403,31 @@ export default function UploadPage() {
               rows={3}
             />
           </div>
+
+          {nearbySites.length > 0 && (
+            <div className="field-block">
+              <p className="field-label">Cette photo concerne-t-elle un site de la ville ?</p>
+              <div className="chip-group">
+                {nearbySites.map((s) => (
+                  <button
+                    key={s.code}
+                    type="button"
+                    className={"chip" + (relatedSite === s.name ? " active" : "")}
+                    onClick={() => setRelatedSite(s.name)}
+                  >
+                    {s.name} ({Math.round(s.distance)} m)
+                  </button>
+                ))}
+                <button
+                  type="button"
+                  className={"chip" + (relatedSite === null ? " active" : "")}
+                  onClick={() => setRelatedSite(null)}
+                >
+                  Aucun
+                </button>
+              </div>
+            </div>
+          )}
         </>
       )}
 

@@ -37,6 +37,7 @@ export default function ListPage() {
   const [severityFilter, setSeverityFilter] = useState("");
   const [quartierFilter, setQuartierFilter] = useState("");
   const [voirieFilter, setVoirieFilter] = useState("");
+  const [siteFilter, setSiteFilter] = useState("");
 
   useEffect(() => {
     fetchPhotos()
@@ -53,6 +54,11 @@ export default function ListPage() {
     [photos]
   );
 
+  const siteOptions = useMemo(
+    () => [...new Set(photos.map((p) => p.relatedSite).filter(Boolean))].sort((a, b) => a.localeCompare(b, "fr")),
+    [photos]
+  );
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return photos.filter((p) => {
@@ -64,9 +70,12 @@ export default function ListPage() {
       const matchesSeverity = !severityFilter || p.severity === severityFilter;
       const matchesQuartier = !quartierFilter || p.quartier === quartierFilter;
       const matchesVoirie = !voirieFilter || p.voirie?.statutCategory === voirieFilter;
-      return matchesQuery && matchesCategory && matchesSeverity && matchesQuartier && matchesVoirie;
+      const matchesSite = !siteFilter || p.relatedSite === siteFilter;
+      return (
+        matchesQuery && matchesCategory && matchesSeverity && matchesQuartier && matchesVoirie && matchesSite
+      );
     });
-  }, [photos, query, categoryFilter, severityFilter, quartierFilter, voirieFilter]);
+  }, [photos, query, categoryFilter, severityFilter, quartierFilter, voirieFilter, siteFilter]);
 
   const groups = useMemo(() => groupPhotos(filtered, groupBy), [filtered, groupBy]);
 
@@ -120,6 +129,19 @@ export default function ListPage() {
         </select>
       </div>
 
+      {siteOptions.length > 0 && (
+        <div className="filter-row">
+          <select value={siteFilter} onChange={(e) => setSiteFilter(e.target.value)}>
+            <option value="">Tous les sites</option>
+            {siteOptions.map((s) => (
+              <option key={s} value={s}>
+                {s}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
       <div className="segmented">
         <button className={groupBy === "address" ? "active" : ""} onClick={() => setGroupBy("address")}>
           Par adresse
@@ -164,6 +186,7 @@ export default function ListPage() {
                   <p className="address">{photo.addressLabel || "Adresse inconnue"}</p>
                   <p className="uploader">{photo.uploaderName}</p>
                   {photo.description && <p className="description-preview">{photo.description}</p>}
+                  {photo.relatedSite && <p className="description-preview">Site : {photo.relatedSite}</p>}
                   <p className="meta">
                     {formatDate(photo.createdAt)} ·{" "}
                     {photo.source === "exif" ? "GPS photo" : "Adresse saisie"}

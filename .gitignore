@@ -10,3 +10,5 @@ Photos/
 *.log
 app/backend/*.xlsm
 app/backend/~$*.xlsm
+app/backend/*.xlsx
+app/backend/~$*.xlsx
