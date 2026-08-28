@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import exifr from "exifr";
-import { uploadPhoto, searchIvryAddress, fetchMeta, classifyPhoto } from "../lib/api";
+import { uploadPhoto, searchIvryAddress, fetchMeta, classifyPhoto, locateGps } from "../lib/api";
 import { getDeviceId, getUploaderName } from "../lib/device";
 
 export default function UploadPage() {
@@ -9,7 +9,10 @@ export default function UploadPage() {
   const [previewUrl, setPreviewUrl] = useState(null);
   const [checkingExif, setCheckingExif] = useState(false);
   const [gps, setGps] = useState(null); // { lat, lon } | null
-  const [hasGps, setHasGps] = useState(null); // null = pas encore verifie
+  const [hasGps, setHasGps] = useState(null); // null = pas encore decide, true = on utilise le GPS, false = adresse manuelle
+  const [gpsPending, setGpsPending] = useState(null); // { inIvry, addressLabel, quartier } en attente de confirmation
+  const [ignoreExifGps, setIgnoreExifGps] = useState(false);
+  const [confirmedAddressLabel, setConfirmedAddressLabel] = useState(null);
 
   const [addressQuery, setAddressQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -54,6 +57,9 @@ export default function UploadPage() {
     setSuggestions([]);
     setHasGps(null);
     setGps(null);
+    setGpsPending(null);
+    setIgnoreExifGps(false);
+    setConfirmedAddressLabel(null);
     setCategory(null);
     setShowCustomCategory(false);
     setCustomCategoryText("");
@@ -63,12 +69,23 @@ export default function UploadPage() {
 
     exifr
       .gps(selected)
-      .then((location) => {
-        if (location && Number.isFinite(location.latitude) && Number.isFinite(location.longitude)) {
-          setGps({ lat: location.latitude, lon: location.longitude });
-          setHasGps(true);
-        } else {
+      .then(async (location) => {
+        const lat = location?.latitude;
+        const lon = location?.longitude;
+        const isNullIsland = lat === 0 && lon === 0;
+
+        if (!location || !Number.isFinite(lat) || !Number.isFinite(lon) || isNullIsland) {
           setHasGps(false);
+          return;
+        }
+
+        setGps({ lat, lon });
+        try {
+          const result = await locateGps(lat, lon);
+          setGpsPending(result);
+        } catch {
+          // localisation indisponible : on fait confiance au GPS de la photo
+          setHasGps(true);
         }
       })
       .catch(() => setHasGps(false))
@@ -102,11 +119,29 @@ export default function UploadPage() {
     }, 350);
   }
 
+  function confirmGpsPosition() {
+    setConfirmedAddressLabel(gpsPending?.addressLabel || null);
+    setGpsPending(null);
+    setHasGps(true);
+  }
+
+  function switchToManualAddress() {
+    if (gpsPending?.addressLabel) {
+      setAddressQuery(gpsPending.addressLabel);
+    }
+    setGpsPending(null);
+    setIgnoreExifGps(true);
+    setHasGps(false);
+  }
+
   function resetForm() {
     setFile(null);
     setPreviewUrl(null);
     setHasGps(null);
     setGps(null);
+    setGpsPending(null);
+    setIgnoreExifGps(false);
+    setConfirmedAddressLabel(null);
     setAddressQuery("");
     setSuggestions([]);
     setSelectedAddress(null);
@@ -151,6 +186,7 @@ export default function UploadPage() {
         setError("Choisissez une adresse dans la liste proposee.");
         return;
       }
+      if (ignoreExifGps) formData.append("ignoreExifGps", "true");
       formData.append("addressLabel", selectedAddress.label);
       formData.append("lat", selectedAddress.lat);
       formData.append("lon", selectedAddress.lon);
@@ -169,7 +205,8 @@ export default function UploadPage() {
     }
   }
 
-  const readyToSubmit = file && !checkingExif && (hasGps || selectedAddress) && category && severity;
+  const readyToSubmit =
+    file && !checkingExif && !gpsPending && (hasGps || selectedAddress) && category && severity;
 
   return (
     <div className="page upload-page">
@@ -193,17 +230,48 @@ export default function UploadPage() {
 
       {checkingExif && <p className="hint">Lecture des donnees GPS de la photo...</p>}
 
+      {gpsPending && gpsPending.inIvry && (
+        <div className="modal-backdrop" onClick={() => {}}>
+          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+            <h2>Adresse trouvee</h2>
+            <p>{gpsPending.addressLabel || "Position GPS trouvee, adresse inconnue"}</p>
+            <button onClick={confirmGpsPosition}>Confirmer cette adresse</button>
+            <button className="secondary-btn" onClick={switchToManualAddress}>
+              Modifier l'adresse
+            </button>
+          </div>
+        </div>
+      )}
+
+      {gpsPending && !gpsPending.inIvry && (
+        <div className="modal-backdrop" onClick={() => {}}>
+          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+            <h2>Position hors Ivry-sur-Seine</h2>
+            <p>
+              La position GPS de cette photo semble se situer en dehors d'Ivry-sur-Seine
+              {gpsPending.addressLabel ? ` (${gpsPending.addressLabel})` : ""}.
+            </p>
+            <button onClick={confirmGpsPosition}>Continuer quand meme</button>
+            <button className="secondary-btn" onClick={switchToManualAddress}>
+              Saisir une adresse manuellement
+            </button>
+          </div>
+        </div>
+      )}
+
       {hasGps === true && gps && (
         <p className="hint success-hint">
-          Position GPS trouvee dans la photo ({gps.lat.toFixed(5)}, {gps.lon.toFixed(5)}) — pas
-          besoin de saisir une adresse.
+          Position GPS confirmee ({gps.lat.toFixed(5)}, {gps.lon.toFixed(5)})
+          {confirmedAddressLabel ? ` — ${confirmedAddressLabel}` : ""}.
         </p>
       )}
 
       {hasGps === false && (
         <div className="address-form">
           <p className="hint">
-            Pas de position GPS dans cette photo. Indiquez l'adresse a Ivry-sur-Seine.
+            {ignoreExifGps
+              ? "Modifiez ou confirmez l'adresse ci-dessous."
+              : "Pas de position GPS dans cette photo. Indiquez l'adresse a Ivry-sur-Seine."}
           </p>
           <input
             type="text"

@@ -164,6 +164,17 @@ app.get("/api/geo/quartiers", (_req, res) => {
   res.json(getQuartiersGeoJson());
 });
 
+app.post("/api/geo/locate", async (req, res) => {
+  const lat = Number(req.body?.lat);
+  const lon = Number(req.body?.lon);
+  if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
+    return res.status(400).json({ error: "lat/lon requis" });
+  }
+  const quartier = getQuartier(lat, lon);
+  const addressLabel = await reverseGeocode(lat, lon);
+  res.json({ inIvry: Boolean(quartier), quartier, addressLabel });
+});
+
 function buildVoirie(photo) {
   const statutCategory = getVoirieStatus(photo.lat, photo.lon);
   if (!statutCategory) return null;
@@ -292,6 +303,7 @@ app.post("/api/photos", upload.single("photo"), checkNotBanned, async (req, res)
       citycode,
       category,
       severity,
+      ignoreExifGps,
     } = req.body || {};
 
     if (!req.file) {
@@ -307,9 +319,10 @@ app.post("/api/photos", upload.single("photo"), checkNotBanned, async (req, res)
     let source = null;
     let label = null;
 
-    const gps = await exifr.gps(filePath).catch(() => null);
+    const gps = ignoreExifGps ? null : await exifr.gps(filePath).catch(() => null);
+    const hasNullIslandGps = gps && gps.latitude === 0 && gps.longitude === 0;
 
-    if (gps && Number.isFinite(gps.latitude) && Number.isFinite(gps.longitude)) {
+    if (gps && !hasNullIslandGps && Number.isFinite(gps.latitude) && Number.isFinite(gps.longitude)) {
       lat = gps.latitude;
       lon = gps.longitude;
       source = "exif";

@@ -666,6 +666,12 @@ body {
   color: var(--muted);
 }
 
+.modal-card button.secondary-btn {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
 /* Photo detail modal */
 .detail-card {
   background: var(--surface);

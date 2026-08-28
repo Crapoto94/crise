@@ -9,6 +9,16 @@ function deviceHeaders() {
   };
 }
 
+export async function locateGps(lat, lon) {
+  const res = await fetch("/api/geo/locate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...deviceHeaders() },
+    body: JSON.stringify({ lat, lon }),
+  });
+  if (!res.ok) throw new Error("Erreur de localisation");
+  return res.json();
+}
+
 export async function fetchQuartiersGeoJson() {
   const res = await fetch("/api/geo/quartiers", { headers: deviceHeaders() });
   if (!res.ok) throw new Error("Erreur de chargement des quartiers");
