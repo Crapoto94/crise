@@ -75,27 +75,37 @@ function buildClusterIcon(photos) {
 
 const SITE_ICON_SIZE = 22;
 
-function buildSiteIcon(category) {
+const SITE_ICON_SIZE_LARGE = 34;
+
+function buildSiteIcon(category, large) {
   const meta = resolveSiteCategory(category);
+  const size = large ? SITE_ICON_SIZE_LARGE : SITE_ICON_SIZE;
+  const glyphSize = large ? 20 : 13;
   return L.divIcon({
-    className: "site-marker",
-    html: `<div class="site-marker-dot" style="background:${meta.color}"><svg viewBox="0 0 16 16" width="13" height="13" fill="#fff">${meta.icon}</svg></div>`,
-    iconSize: [SITE_ICON_SIZE, SITE_ICON_SIZE],
-    iconAnchor: [SITE_ICON_SIZE / 2, SITE_ICON_SIZE / 2],
+    className: large ? "site-marker site-marker-large" : "site-marker",
+    html: `<div class="site-marker-dot" style="background:${meta.color}"><svg viewBox="0 0 16 16" width="${glyphSize}" height="${glyphSize}" fill="#fff">${meta.icon}</svg></div>`,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
   });
 }
 
 const siteIconCache = new Map();
-function getSiteIcon(category) {
-  if (!siteIconCache.has(category)) siteIconCache.set(category, buildSiteIcon(category));
-  return siteIconCache.get(category);
+function getSiteIcon(category, large) {
+  const key = `${category}:${large ? "l" : "s"}`;
+  if (!siteIconCache.has(key)) siteIconCache.set(key, buildSiteIcon(category, large));
+  return siteIconCache.get(key);
 }
 
 function SiteMarkers({ sites, visibleCategories }) {
   return sites
     .filter((s) => visibleCategories.has(legendCategoryKey(s.category)))
     .map((s) => (
-      <Marker key={s.code} position={[s.lat, s.lon]} icon={getSiteIcon(s.category)} zIndexOffset={-1000}>
+      <Marker
+        key={s.code}
+        position={[s.lat, s.lon]}
+        icon={getSiteIcon(s.category, s.large)}
+        zIndexOffset={s.large ? -900 : -1000}
+      >
         <Tooltip>{s.name}</Tooltip>
       </Marker>
     ));

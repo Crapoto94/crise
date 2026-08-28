@@ -1,12 +1,13 @@
 [
  {
   "code": "S001",
-  "name": "ESPLANADE GEORGES MARRANE",
-  "category": "autre",
-  "categoryLabel": "Autre",
+  "name": "HOTEL DE VILLE",
+  "category": "administratif",
+  "categoryLabel": "ADMINISTRATIF",
   "address": "ESPLANADE GEORGES MARRANE",
   "lat": 48.8124,
-  "lon": 2.3872
+  "lon": 2.3872,
+  "large": true
  },
  {
   "code": "S002",
