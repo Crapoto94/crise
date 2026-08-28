@@ -1,4 +1,5 @@
 node_modules
 uploads
-data
+data/*
+!data/voiries.json
 npm-debug.log

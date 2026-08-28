@@ -248,6 +248,16 @@ body {
   cursor: pointer;
 }
 
+.description-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
 .custom-category-input {
   width: 100%;
   padding: 10px 12px;
@@ -748,6 +758,22 @@ body {
 
 .detail-info .meta {
   margin-top: 2px;
+}
+
+.description-text {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--text);
+  white-space: pre-wrap;
+}
+
+.description-preview {
+  font-size: 0.8rem;
+  color: var(--text);
+  margin: 2px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .comments-section h3 {

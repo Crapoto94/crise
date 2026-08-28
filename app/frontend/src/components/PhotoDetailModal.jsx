@@ -88,6 +88,7 @@ export default function PhotoDetailModal({ photo, onClose, onPhotoDeleted }) {
           <p className="meta">
             {photo.uploaderName} · {formatDate(photo.createdAt)}
           </p>
+          {photo.description && <p className="description-text">{photo.description}</p>}
         </div>
 
         {error && <p className="error-text">{error}</p>}

@@ -24,6 +24,7 @@ export default function UploadPage() {
   const [showCustomCategory, setShowCustomCategory] = useState(false);
   const [customCategoryText, setCustomCategoryText] = useState("");
   const [severity, setSeverity] = useState("mineur");
+  const [description, setDescription] = useState("");
 
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
@@ -43,6 +44,20 @@ export default function UploadPage() {
       if (previewUrl) URL.revokeObjectURL(previewUrl);
     };
   }, [previewUrl]);
+
+  function getBrowserLocation() {
+    return new Promise((resolve, reject) => {
+      if (!navigator.geolocation) {
+        reject(new Error("Geolocalisation non supportee"));
+        return;
+      }
+      navigator.geolocation.getCurrentPosition(
+        (pos) => resolve({ lat: pos.coords.latitude, lon: pos.coords.longitude }),
+        (err) => reject(err),
+        { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 }
+      );
+    });
+  }
 
   async function seedConfirmFromLocation(lat, lon, source) {
     try {
@@ -71,21 +86,29 @@ export default function UploadPage() {
     setShowCustomCategory(false);
     setCustomCategoryText("");
     setSeverity("mineur");
+    setDescription("");
     setCheckingExif(true);
     setSuggestingCategory(true);
 
     exifr
       .gps(selected)
-      .then((location) => {
+      .then(async (location) => {
         const lat = location?.latitude;
         const lon = location?.longitude;
         const isNullIsland = lat === 0 && lon === 0;
 
-        if (!location || !Number.isFinite(lat) || !Number.isFinite(lon) || isNullIsland) {
-          setMode("manual_search");
-          return;
+        if (location && Number.isFinite(lat) && Number.isFinite(lon) && !isNullIsland) {
+          return seedConfirmFromLocation(lat, lon, "exif");
         }
-        return seedConfirmFromLocation(lat, lon, "exif");
+
+        // Pas d'EXIF (frequent pour une photo prise en direct via le navigateur) :
+        // on tente la position live de l'appareil avant de demander une saisie manuelle.
+        try {
+          const geo = await getBrowserLocation();
+          return seedConfirmFromLocation(geo.lat, geo.lon, "manual");
+        } catch {
+          setMode("manual_search");
+        }
       })
       .catch(() => setMode("manual_search"))
       .finally(() => setCheckingExif(false));
@@ -135,6 +158,7 @@ export default function UploadPage() {
     setShowCustomCategory(false);
     setCustomCategoryText("");
     setSeverity("mineur");
+    setDescription("");
     if (fileInputRef.current) fileInputRef.current.value = "";
   }
 
@@ -170,6 +194,7 @@ export default function UploadPage() {
     formData.append("lon", confirmed.lon);
     formData.append("addressLabel", confirmed.addressLabel || "");
     formData.append("source", confirmed.source);
+    if (description.trim()) formData.append("description", description.trim());
 
     setUploading(true);
     try {
@@ -205,7 +230,7 @@ export default function UploadPage() {
         />
       </label>
 
-      {checkingExif && <p className="hint">Lecture des donnees GPS de la photo...</p>}
+      {checkingExif && <p className="hint">Recherche de la position (photo puis appareil)...</p>}
 
       {mode === "confirming" && confirmSeed && (
         <AddressConfirmMap
@@ -311,6 +336,18 @@ export default function UploadPage() {
                 </button>
               ))}
             </div>
+          </div>
+
+          <div className="field-block">
+            <p className="field-label">Description (optionnel)</p>
+            <textarea
+              className="description-input"
+              placeholder="Precisez la situation, un detail utile..."
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              maxLength={1000}
+              rows={3}
+            />
           </div>
         </>
       )}

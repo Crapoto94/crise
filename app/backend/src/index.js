@@ -25,6 +25,12 @@ function sanitizeCategory(value) {
   return trimmed || null;
 }
 
+function sanitizeDescription(value) {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim().slice(0, 1000);
+  return trimmed || null;
+}
+
 const app = express();
 app.set("trust proxy", true);
 app.use(cors());
@@ -98,17 +104,18 @@ const uploadMemory = multer({
 
 const selectAllStmt = db.prepare(`
   SELECT p.id, p.filename, p.uploader_name AS uploaderName, p.device_id AS deviceId, p.lat, p.lon,
-         p.address_label AS addressLabel, p.source, p.category, p.severity, p.quartier, p.created_at AS createdAt,
+         p.address_label AS addressLabel, p.source, p.category, p.severity, p.quartier, p.description,
+         p.created_at AS createdAt,
          (SELECT COUNT(*) FROM comments c WHERE c.photo_id = p.id) AS commentCount
   FROM photos p
   ORDER BY p.created_at DESC
 `);
 const insertStmt = db.prepare(
-  `INSERT INTO photos (filename, uploader_name, device_id, lat, lon, address_label, source, category, severity, quartier)
-   VALUES (@filename, @uploaderName, @deviceId, @lat, @lon, @addressLabel, @source, @category, @severity, @quartier)`
+  `INSERT INTO photos (filename, uploader_name, device_id, lat, lon, address_label, source, category, severity, quartier, description)
+   VALUES (@filename, @uploaderName, @deviceId, @lat, @lon, @addressLabel, @source, @category, @severity, @quartier, @description)`
 );
 const selectOneStmt = db.prepare(
-  "SELECT id, filename, uploader_name AS uploaderName, device_id AS deviceId, lat, lon, address_label AS addressLabel, source, category, severity, quartier, created_at AS createdAt FROM photos WHERE id = ?"
+  "SELECT id, filename, uploader_name AS uploaderName, device_id AS deviceId, lat, lon, address_label AS addressLabel, source, category, severity, quartier, description, created_at AS createdAt FROM photos WHERE id = ?"
 );
 const deletePhotoStmt = db.prepare("DELETE FROM photos WHERE id = ?");
 const selectPhotosMissingQuartierStmt = db.prepare(
@@ -293,7 +300,8 @@ app.post("/api/classify", uploadMemory.single("photo"), async (req, res) => {
 
 app.post("/api/photos", upload.single("photo"), checkNotBanned, async (req, res) => {
   try {
-    const { uploaderName, deviceId, addressLabel, lat, lon, source, category, severity } = req.body || {};
+    const { uploaderName, deviceId, addressLabel, lat, lon, source, category, severity, description } =
+      req.body || {};
 
     if (!req.file) {
       return res.status(400).json({ error: "Photo manquante" });
@@ -319,6 +327,7 @@ app.post("/api/photos", upload.single("photo"), checkNotBanned, async (req, res)
       category: sanitizeCategory(category),
       severity: SEVERITY_VALUES.includes(severity) ? severity : null,
       quartier: getQuartier(parsedLat, parsedLon),
+      description: sanitizeDescription(description),
     });
 
     res.status(201).json(selectOneStmt.get(info.lastInsertRowid));

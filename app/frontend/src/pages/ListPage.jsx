@@ -163,6 +163,7 @@ export default function ListPage() {
                   />
                   <p className="address">{photo.addressLabel || "Adresse inconnue"}</p>
                   <p className="uploader">{photo.uploaderName}</p>
+                  {photo.description && <p className="description-preview">{photo.description}</p>}
                   <p className="meta">
                     {formatDate(photo.createdAt)} ·{" "}
                     {photo.source === "exif" ? "GPS photo" : "Adresse saisie"}
