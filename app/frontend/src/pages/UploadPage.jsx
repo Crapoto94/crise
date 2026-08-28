@@ -18,6 +18,8 @@ export default function UploadPage() {
 
   const [category, setCategory] = useState(null);
   const [suggestingCategory, setSuggestingCategory] = useState(false);
+  const [showCustomCategory, setShowCustomCategory] = useState(false);
+  const [customCategoryText, setCustomCategoryText] = useState("");
   const [severity, setSeverity] = useState(null);
 
   const [uploading, setUploading] = useState(false);
@@ -53,6 +55,8 @@ export default function UploadPage() {
     setHasGps(null);
     setGps(null);
     setCategory(null);
+    setShowCustomCategory(false);
+    setCustomCategoryText("");
     setSeverity(null);
     setCheckingExif(true);
     setSuggestingCategory(true);
@@ -107,8 +111,26 @@ export default function UploadPage() {
     setSuggestions([]);
     setSelectedAddress(null);
     setCategory(null);
+    setShowCustomCategory(false);
+    setCustomCategoryText("");
     setSeverity(null);
     if (fileInputRef.current) fileInputRef.current.value = "";
+  }
+
+  function handleCategoryChipClick(value) {
+    if (value === "autre") {
+      setShowCustomCategory(true);
+      setCategory(customCategoryText.trim() || null);
+    } else {
+      setShowCustomCategory(false);
+      setCustomCategoryText("");
+      setCategory(value);
+    }
+  }
+
+  function handleCustomCategoryChange(value) {
+    setCustomCategoryText(value);
+    setCategory(value.trim() || null);
   }
 
   async function handleSubmit(e) {
@@ -226,13 +248,28 @@ export default function UploadPage() {
                 <button
                   key={c.value}
                   type="button"
-                  className={"chip" + (category === c.value ? " active" : "")}
-                  onClick={() => setCategory(c.value)}
+                  className={
+                    "chip" +
+                    ((c.value === "autre" ? showCustomCategory : !showCustomCategory && category === c.value)
+                      ? " active"
+                      : "")
+                  }
+                  onClick={() => handleCategoryChipClick(c.value)}
                 >
                   {c.label}
                 </button>
               ))}
             </div>
+            {showCustomCategory && (
+              <input
+                type="text"
+                className="custom-category-input"
+                placeholder="Precisez la categorie..."
+                value={customCategoryText}
+                onChange={(e) => handleCustomCategoryChange(e.target.value)}
+                autoFocus
+              />
+            )}
           </div>
 
           <div className="field-block">

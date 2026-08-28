@@ -233,6 +233,15 @@ body {
   cursor: pointer;
 }
 
+.custom-category-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
 .chip.active {
   background: var(--primary);
   border-color: var(--primary);
@@ -430,6 +439,7 @@ body {
   color: var(--muted);
   font-size: 0.8rem;
 }
+
 
 /* List page */
 .search-input {

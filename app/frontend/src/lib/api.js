@@ -9,6 +9,12 @@ function deviceHeaders() {
   };
 }
 
+export async function fetchQuartiersGeoJson() {
+  const res = await fetch("/api/geo/quartiers", { headers: deviceHeaders() });
+  if (!res.ok) throw new Error("Erreur de chargement des quartiers");
+  return res.json();
+}
+
 export async function fetchMeta() {
   const res = await fetch("/api/meta", { headers: deviceHeaders() });
   if (!res.ok) throw new Error("Erreur de chargement des categories");

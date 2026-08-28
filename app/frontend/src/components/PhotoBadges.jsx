@@ -1,11 +1,4 @@
-import { CATEGORY_LABELS, SEVERITY_LABELS } from "../lib/meta";
-
-const VOIRIE_LABELS = {
-  vc: "Voie communale",
-  privee: "Voie privee",
-  oph: "Privee OPH",
-  departementale: "Departementale",
-};
+import { CATEGORY_LABELS, SEVERITY_LABELS, VOIRIE_LABELS } from "../lib/meta";
 
 function voirieLabel(voirie) {
   if (!voirie) return null;
@@ -13,9 +6,9 @@ function voirieLabel(voirie) {
   return VOIRIE_LABELS[voirie.statutCategory] || voirie.statutRaw || null;
 }
 
-export default function PhotoBadges({ category, severity, voirie }) {
+export default function PhotoBadges({ category, severity, voirie, quartier }) {
   const voirieText = voirieLabel(voirie);
-  if (!category && !severity && !voirieText) return null;
+  if (!category && !severity && !voirieText && !quartier) return null;
   return (
     <div className="badge-row">
       {severity && (
@@ -27,6 +20,7 @@ export default function PhotoBadges({ category, severity, voirie }) {
           {voirieText}
         </span>
       )}
+      {quartier && <span className="badge category-badge">{quartier}</span>}
     </div>
   );
 }

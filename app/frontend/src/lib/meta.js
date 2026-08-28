@@ -12,3 +12,10 @@ export const SEVERITY_LABELS = {
   majeur: "Majeur",
   urgent: "Urgent",
 };
+
+export const VOIRIE_LABELS = {
+  vc: "Voie communale",
+  privee: "Voie privee",
+  oph: "Privee OPH",
+  departementale: "Departementale",
+};

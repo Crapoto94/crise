@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchPhotos } from "../lib/api";
 import { streetFromAddress } from "../lib/address";
-import { CATEGORY_LABELS, SEVERITY_LABELS } from "../lib/meta";
+import { CATEGORY_LABELS, SEVERITY_LABELS, VOIRIE_LABELS } from "../lib/meta";
 import PhotoDetailModal from "../components/PhotoDetailModal";
 import PhotoBadges from "../components/PhotoBadges";
 
@@ -14,10 +14,10 @@ function groupPhotos(photos, groupBy) {
 
   const map = new Map();
   for (const photo of photos) {
-    const label =
-      groupBy === "street"
-        ? streetFromAddress(photo.addressLabel)
-        : photo.addressLabel || "Adresse inconnue";
+    let label;
+    if (groupBy === "street") label = streetFromAddress(photo.addressLabel);
+    else if (groupBy === "quartier") label = photo.quartier || "Hors quartier";
+    else label = photo.addressLabel || "Adresse inconnue";
     if (!map.has(label)) map.set(label, []);
     map.get(label).push(photo);
   }
@@ -35,6 +35,8 @@ export default function ListPage() {
   const [groupBy, setGroupBy] = useState("address");
   const [categoryFilter, setCategoryFilter] = useState("");
   const [severityFilter, setSeverityFilter] = useState("");
+  const [quartierFilter, setQuartierFilter] = useState("");
+  const [voirieFilter, setVoirieFilter] = useState("");
 
   useEffect(() => {
     fetchPhotos()
@@ -46,6 +48,11 @@ export default function ListPage() {
     setPhotos((prev) => prev.filter((p) => p.id !== id));
   }
 
+  const quartierOptions = useMemo(
+    () => [...new Set(photos.map((p) => p.quartier).filter(Boolean))].sort((a, b) => a.localeCompare(b, "fr")),
+    [photos]
+  );
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return photos.filter((p) => {
@@ -55,9 +62,11 @@ export default function ListPage() {
         (p.uploaderName || "").toLowerCase().includes(q);
       const matchesCategory = !categoryFilter || p.category === categoryFilter;
       const matchesSeverity = !severityFilter || p.severity === severityFilter;
-      return matchesQuery && matchesCategory && matchesSeverity;
+      const matchesQuartier = !quartierFilter || p.quartier === quartierFilter;
+      const matchesVoirie = !voirieFilter || p.voirie?.statutCategory === voirieFilter;
+      return matchesQuery && matchesCategory && matchesSeverity && matchesQuartier && matchesVoirie;
     });
-  }, [photos, query, categoryFilter, severityFilter]);
+  }, [photos, query, categoryFilter, severityFilter, quartierFilter, voirieFilter]);
 
   const groups = useMemo(() => groupPhotos(filtered, groupBy), [filtered, groupBy]);
 
@@ -92,12 +101,34 @@ export default function ListPage() {
         </select>
       </div>
 
+      <div className="filter-row">
+        <select value={quartierFilter} onChange={(e) => setQuartierFilter(e.target.value)}>
+          <option value="">Tous les quartiers</option>
+          {quartierOptions.map((q) => (
+            <option key={q} value={q}>
+              {q}
+            </option>
+          ))}
+        </select>
+        <select value={voirieFilter} onChange={(e) => setVoirieFilter(e.target.value)}>
+          <option value="">Tous types de voie</option>
+          {Object.entries(VOIRIE_LABELS).map(([value, label]) => (
+            <option key={value} value={value}>
+              {label}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <div className="segmented">
         <button className={groupBy === "address" ? "active" : ""} onClick={() => setGroupBy("address")}>
           Par adresse
         </button>
         <button className={groupBy === "street" ? "active" : ""} onClick={() => setGroupBy("street")}>
           Par rue
+        </button>
+        <button className={groupBy === "quartier" ? "active" : ""} onClick={() => setGroupBy("quartier")}>
+          Par quartier
         </button>
         <button className={groupBy === "none" ? "active" : ""} onClick={() => setGroupBy("none")}>
           Aucun
@@ -124,7 +155,12 @@ export default function ListPage() {
                   onClick={() => setSelected(photo)}
                 />
                 <div className="photo-list-info">
-                  <PhotoBadges category={photo.category} severity={photo.severity} voirie={photo.voirie} />
+                  <PhotoBadges
+                    category={photo.category}
+                    severity={photo.severity}
+                    voirie={photo.voirie}
+                    quartier={photo.quartier}
+                  />
                   <p className="address">{photo.addressLabel || "Adresse inconnue"}</p>
                   <p className="uploader">{photo.uploaderName}</p>
                   <p className="meta">

@@ -4,6 +4,7 @@ export const CATEGORIES = [
   { value: "toiture", label: "Toiture endommagee" },
   { value: "voirie", label: "Voirie / chaussee" },
   { value: "reseau_electrique", label: "Reseau electrique" },
+  { value: "vehicule", label: "Vehicule" },
   { value: "autre", label: "Autre" },
 ];
 
@@ -13,19 +14,26 @@ export const SEVERITIES = [
   { value: "urgent", label: "Urgent" },
 ];
 
-export const DEFAULT_VISION_MODEL = "google/gemini-2.0-flash-exp:free";
+// Liste verifiee via https://openrouter.ai/api/v1/models le 2026-08-28.
+// Les modeles gratuits d'OpenRouter changent souvent de disponibilite :
+// si la classification echoue, changer de modele dans /admin > Reglages.
+export const DEFAULT_VISION_MODEL = "minimax/minimax-m3:free";
 
 export const SUGGESTED_VISION_MODELS = [
   {
-    value: "google/gemini-2.0-flash-exp:free",
-    label: "Google Gemini 2.0 Flash (gratuit, recommande)",
+    value: "minimax/minimax-m3:free",
+    label: "MiniMax M3 (gratuit, recommande)",
   },
   {
-    value: "qwen/qwen2.5-vl-72b-instruct:free",
-    label: "Qwen 2.5 VL 72B (gratuit)",
+    value: "google/gemma-4-31b-it:free",
+    label: "Google Gemma 4 31B (gratuit)",
   },
   {
-    value: "meta-llama/llama-3.2-11b-vision-instruct:free",
-    label: "Meta Llama 3.2 11B Vision (gratuit)",
+    value: "google/gemma-4-26b-a4b-it:free",
+    label: "Google Gemma 4 26B (gratuit, plus rapide)",
+  },
+  {
+    value: "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+    label: "Nvidia Nemotron Nano Omni 30B (gratuit)",
   },
 ];

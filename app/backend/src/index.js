@@ -13,12 +13,18 @@ import { CATEGORIES, SEVERITIES, DEFAULT_VISION_MODEL, SUGGESTED_VISION_MODELS }
 import { getSetting, setSetting } from "./settings.js";
 import { classifyDamage } from "./vision.js";
 import { matchVoirie } from "./voirie.js";
+import { getVoirieStatus, getQuartier, getQuartiersGeoJson } from "./geo.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const uploadsDir = path.join(__dirname, "..", "uploads");
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "2508";
-const CATEGORY_VALUES = CATEGORIES.map((c) => c.value);
 const SEVERITY_VALUES = SEVERITIES.map((s) => s.value);
+
+function sanitizeCategory(value) {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim().slice(0, 60);
+  return trimmed || null;
+}
 
 const app = express();
 app.set("trust proxy", true);
@@ -93,19 +99,28 @@ const uploadMemory = multer({
 
 const selectAllStmt = db.prepare(`
   SELECT p.id, p.filename, p.uploader_name AS uploaderName, p.device_id AS deviceId, p.lat, p.lon,
-         p.address_label AS addressLabel, p.source, p.category, p.severity, p.created_at AS createdAt,
+         p.address_label AS addressLabel, p.source, p.category, p.severity, p.quartier, p.created_at AS createdAt,
          (SELECT COUNT(*) FROM comments c WHERE c.photo_id = p.id) AS commentCount
   FROM photos p
   ORDER BY p.created_at DESC
 `);
 const insertStmt = db.prepare(
-  `INSERT INTO photos (filename, uploader_name, device_id, lat, lon, address_label, source, category, severity)
-   VALUES (@filename, @uploaderName, @deviceId, @lat, @lon, @addressLabel, @source, @category, @severity)`
+  `INSERT INTO photos (filename, uploader_name, device_id, lat, lon, address_label, source, category, severity, quartier)
+   VALUES (@filename, @uploaderName, @deviceId, @lat, @lon, @addressLabel, @source, @category, @severity, @quartier)`
 );
 const selectOneStmt = db.prepare(
-  "SELECT id, filename, uploader_name AS uploaderName, device_id AS deviceId, lat, lon, address_label AS addressLabel, source, category, severity, created_at AS createdAt FROM photos WHERE id = ?"
+  "SELECT id, filename, uploader_name AS uploaderName, device_id AS deviceId, lat, lon, address_label AS addressLabel, source, category, severity, quartier, created_at AS createdAt FROM photos WHERE id = ?"
 );
 const deletePhotoStmt = db.prepare("DELETE FROM photos WHERE id = ?");
+const selectPhotosMissingQuartierStmt = db.prepare(
+  "SELECT id, lat, lon FROM photos WHERE quartier IS NULL"
+);
+const updateQuartierStmt = db.prepare("UPDATE photos SET quartier = ? WHERE id = ?");
+
+for (const row of selectPhotosMissingQuartierStmt.all()) {
+  const quartier = getQuartier(row.lat, row.lon);
+  if (quartier) updateQuartierStmt.run(quartier, row.id);
+}
 
 const selectCommentsStmt = db.prepare(
   "SELECT id, photo_id AS photoId, author_name AS authorName, device_id AS deviceId, text, created_at AS createdAt FROM comments WHERE photo_id = ? ORDER BY created_at ASC"
@@ -129,14 +144,43 @@ const insertBanStmt = db.prepare(
 );
 const deleteBanStmt = db.prepare("DELETE FROM banned_devices WHERE device_id = ?");
 
+const selectDistinctCategoriesStmt = db.prepare(
+  "SELECT DISTINCT category FROM photos WHERE category IS NOT NULL"
+);
+
 app.get("/api/meta", (_req, res) => {
-  res.json({ categories: CATEGORIES, severities: SEVERITIES });
+  const knownValues = new Set(CATEGORIES.map((c) => c.value));
+  const customCategories = selectDistinctCategoriesStmt
+    .all()
+    .map((r) => r.category)
+    .filter((value) => value && !knownValues.has(value))
+    .sort((a, b) => a.localeCompare(b, "fr"))
+    .map((value) => ({ value, label: value }));
+
+  res.json({ categories: [...CATEGORIES, ...customCategories], severities: SEVERITIES });
 });
+
+app.get("/api/geo/quartiers", (_req, res) => {
+  res.json(getQuartiersGeoJson());
+});
+
+function buildVoirie(photo) {
+  const statutCategory = getVoirieStatus(photo.lat, photo.lon);
+  if (!statutCategory) return null;
+  const textMatch = matchVoirie(photo.addressLabel);
+  return {
+    statutCategory,
+    rdCode: statutCategory === "departementale" ? textMatch?.rdCode ?? null : null,
+    codeRivoli: textMatch?.codeRivoli ?? null,
+    fullName: textMatch?.fullName ?? null,
+    source: "geo",
+  };
+}
 
 app.get("/api/photos", (_req, res) => {
   const photos = selectAllStmt.all().map((p) => ({
     ...p,
-    voirie: matchVoirie(p.addressLabel),
+    voirie: buildVoirie(p),
   }));
   res.json(photos);
 });
@@ -295,8 +339,9 @@ app.post("/api/photos", upload.single("photo"), checkNotBanned, async (req, res)
       lon,
       addressLabel: label,
       source,
-      category: CATEGORY_VALUES.includes(category) ? category : null,
+      category: sanitizeCategory(category),
       severity: SEVERITY_VALUES.includes(severity) ? severity : null,
+      quartier: getQuartier(lat, lon),
     });
 
     res.status(201).json(selectOneStmt.get(info.lastInsertRowid));

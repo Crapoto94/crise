@@ -12,6 +12,8 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@turf/boolean-point-in-polygon": "^7.4.0",
+    "@turf/helpers": "^7.4.0",
     "better-sqlite3": "^13.0.3",
     "cors": "^2.8.6",
     "exifr": "^7.1.3",

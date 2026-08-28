@@ -78,7 +78,12 @@ export default function PhotoDetailModal({ photo, onClose, onPhotoDeleted }) {
           onClick={() => setZoomed(true)}
         />
         <div className="detail-info">
-          <PhotoBadges category={photo.category} severity={photo.severity} voirie={photo.voirie} />
+          <PhotoBadges
+            category={photo.category}
+            severity={photo.severity}
+            voirie={photo.voirie}
+            quartier={photo.quartier}
+          />
           <p className="address">{photo.addressLabel || "Adresse inconnue"}</p>
           <p className="meta">
             {photo.uploaderName} · {formatDate(photo.createdAt)}
