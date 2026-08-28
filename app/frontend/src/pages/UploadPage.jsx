@@ -70,7 +70,7 @@ export default function UploadPage() {
     setMode("confirming");
   }
 
-  async function handleFileChange(e) {
+  async function handleFileChange(e, isLiveCapture) {
     const selected = e.target.files?.[0];
     if (!selected) return;
 
@@ -102,7 +102,14 @@ export default function UploadPage() {
           return seedConfirmFromLocation(lat, lon, "exif");
         }
 
-        // Pas d'EXIF (frequent pour une photo prise en direct via le navigateur) :
+        if (!isLiveCapture) {
+          // Photo choisie dans la galerie sans EXIF exploitable : on ne doit surtout pas
+          // utiliser la position actuelle de l'appareil, elle n'a aucun rapport avec la photo.
+          setMode("manual_search");
+          return;
+        }
+
+        // Prise en direct sans EXIF (frequent avec la capture caméra du navigateur) :
         // on tente la position live de l'appareil avant de demander une saisie manuelle.
         try {
           const geo = await getBrowserLocation();
@@ -230,7 +237,7 @@ export default function UploadPage() {
             type="file"
             accept="image/*"
             capture="environment"
-            onChange={handleFileChange}
+            onChange={(e) => handleFileChange(e, true)}
             hidden
           />
         </label>
@@ -240,7 +247,7 @@ export default function UploadPage() {
             ref={galleryInputRef}
             type="file"
             accept="image/*"
-            onChange={handleFileChange}
+            onChange={(e) => handleFileChange(e, false)}
             hidden
           />
         </label>
