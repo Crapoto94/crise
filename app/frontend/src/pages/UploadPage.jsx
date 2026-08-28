@@ -31,7 +31,8 @@ export default function UploadPage() {
   const [success, setSuccess] = useState("");
 
   const debounceRef = useRef(null);
-  const fileInputRef = useRef(null);
+  const cameraInputRef = useRef(null);
+  const galleryInputRef = useRef(null);
 
   useEffect(() => {
     fetchMeta()
@@ -159,7 +160,8 @@ export default function UploadPage() {
     setCustomCategoryText("");
     setSeverity("mineur");
     setDescription("");
-    if (fileInputRef.current) fileInputRef.current.value = "";
+    if (cameraInputRef.current) cameraInputRef.current.value = "";
+    if (galleryInputRef.current) galleryInputRef.current.value = "";
   }
 
   function handleCategoryChipClick(value) {
@@ -214,20 +216,35 @@ export default function UploadPage() {
     <div className="page upload-page">
       <h1>Envoyer une photo</h1>
 
-      <label className="file-drop">
-        {previewUrl ? (
+      {previewUrl && (
+        <div className="file-drop">
           <img src={previewUrl} alt="Apercu" className="file-preview" />
-        ) : (
-          <span>Prendre ou choisir une photo</span>
-        )}
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept="image/*"
-          onChange={handleFileChange}
-          hidden
-        />
-      </label>
+        </div>
+      )}
+
+      <div className="file-choice-row">
+        <label className="file-choice-btn">
+          Prendre une photo
+          <input
+            ref={cameraInputRef}
+            type="file"
+            accept="image/*"
+            capture="environment"
+            onChange={handleFileChange}
+            hidden
+          />
+        </label>
+        <label className="file-choice-btn">
+          Choisir dans la galerie
+          <input
+            ref={galleryInputRef}
+            type="file"
+            accept="image/*"
+            onChange={handleFileChange}
+            hidden
+          />
+        </label>
+      </div>
 
       {checkingExif && <p className="hint">Recherche de la position (photo puis appareil)...</p>}
 
