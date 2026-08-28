@@ -5,6 +5,7 @@ import path from "node:path";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import { fileURLToPath } from "node:url";
+import sharp from "sharp";
 
 import { db } from "./db.js";
 import { reverseGeocode } from "./geocode.js";
@@ -329,6 +330,17 @@ app.post("/api/photos", upload.single("photo"), checkNotBanned, async (req, res)
     const parsedLon = Number(lon);
     if (!Number.isFinite(parsedLat) || !Number.isFinite(parsedLon) || !addressLabel) {
       return res.status(400).json({ error: "Position et adresse confirmees requises" });
+    }
+
+    // Les photos prises en portrait sur mobile stockent souvent les pixels en paysage
+    // avec un tag EXIF d'orientation : on applique la rotation une fois pour toutes ici,
+    // pour un rendu correct partout (miniatures, carte, zoom) quel que soit le navigateur.
+    const filePath = path.join(uploadsDir, req.file.filename);
+    try {
+      const rotated = await sharp(filePath).rotate().toBuffer();
+      await fs.promises.writeFile(filePath, rotated);
+    } catch (err) {
+      console.error("Normalisation orientation photo echouee:", err);
     }
 
     const info = insertStmt.run({
