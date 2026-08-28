@@ -1,0 +1,2540 @@
+[
+ {
+  "codeRivoli": "B0010",
+  "typeVoie": "rue",
+  "nomVoie": "Albert Einstein",
+  "fullName": "rue Albert Einstein",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A1458",
+  "typeVoie": "allée",
+  "nomVoie": "de la Chocolaterie",
+  "fullName": "allée de la Chocolaterie",
+  "statutRaw": "Privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A8680",
+  "typeVoie": "allée",
+  "nomVoie": "de la Seine",
+  "fullName": "allée de la Seine",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A030T",
+  "typeVoie": "jardin",
+  "nomVoie": "de l'Insurrection",
+  "fullName": "jardin de l'Insurrection",
+  "statutRaw": "privée OPH",
+  "statutCategory": "oph",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A1481",
+  "typeVoie": "square",
+  "nomVoie": "du Colombier",
+  "fullName": "square du Colombier",
+  "statutRaw": null,
+  "statutCategory": "inconnu",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A3114",
+  "typeVoie": "allée",
+  "nomVoie": "Elisabeth",
+  "fullName": "allée Elisabeth",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "B3115",
+  "typeVoie": "rue",
+  "nomVoie": "Elisabeth",
+  "fullName": "rue Elisabeth",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A3160",
+  "typeVoie": "rue",
+  "nomVoie": "Ernest Renan",
+  "fullName": "rue Ernest Renan",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "H4110",
+  "typeVoie": "rue",
+  "nomVoie": "Gabriel Péri",
+  "fullName": "rue Gabriel Péri",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "M4183",
+  "typeVoie": "passage",
+  "nomVoie": "Gerard",
+  "fullName": "passage Gerard",
+  "statutRaw": "privé",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "U4189",
+  "typeVoie": "rue",
+  "nomVoie": "Germaine Tillion",
+  "fullName": "rue Germaine Tillion",
+  "statutRaw": "privée (destinée à être VC)",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A6127",
+  "typeVoie": "allée",
+  "nomVoie": "Marie Lefévre",
+  "fullName": "allée Marie Lefévre",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Y0030",
+  "typeVoie": "rue",
+  "nomVoie": "Albert Meunier",
+  "fullName": "rue Albert Meunier",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "J0040",
+  "typeVoie": "rue",
+  "nomVoie": "Alexis Chaussinand",
+  "fullName": "rue Alexis Chaussinand",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "K0041",
+  "typeVoie": "allée",
+  "nomVoie": "allée Allain Leprest",
+  "fullName": "allée allée Allain Leprest",
+  "statutRaw": "projet Thorez/Villars en cours, à définir",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "N0044",
+  "typeVoie": "rue",
+  "nomVoie": "Amedée Huon",
+  "fullName": "rue Amedée Huon",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "P0045",
+  "typeVoie": "rue",
+  "nomVoie": "Ampere",
+  "fullName": "rue Ampere",
+  "statutRaw": "VC (1er tronçon)la 2eme partie en prolongement sera à verser en VC après acquisition Ville",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "S0047",
+  "typeVoie": "rue",
+  "nomVoie": "André Voguet",
+  "fullName": "rue André Voguet",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "V0050",
+  "typeVoie": "rue",
+  "nomVoie": "Antoine Thomas",
+  "fullName": "rue Antoine Thomas",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "L0065",
+  "typeVoie": "quai",
+  "nomVoie": "Auguste Deshaies",
+  "fullName": "quai Auguste Deshaies",
+  "statutRaw": "RD152A",
+  "statutCategory": "departementale",
+  "rdCode": "RD152A"
+ },
+ {
+  "codeRivoli": "Y0605",
+  "typeVoie": "villa",
+  "nomVoie": "Bac",
+  "fullName": "villa Bac",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "D0610",
+  "typeVoie": "rue",
+  "nomVoie": "Barbes",
+  "fullName": "rue Barbes",
+  "statutRaw": "Ville de Paris",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "J0615",
+  "typeVoie": "rue",
+  "nomVoie": "Baudin",
+  "fullName": "rue Baudin",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "O630A",
+  "typeVoie": "allée",
+  "nomVoie": "Belle-Croix",
+  "fullName": "allée Belle-Croix",
+  "statutRaw": "Privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "L0640",
+  "typeVoie": "rue",
+  "nomVoie": "Bernard Palissy",
+  "fullName": "rue Bernard Palissy",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "T0646",
+  "typeVoie": "rue",
+  "nomVoie": "Berthelot",
+  "fullName": "rue Berthelot",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "C0655",
+  "typeVoie": "rue",
+  "nomVoie": "Bizet",
+  "fullName": "rue Bizet",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "H0660",
+  "typeVoie": "rue",
+  "nomVoie": "Blanqui",
+  "fullName": "rue Blanqui",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "E0680",
+  "typeVoie": "passage",
+  "nomVoie": "Bourdeau",
+  "fullName": "passage Bourdeau",
+  "statutRaw": "privé",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "N0780",
+  "typeVoie": "rue",
+  "nomVoie": "Bruneseau",
+  "fullName": "rue Bruneseau",
+  "statutRaw": "RD154A",
+  "statutCategory": "departementale",
+  "rdCode": "RD154A"
+ },
+ {
+  "codeRivoli": "Z1411",
+  "typeVoie": "rue",
+  "nomVoie": "Carnot",
+  "fullName": "rue Carnot",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "D1415",
+  "typeVoie": "rue",
+  "nomVoie": "Celestino Alfonso",
+  "fullName": "rue Celestino Alfonso",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "N1424",
+  "typeVoie": "allée",
+  "nomVoie": "Chanteclair",
+  "fullName": "allée Chanteclair",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "V1430",
+  "typeVoie": "impasse",
+  "nomVoie": "Chanvin",
+  "fullName": "impasse Chanvin",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "X1432",
+  "typeVoie": "rue",
+  "nomVoie": "Charles de Coulomb",
+  "fullName": "rue Charles de Coulomb",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A1435",
+  "typeVoie": "rue",
+  "nomVoie": "Charles Leroy",
+  "fullName": "rue Charles Leroy",
+  "statutRaw": "VC Ville de Paris",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "E1600",
+  "typeVoie": null,
+  "nomVoie": "chemin des Coutures",
+  "fullName": "chemin des Coutures",
+  "statutRaw": "privée OPH",
+  "statutCategory": "oph",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "H1465",
+  "typeVoie": "rue",
+  "nomVoie": "Christophe Colomb",
+  "fullName": "rue Christophe Colomb",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "N0067",
+  "typeVoie": null,
+  "nomVoie": "cite Auguste Pioline",
+  "fullName": "cite Auguste Pioline",
+  "statutRaw": "privée(oph)",
+  "statutCategory": "oph",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "W1477",
+  "typeVoie": "rue",
+  "nomVoie": "Claude Guy",
+  "fullName": "rue Claude Guy",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "N2505",
+  "typeVoie": "avenue",
+  "nomVoie": "Danielle Casanova",
+  "fullName": "avenue Danielle Casanova",
+  "statutRaw": "RD224",
+  "statutCategory": "departementale",
+  "rdCode": "RD224"
+ },
+ {
+  "codeRivoli": "Z2515",
+  "typeVoie": "place",
+  "nomVoie": "Danton",
+  "fullName": "place Danton",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "F0750",
+  "typeVoie": "boulevard",
+  "nomVoie": "de Brandebourg",
+  "fullName": "boulevard de Brandebourg",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "S0760",
+  "typeVoie": "rue",
+  "nomVoie": "de Bretagne",
+  "fullName": "rue de Bretagne",
+  "statutRaw": "VC(CM du 16/06/2016)",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "S1450",
+  "typeVoie": "rue",
+  "nomVoie": "de Chateaudin",
+  "fullName": "rue de Chateaudin",
+  "statutRaw": "RD150A",
+  "statutCategory": "departementale",
+  "rdCode": "RD150A"
+ },
+ {
+  "codeRivoli": "P4185",
+  "typeVoie": "impasse",
+  "nomVoie": "de Gournay",
+  "fullName": "impasse de Gournay",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "R4186",
+  "typeVoie": "passage",
+  "nomVoie": "de Gournay",
+  "fullName": "passage de Gournay",
+  "statutRaw": "prévu Ville, et VC?",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "B0608",
+  "typeVoie": "rue",
+  "nomVoie": "de la Baignade",
+  "fullName": "rue de la Baignade",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "D1392",
+  "typeVoie": "escalier",
+  "nomVoie": "de la Butte",
+  "fullName": "escalier de la Butte",
+  "statutRaw": "propriété Ville,affecté au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "F4131",
+  "typeVoie": "rue",
+  "nomVoie": "de la Gare",
+  "fullName": "rue de la Gare",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "C5140",
+  "typeVoie": "sentier",
+  "nomVoie": "de la Liberté",
+  "fullName": "sentier de la Liberté",
+  "statutRaw": "CR",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Z6126",
+  "typeVoie": "allée",
+  "nomVoie": "de la Marne",
+  "fullName": "allée de la Marne",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "F6155",
+  "typeVoie": "Square",
+  "nomVoie": "de la Minoterie",
+  "fullName": "Square de la Minoterie",
+  "statutRaw": "privé",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "P7106",
+  "typeVoie": "rue",
+  "nomVoie": "de la Paix",
+  "fullName": "rue de la Paix",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "N7105",
+  "typeVoie": "impasse",
+  "nomVoie": "de la Paix",
+  "fullName": "impasse de la Paix",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "S8120",
+  "typeVoie": "avenue",
+  "nomVoie": "de la République",
+  "fullName": "avenue de la République",
+  "statutRaw": "RD224",
+  "statutCategory": "departementale",
+  "rdCode": "RD224"
+ },
+ {
+  "codeRivoli": "T8120",
+  "typeVoie": "place",
+  "nomVoie": "de la République",
+  "fullName": "place de la République",
+  "statutRaw": "RD154",
+  "statutCategory": "departementale",
+  "rdCode": "RD154"
+ },
+ {
+  "codeRivoli": "X8125",
+  "typeVoie": "rue",
+  "nomVoie": "de la Révolution",
+  "fullName": "rue de la Révolution",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "W005",
+  "typeVoie": "rue",
+  "nomVoie": "de l'Affiche rouge",
+  "fullName": "rue de l'Affiche rouge",
+  "statutRaw": "propriété ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "C0080",
+  "typeVoie": "impasse",
+  "nomVoie": "de l'Avenir",
+  "fullName": "impasse de l'Avenir",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "D0081",
+  "typeVoie": "rue",
+  "nomVoie": "de l'Avenir",
+  "fullName": "rue de l'Avenir",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Z3090",
+  "typeVoie": "rue",
+  "nomVoie": "de l'Eclateur",
+  "fullName": "rue de l'Eclateur",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Y3112",
+  "typeVoie": "place",
+  "nomVoie": "de l'Eglise",
+  "fullName": "place de l'Eglise",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "J4640",
+  "typeVoie": "avenue",
+  "nomVoie": "de l'Industrie",
+  "fullName": "avenue de l'Industrie",
+  "statutRaw": null,
+  "statutCategory": "inconnu",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "V4650",
+  "typeVoie": "place",
+  "nomVoie": "de l'Insurrection",
+  "fullName": "place de l'Insurrection",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "J6917",
+  "typeVoie": "place",
+  "nomVoie": "de l'Orme au Chat",
+  "fullName": "place de l'Orme au Chat",
+  "statutRaw": "propriété Ville(div, en vol,) affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "V7180",
+  "typeVoie": "allée",
+  "nomVoie": "de Postillon",
+  "fullName": "allée de Postillon",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A8565",
+  "typeVoie": "boulevard",
+  "nomVoie": "de Stalingrad",
+  "fullName": "boulevard de Stalingrad",
+  "statutRaw": "RD5",
+  "statutCategory": "departementale",
+  "rdCode": "RD5"
+ },
+ {
+  "codeRivoli": "A9600",
+  "typeVoie": "avenue",
+  "nomVoie": "de Verdun",
+  "fullName": "avenue de Verdun",
+  "statutRaw": "RD5",
+  "statutCategory": "departementale",
+  "rdCode": "RD5"
+ },
+ {
+  "codeRivoli": "E2520",
+  "typeVoie": "rue",
+  "nomVoie": "Denis Papin",
+  "fullName": "rue Denis Papin",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "G0613",
+  "typeVoie": "rue",
+  "nomVoie": "des Bateaux-Lavoirs",
+  "fullName": "rue des Bateaux-Lavoirs",
+  "statutRaw": "VC (CM du 16/06/2016)",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "U0670",
+  "typeVoie": "place",
+  "nomVoie": "des Bouleaux*",
+  "fullName": "place des Bouleaux*",
+  "statutRaw": "privée affectée au public",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "C1414",
+  "typeVoie": "allée",
+  "nomVoie": "des Carrières Delacroix",
+  "fullName": "allée des Carrières Delacroix",
+  "statutRaw": "privée OPH",
+  "statutCategory": "oph",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "J1420",
+  "typeVoie": "rue",
+  "nomVoie": "des Chalets",
+  "fullName": "rue des Chalets",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "F1440",
+  "typeVoie": "passage",
+  "nomVoie": "des Charmes",
+  "fullName": "passage des Charmes",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "X3203",
+  "typeVoie": "placette",
+  "nomVoie": "des Fauconnieres",
+  "fullName": "placette des Fauconnieres",
+  "statutRaw": "privée OPH affectée au public",
+  "statutCategory": "oph",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": null,
+  "typeVoie": "square",
+  "nomVoie": "des Fauconnieres",
+  "fullName": "square des Fauconnieres",
+  "statutRaw": "Ville?",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Z3205",
+  "typeVoie": "promenée",
+  "nomVoie": "des Fauconnières",
+  "fullName": "promenée des Fauconnières",
+  "statutRaw": "privée affectée au public",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "T3590",
+  "typeVoie": "rue",
+  "nomVoie": "des Frères Blais",
+  "fullName": "rue des Frères Blais",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "S3589",
+  "typeVoie": "impasse",
+  "nomVoie": "des Frères Blais",
+  "fullName": "impasse des Frères Blais",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Y4193",
+  "typeVoie": "impasse",
+  "nomVoie": "des Hautes Bornes",
+  "fullName": "impasse des Hautes Bornes",
+  "statutRaw": "propriété ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Y4193",
+  "typeVoie": "impasse",
+  "nomVoie": "des Hautes Bornes",
+  "fullName": "impasse des Hautes Bornes",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "F4430",
+  "typeVoie": "impasse",
+  "nomVoie": "des Herbeuses",
+  "fullName": "impasse des Herbeuses",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "H4432",
+  "typeVoie": "sentier",
+  "nomVoie": "des Herbeuses",
+  "fullName": "sentier des Herbeuses",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "K4710",
+  "typeVoie": "rue",
+  "nomVoie": "des Jardins",
+  "fullName": "rue des Jardins",
+  "statutRaw": "RD150",
+  "statutCategory": "departementale",
+  "rdCode": "RD150"
+ },
+ {
+  "codeRivoli": "J5100",
+  "typeVoie": "rue",
+  "nomVoie": "des Lampes",
+  "fullName": "rue des Lampes",
+  "statutRaw": "privée, destinée publique",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "H6111",
+  "typeVoie": "sentier",
+  "nomVoie": "des Malicots",
+  "fullName": "sentier des Malicots",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "B6128",
+  "typeVoie": "chemin",
+  "nomVoie": "des Marronniers",
+  "fullName": "chemin des Marronniers",
+  "statutRaw": "privé OPH affecté au public",
+  "statutCategory": "oph",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "R6900",
+  "typeVoie": "sentier",
+  "nomVoie": "des Oeillets",
+  "fullName": "sentier des Oeillets",
+  "statutRaw": "CR",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "J7147",
+  "typeVoie": "rue",
+  "nomVoie": "des Péniches",
+  "fullName": "rue des Péniches",
+  "statutRaw": "RD19A",
+  "statutCategory": "departementale",
+  "rdCode": "RD19A"
+ },
+ {
+  "codeRivoli": "K7148",
+  "typeVoie": "rue",
+  "nomVoie": "des Petits Hôtels",
+  "fullName": "rue des Petits Hôtels",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "L7149",
+  "typeVoie": "impasse",
+  "nomVoie": "des Peupliers",
+  "fullName": "impasse des Peupliers",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "P7175",
+  "typeVoie": "allée",
+  "nomVoie": "des Poètes",
+  "fullName": "allée des Poètes",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "J8550",
+  "typeVoie": "villa",
+  "nomVoie": "des Sorbiers",
+  "fullName": "villa des Sorbiers",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "P9130",
+  "typeVoie": "promenée",
+  "nomVoie": "des Terrasses*",
+  "fullName": "promenée des Terrasses*",
+  "statutRaw": "privée affectée au public",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "W2525",
+  "typeVoie": "rue",
+  "nomVoie": "Desault",
+  "fullName": "rue Desault",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "W2535",
+  "typeVoie": "rue",
+  "nomVoie": "Descartes",
+  "fullName": "rue Descartes",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "L3170",
+  "typeVoie": "rue",
+  "nomVoie": "d'Estienne d'Orves",
+  "fullName": "rue d'Estienne d'Orves",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "E4682",
+  "typeVoie": "villa",
+  "nomVoie": "d'Ivry",
+  "fullName": "villa d'Ivry",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "F4683",
+  "typeVoie": "rue",
+  "nomVoie": "d'Ivry",
+  "fullName": "rue d'Ivry",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "X005E",
+  "typeVoie": "pont",
+  "nomVoie": "d'Ivry",
+  "fullName": "pont d'Ivry",
+  "statutRaw": "RD19",
+  "statutCategory": "departementale",
+  "rdCode": "RD19"
+ },
+ {
+  "codeRivoli": "X2536",
+  "typeVoie": "rue",
+  "nomVoie": "du 17 (dix sept) octobre 1962",
+  "fullName": "rue du 17 (dix sept) octobre 1962",
+  "statutRaw": "projet Ivry-Confluences îlot4",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Y2537",
+  "typeVoie": "rue",
+  "nomVoie": "du 19 (dix neuf )mars 1962",
+  "fullName": "rue du 19 (dix neuf )mars 1962",
+  "statutRaw": "RD154B",
+  "statutCategory": "departementale",
+  "rdCode": "RD154B"
+ },
+ {
+  "codeRivoli": "U1475",
+  "typeVoie": "avenue",
+  "nomVoie": "du Cimetière Parisien",
+  "fullName": "avenue du Cimetière Parisien",
+  "statutRaw": "privée(voie à revoir avec le KB)",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Z1480",
+  "typeVoie": "rue",
+  "nomVoie": "du Colombier",
+  "fullName": "rue du Colombier",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "B1482",
+  "typeVoie": "boulevard",
+  "nomVoie": "du Colonel Fabien",
+  "fullName": "boulevard du Colonel Fabien",
+  "statutRaw": "RD19",
+  "statutCategory": "departementale",
+  "rdCode": "RD19"
+ },
+ {
+  "codeRivoli": "Z2538",
+  "typeVoie": "rue",
+  "nomVoie": "du Dr Esquirol",
+  "fullName": "rue du Dr Esquirol",
+  "statutRaw": "Ville de paris",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "V3500",
+  "typeVoie": "route",
+  "nomVoie": "du Fort",
+  "fullName": "route du Fort",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A3551",
+  "typeVoie": "passage",
+  "nomVoie": "du Four",
+  "fullName": "passage du Four",
+  "statutRaw": "propriété Ville affecté au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "P4139",
+  "typeVoie": "place",
+  "nomVoie": "du Général De Gaulle",
+  "fullName": "place du Général De Gaulle",
+  "statutRaw": "en cours d'acquisition par la Ville(CM du 22/06/2017)",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "R4140",
+  "typeVoie": "avenue",
+  "nomVoie": "du General Leclerc",
+  "fullName": "avenue du General Leclerc",
+  "statutRaw": "RD154",
+  "statutCategory": "departementale",
+  "rdCode": "RD154"
+ },
+ {
+  "codeRivoli": "U4465",
+  "typeVoie": "place",
+  "nomVoie": "du Huit Mai 1945",
+  "fullName": "place du Huit Mai 1945",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "E5142",
+  "typeVoie": "promenée",
+  "nomVoie": "du Liégat",
+  "fullName": "promenée du Liégat",
+  "statutRaw": "privée OPH affectée au public",
+  "statutCategory": "oph",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "H5145",
+  "typeVoie": "passage",
+  "nomVoie": "du Lion d'or",
+  "fullName": "passage du Lion d'or",
+  "statutRaw": "privé affecté au public",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "B6159",
+  "typeVoie": "sentier",
+  "nomVoie": "du Moulin à Vent",
+  "fullName": "sentier du Moulin à Vent",
+  "statutRaw": "CR",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "V7111",
+  "typeVoie": "allée",
+  "nomVoie": "du Parc",
+  "fullName": "allée du Parc",
+  "statutRaw": "privée OPH affectée au public",
+  "statutCategory": "oph",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "D7188",
+  "typeVoie": "rue",
+  "nomVoie": "du Professeur Calmette",
+  "fullName": "rue du Professeur Calmette",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "W7940",
+  "typeVoie": "rue",
+  "nomVoie": "du Quartier Parisien",
+  "fullName": "rue du Quartier Parisien",
+  "statutRaw": "RD223B",
+  "statutCategory": "departementale",
+  "rdCode": "RD223B"
+ },
+ {
+  "codeRivoli": "P9140",
+  "typeVoie": "chemin",
+  "nomVoie": "du Théatre*",
+  "fullName": "chemin du Théatre*",
+  "statutRaw": "privé affecté au public",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "U9640",
+  "typeVoie": "allée",
+  "nomVoie": "du Vieux Moulin",
+  "fullName": "allée du Vieux Moulin",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "X003C",
+  "typeVoie": "passerelle",
+  "nomVoie": "EDF",
+  "fullName": "passerelle EDF",
+  "statutRaw": "propriété EDF",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "R3105",
+  "typeVoie": "rue",
+  "nomVoie": "Edmée guillou",
+  "fullName": "rue Edmée guillou",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "S3106",
+  "typeVoie": "allée",
+  "nomVoie": "Edouard Quincey",
+  "fullName": "allée Edouard Quincey",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "T3107",
+  "typeVoie": "rue",
+  "nomVoie": "Edouard Vasseur",
+  "fullName": "rue Edouard Vasseur",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "G3120",
+  "typeVoie": "rue",
+  "nomVoie": "Emile Bastard",
+  "fullName": "rue Emile Bastard",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "M3125",
+  "typeVoie": "rue",
+  "nomVoie": "Emile Blin",
+  "fullName": "rue Emile Blin",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "D3140",
+  "typeVoie": "place",
+  "nomVoie": "Emile Guenet",
+  "fullName": "place Emile Guenet",
+  "statutRaw": "VC, traversée par RD224A",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "P3150",
+  "typeVoie": "rue",
+  "nomVoie": "Emile Zola",
+  "fullName": "rue Emile Zola",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "X3180",
+  "typeVoie": "rue",
+  "nomVoie": "Eugene Duchauffour",
+  "fullName": "rue Eugene Duchauffour",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "N3195",
+  "typeVoie": "place",
+  "nomVoie": "Fadwa Touqan",
+  "fullName": "place Fadwa Touqan",
+  "statutRaw": null,
+  "statutCategory": "inconnu",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Y3250",
+  "typeVoie": "rue",
+  "nomVoie": "Ferdinand Roussel",
+  "fullName": "rue Ferdinand Roussel",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "U3545",
+  "typeVoie": "rue",
+  "nomVoie": "Fouilloux",
+  "fullName": "rue Fouilloux",
+  "statutRaw": "RD210",
+  "statutCategory": "departementale",
+  "rdCode": "RD210"
+ },
+ {
+  "codeRivoli": "E3555",
+  "typeVoie": "rue",
+  "nomVoie": "Francisco Ferrer",
+  "fullName": "rue Francisco Ferrer",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "W3570",
+  "typeVoie": "rue",
+  "nomVoie": "Francois Mitterrand (1998)",
+  "fullName": "rue Francois Mitterrand (1998)",
+  "statutRaw": "VC (CM du 16/06/2016)",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "M3700",
+  "typeVoie": "allée",
+  "nomVoie": "Furcy",
+  "fullName": "allée Furcy",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "K4112",
+  "typeVoie": "allée",
+  "nomVoie": "Gagarine",
+  "fullName": "allée Gagarine",
+  "statutRaw": "privée OPH affectée au public",
+  "statutCategory": "oph",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "N4115",
+  "typeVoie": "rue",
+  "nomVoie": "Gagnée",
+  "fullName": "rue Gagnée",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "U4120",
+  "typeVoie": "rue",
+  "nomVoie": "Galilee",
+  "fullName": "rue Galilee",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "K4135",
+  "typeVoie": "rue",
+  "nomVoie": "Gaston Cornavin",
+  "fullName": "rue Gaston Cornavin",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "L4136",
+  "typeVoie": "rue",
+  "nomVoie": "Gaston Monmousseau",
+  "fullName": "rue Gaston Monmousseau",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "N4138",
+  "typeVoie": "rue",
+  "nomVoie": "Gaston Picard",
+  "fullName": "rue Gaston Picard",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "B4150",
+  "typeVoie": "avenue",
+  "nomVoie": "Georges Gosnat",
+  "fullName": "avenue Georges Gosnat",
+  "statutRaw": "RD154",
+  "statutCategory": "departementale",
+  "rdCode": "RD154"
+ },
+ {
+  "codeRivoli": "M4160",
+  "typeVoie": "rue",
+  "nomVoie": "Georges Jehenne",
+  "fullName": "rue Georges Jehenne",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "T4165",
+  "typeVoie": "esplanade",
+  "nomVoie": "Georges Marrane",
+  "fullName": "esplanade Georges Marrane",
+  "statutRaw": "propriété Ville affectée public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Y4170",
+  "typeVoie": "rue",
+  "nomVoie": "Georges Trudin",
+  "fullName": "rue Georges Trudin",
+  "statutRaw": "RD150A",
+  "statutCategory": "departementale",
+  "rdCode": "RD150A"
+ },
+ {
+  "codeRivoli": "J4180",
+  "typeVoie": "rue",
+  "nomVoie": "Georgette Rostaing",
+  "fullName": "rue Georgette Rostaing",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "L4182",
+  "typeVoie": "promenée",
+  "nomVoie": "Gérard Philipe*",
+  "fullName": "promenée Gérard Philipe*",
+  "statutRaw": "privée affectée au public",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "L4184",
+  "typeVoie": "place",
+  "nomVoie": "Gérard Philipe*",
+  "fullName": "place Gérard Philipe*",
+  "statutRaw": "privée affectée au public",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "V4190",
+  "typeVoie": "rue",
+  "nomVoie": "Gustave Simonet",
+  "fullName": "rue Gustave Simonet",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A4195",
+  "typeVoie": "avenue",
+  "nomVoie": "Henri Barbusse",
+  "fullName": "avenue Henri Barbusse",
+  "statutRaw": "RD154",
+  "statutCategory": "departementale",
+  "rdCode": "RD154"
+ },
+ {
+  "codeRivoli": "V4420",
+  "typeVoie": "rue",
+  "nomVoie": "Henri Martin",
+  "fullName": "rue Henri Martin",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "W4421",
+  "typeVoie": "impasse",
+  "nomVoie": "Henri Martin",
+  "fullName": "impasse Henri Martin",
+  "statutRaw": "privée affectée au public",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A4425",
+  "typeVoie": "quai",
+  "nomVoie": "Henri Pourchasse",
+  "fullName": "quai Henri Pourchasse",
+  "statutRaw": "RD152",
+  "statutCategory": "departementale",
+  "rdCode": "RD152"
+ },
+ {
+  "codeRivoli": "B4426",
+  "typeVoie": "esplanade",
+  "nomVoie": "Henri Rol-Tanguy",
+  "fullName": "esplanade Henri Rol-Tanguy",
+  "statutRaw": "propriété Départ affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "S4440",
+  "typeVoie": "boulevard",
+  "nomVoie": "Hippolyte Marques",
+  "fullName": "boulevard Hippolyte Marques",
+  "statutRaw": "VC Paris",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "B4449",
+  "typeVoie": "impasse",
+  "nomVoie": "Hoche",
+  "fullName": "impasse Hoche",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "C4450",
+  "typeVoie": "passage",
+  "nomVoie": "Hoche",
+  "fullName": "passage Hoche",
+  "statutRaw": "privée, affectée au public",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "E4452",
+  "typeVoie": "square",
+  "nomVoie": "Hoche",
+  "fullName": "square Hoche",
+  "statutRaw": "privé",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "D4451",
+  "typeVoie": "rue",
+  "nomVoie": "Hoche",
+  "fullName": "rue Hoche",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "R4462",
+  "typeVoie": "place",
+  "nomVoie": "Hubert Beuve-Mery",
+  "fullName": "place Hubert Beuve-Mery",
+  "statutRaw": null,
+  "statutCategory": "inconnu",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "F4660",
+  "typeVoie": "allée",
+  "nomVoie": "Irène Joliot-Curie",
+  "fullName": "allée Irène Joliot-Curie",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "N4713",
+  "typeVoie": "rond point",
+  "nomVoie": "Jaroslav Dombrowski",
+  "fullName": "rond point Jaroslav Dombrowski",
+  "statutRaw": "RD223",
+  "statutCategory": "departementale",
+  "rdCode": "RD223"
+ },
+ {
+  "codeRivoli": "B4725",
+  "typeVoie": "rue",
+  "nomVoie": "Jean Bonnefoix",
+  "fullName": "rue Jean Bonnefoix",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "G4730",
+  "typeVoie": "quai",
+  "nomVoie": "Jean Compagnon",
+  "fullName": "quai Jean Compagnon",
+  "statutRaw": "RD152A",
+  "statutCategory": "departementale",
+  "rdCode": "RD152A"
+ },
+ {
+  "codeRivoli": "M4735",
+  "typeVoie": "rue",
+  "nomVoie": "Jean Dormoy",
+  "fullName": "rue Jean Dormoy",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "P4737",
+  "typeVoie": "place",
+  "nomVoie": "Jean Ferrat",
+  "fullName": "place Jean Ferrat",
+  "statutRaw": "Ville et Départt",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "V4742",
+  "typeVoie": "avenue",
+  "nomVoie": "Jean Jaures",
+  "fullName": "avenue Jean Jaures",
+  "statutRaw": "RD155",
+  "statutCategory": "departementale",
+  "rdCode": "RD155"
+ },
+ {
+  "codeRivoli": "W4743",
+  "typeVoie": "place",
+  "nomVoie": "Jean Jaures (19-07-1996)",
+  "fullName": "place Jean Jaures (19-07-1996)",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Y4745",
+  "typeVoie": "rue",
+  "nomVoie": "Jean Le Galleu",
+  "fullName": "rue Jean Le Galleu",
+  "statutRaw": "propriété ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "J4755",
+  "typeVoie": "rue",
+  "nomVoie": "Jean Mazet",
+  "fullName": "rue Jean Mazet",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "X4767",
+  "typeVoie": "rue",
+  "nomVoie": "Jean Perrin",
+  "fullName": "rue Jean Perrin",
+  "statutRaw": "propriétéVille affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "P4760",
+  "typeVoie": "rue",
+  "nomVoie": "Jean Tremoulet",
+  "fullName": "rue Jean Tremoulet",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "W4720",
+  "typeVoie": "rue",
+  "nomVoie": "Jean-Baptiste Clement",
+  "fullName": "rue Jean-Baptiste Clement",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Z4723",
+  "typeVoie": "rue",
+  "nomVoie": "Jean-Baptiste Renoult",
+  "fullName": "rue Jean-Baptiste Renoult",
+  "statutRaw": "RD54",
+  "statutCategory": "departementale",
+  "rdCode": "RD54"
+ },
+ {
+  "codeRivoli": "T4740",
+  "typeVoie": "rue",
+  "nomVoie": "Jean-Jacques Rousseau",
+  "fullName": "rue Jean-Jacques Rousseau",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "D4750",
+  "typeVoie": "rue",
+  "nomVoie": "Jean-Marie Poulmarch",
+  "fullName": "rue Jean-Marie Poulmarch",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "S4762",
+  "typeVoie": "terrasse",
+  "nomVoie": "Jeanne Hachette*",
+  "fullName": "terrasse Jeanne Hachette*",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "T4763",
+  "typeVoie": "promenée",
+  "nomVoie": "Jeanne Hachette*",
+  "fullName": "promenée Jeanne Hachette*",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A4770",
+  "typeVoie": "avenue",
+  "nomVoie": "Josephine",
+  "fullName": "avenue Josephine",
+  "statutRaw": "ville et OPH, affectée au public",
+  "statutCategory": "oph",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "F4775",
+  "typeVoie": "rue",
+  "nomVoie": "Jules Ferry",
+  "fullName": "rue Jules Ferry",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "L4780",
+  "typeVoie": "rue",
+  "nomVoie": "Jules Vanzuppe",
+  "fullName": "rue Jules Vanzuppe",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "R4784",
+  "typeVoie": "allée",
+  "nomVoie": "Julian Grimau",
+  "fullName": "allée Julian Grimau",
+  "statutRaw": "privée OPH",
+  "statutCategory": "oph",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "H4800",
+  "typeVoie": "square",
+  "nomVoie": "Justes parmi les Nations",
+  "fullName": "square Justes parmi les Nations",
+  "statutRaw": "privé",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "E5050",
+  "typeVoie": "rue",
+  "nomVoie": "Kleber",
+  "fullName": "rue Kleber",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A5115",
+  "typeVoie": "rue",
+  "nomVoie": "Ledru-Rollin",
+  "fullName": "rue Ledru-Rollin",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "F5120",
+  "typeVoie": "rue",
+  "nomVoie": "Leibnitz",
+  "fullName": "rue Leibnitz",
+  "statutRaw": "RD223A",
+  "statutCategory": "departementale",
+  "rdCode": "RD223A"
+ },
+ {
+  "codeRivoli": "L5125",
+  "typeVoie": "rue",
+  "nomVoie": "Lénine",
+  "fullName": "rue Lénine",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "S5130",
+  "typeVoie": "place",
+  "nomVoie": "Leon Gambetta",
+  "fullName": "place Leon Gambetta",
+  "statutRaw": "RD19",
+  "statutCategory": "departementale",
+  "rdCode": "RD19"
+ },
+ {
+  "codeRivoli": "N5150",
+  "typeVoie": "place",
+  "nomVoie": "Lise Meitner",
+  "fullName": "place Lise Meitner",
+  "statutRaw": null,
+  "statutCategory": "inconnu",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Z5160",
+  "typeVoie": "rue",
+  "nomVoie": "Louis Bertrand",
+  "fullName": "rue Louis Bertrand",
+  "statutRaw": "Ville de Paris",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "C5163",
+  "typeVoie": "rue",
+  "nomVoie": "Louis Fablet",
+  "fullName": "rue Louis Fablet",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "E5165",
+  "typeVoie": "rue",
+  "nomVoie": "Louis Marchal",
+  "fullName": "rue Louis Marchal",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "K5170",
+  "typeVoie": "rue",
+  "nomVoie": "Louis Rousseau",
+  "fullName": "rue Louis Rousseau",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "R5175",
+  "typeVoie": "rue",
+  "nomVoie": "Louise Aglaë Cretté",
+  "fullName": "rue Louise Aglaë Cretté",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "U5178",
+  "typeVoie": "rue",
+  "nomVoie": "Lucien Nadaire",
+  "fullName": "rue Lucien Nadaire",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "W5180",
+  "typeVoie": "rue",
+  "nomVoie": "Lucien Selva",
+  "fullName": "rue Lucien Selva",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "W6100",
+  "typeVoie": "allée",
+  "nomVoie": "Madeleine Delbrêl",
+  "fullName": "allée Madeleine Delbrêl",
+  "statutRaw": "en cours d'acquisition par la ville",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "J6112",
+  "typeVoie": "place",
+  "nomVoie": "Malik Oussekine",
+  "fullName": "place Malik Oussekine",
+  "statutRaw": "Carrefour routier",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "G6110",
+  "typeVoie": "allée",
+  "nomVoie": "Manouchian",
+  "fullName": "allée Manouchian",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "L6114",
+  "typeVoie": "rue",
+  "nomVoie": "Marat",
+  "fullName": "rue Marat",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "K6113",
+  "typeVoie": "promenée",
+  "nomVoie": "Marat*",
+  "fullName": "promenée Marat*",
+  "statutRaw": "privée affectée au public",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "M6115",
+  "typeVoie": "rue",
+  "nomVoie": "Marceau",
+  "fullName": "rue Marceau",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "P6117",
+  "typeVoie": "quai",
+  "nomVoie": "Marcel Boyer",
+  "fullName": "quai Marcel Boyer",
+  "statutRaw": "RD19",
+  "statutCategory": "departementale",
+  "rdCode": "RD19"
+ },
+ {
+  "codeRivoli": "N6116",
+  "typeVoie": "place",
+  "nomVoie": "Marcel Cachin",
+  "fullName": "place Marcel Cachin",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "T6120",
+  "typeVoie": "rue",
+  "nomVoie": "Marcel Cachin",
+  "fullName": "rue Marcel Cachin",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "R6118",
+  "typeVoie": "rue",
+  "nomVoie": "Marcel Hartmann",
+  "fullName": "rue Marcel Hartmann",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "S6119",
+  "typeVoie": "rue",
+  "nomVoie": "Marcel Lamant",
+  "fullName": "rue Marcel Lamant",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Y6125",
+  "typeVoie": "rue",
+  "nomVoie": "Marcel Sallenave",
+  "fullName": "rue Marcel Sallenave",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "C6129",
+  "typeVoie": "Square",
+  "nomVoie": "Maria Mérian",
+  "fullName": "Square Maria Mérian",
+  "statutRaw": "en cours d'acquisition par la Ville (voir Joel Buffle AFD)",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "D6130",
+  "typeVoie": "rue",
+  "nomVoie": "Maurice Berteaux",
+  "fullName": "rue Maurice Berteaux",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "F6132",
+  "typeVoie": "rue",
+  "nomVoie": "Maurice Couderchet",
+  "fullName": "rue Maurice Couderchet",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "F6135",
+  "typeVoie": "rue",
+  "nomVoie": "Maurice Coutant",
+  "fullName": "rue Maurice Coutant",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "P6140",
+  "typeVoie": "rue",
+  "nomVoie": "Maurice Grandcoing",
+  "fullName": "rue Maurice Grandcoing",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "R6141",
+  "typeVoie": "rue",
+  "nomVoie": "Maurice Gunsbourg",
+  "fullName": "rue Maurice Gunsbourg",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "V6145",
+  "typeVoie": "avenue",
+  "nomVoie": "Maurice Thorez",
+  "fullName": "avenue Maurice Thorez",
+  "statutRaw": "RD154A ET 156A",
+  "statutCategory": "departementale",
+  "rdCode": "RD154A"
+ },
+ {
+  "codeRivoli": "Y6148",
+  "typeVoie": "rue",
+  "nomVoie": "Michaël Faraday",
+  "fullName": "rue Michaël Faraday",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "A6150",
+  "typeVoie": "impasse",
+  "nomVoie": "Michelet",
+  "fullName": "impasse Michelet",
+  "statutRaw": "privée affectée au public",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "B6151",
+  "typeVoie": "rue",
+  "nomVoie": "Michelet",
+  "fullName": "rue Michelet",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "L6160",
+  "typeVoie": "rue",
+  "nomVoie": "Mirabeau",
+  "fullName": "rue Mirabeau",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "S6165",
+  "typeVoie": "rue",
+  "nomVoie": "Mohamed Bounaceur",
+  "fullName": "rue Mohamed Bounaceur",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "V6168",
+  "typeVoie": "rue",
+  "nomVoie": "Moise",
+  "fullName": "rue Moise",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "X6170",
+  "typeVoie": "rue",
+  "nomVoie": "Molière",
+  "fullName": "rue Molière",
+  "statutRaw": "VC et RD154A",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "B6174",
+  "typeVoie": "mail",
+  "nomVoie": "Monique Maunoury",
+  "fullName": "mail Monique Maunoury",
+  "statutRaw": "propriétéVille affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Y6190",
+  "typeVoie": "rue",
+  "nomVoie": "Mozart",
+  "fullName": "rue Mozart",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "N6300",
+  "typeVoie": "allée",
+  "nomVoie": "Mulâtresse Solitude",
+  "fullName": "allée Mulâtresse Solitude",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "X006F",
+  "typeVoie": "passerelle",
+  "nomVoie": "Muller",
+  "fullName": "passerelle Muller",
+  "statutRaw": "privée (SNCF?)",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "P6600",
+  "typeVoie": "escalier",
+  "nomVoie": "Nathalie Lemel",
+  "fullName": "escalier Nathalie Lemel",
+  "statutRaw": "privée, destinée à être versée en VCP",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "X004D",
+  "typeVoie": "ponts",
+  "nomVoie": "Nelson Mandela",
+  "fullName": "ponts Nelson Mandela",
+  "statutRaw": "RD154Aet B",
+  "statutCategory": "departementale",
+  "rdCode": "RD154A"
+ },
+ {
+  "codeRivoli": "Z6655",
+  "typeVoie": "rue",
+  "nomVoie": "Nouvelle",
+  "fullName": "rue Nouvelle",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "B6910",
+  "typeVoie": "rue",
+  "nomVoie": "Olympe de Gouges",
+  "fullName": "rue Olympe de Gouges",
+  "statutRaw": "privée destinée à être versée en VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "E7120",
+  "typeVoie": "place",
+  "nomVoie": "Parmentier",
+  "fullName": "place Parmentier",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "K7125",
+  "typeVoie": "impasse",
+  "nomVoie": "Parson",
+  "fullName": "impasse Parson",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "R7130",
+  "typeVoie": "rue",
+  "nomVoie": "Pasteur",
+  "fullName": "rue Pasteur",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "U7133",
+  "typeVoie": "rue",
+  "nomVoie": "Paul Andrieux",
+  "fullName": "rue Paul Andrieux",
+  "statutRaw": "RD224A",
+  "statutCategory": "departementale",
+  "rdCode": "RD224A"
+ },
+ {
+  "codeRivoli": "W7135",
+  "typeVoie": "rue",
+  "nomVoie": "Paul Bert",
+  "fullName": "rue Paul Bert",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Z7138",
+  "typeVoie": "rue",
+  "nomVoie": "Paul Langevin",
+  "fullName": "rue Paul Langevin",
+  "statutRaw": "propriété ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "B7140",
+  "typeVoie": "rue",
+  "nomVoie": "Paul Mazy",
+  "fullName": "rue Paul Mazy",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "G7145",
+  "typeVoie": "boulevard",
+  "nomVoie": "Paul Vaillant-Couturier",
+  "fullName": "boulevard Paul Vaillant-Couturier",
+  "statutRaw": "RD19B",
+  "statutCategory": "departementale",
+  "rdCode": "RD19B"
+ },
+ {
+  "codeRivoli": "M7150",
+  "typeVoie": "rue",
+  "nomVoie": "Pierre Brossolette",
+  "fullName": "rue Pierre Brossolette",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "R7153",
+  "typeVoie": "rue",
+  "nomVoie": "Pierre et Marie Curie",
+  "fullName": "rue Pierre et Marie Curie",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "T7155",
+  "typeVoie": "rue",
+  "nomVoie": "Pierre Galais",
+  "fullName": "rue Pierre Galais",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "V7157",
+  "typeVoie": "place",
+  "nomVoie": "Pierre Gosnat",
+  "fullName": "place Pierre Gosnat",
+  "statutRaw": "RD224A",
+  "statutCategory": "departementale",
+  "rdCode": "RD224A"
+ },
+ {
+  "codeRivoli": "W7158",
+  "typeVoie": "rue",
+  "nomVoie": "Pierre Guignois",
+  "fullName": "rue Pierre Guignois",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Y7160",
+  "typeVoie": "rue",
+  "nomVoie": "Pierre Honfroy",
+  "fullName": "rue Pierre Honfroy",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "D7165",
+  "typeVoie": "rue",
+  "nomVoie": "Pierre Moulie",
+  "fullName": "rue Pierre Moulie",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "F7167",
+  "typeVoie": "rue",
+  "nomVoie": "Pierre Rigaud",
+  "fullName": "rue Pierre Rigaud",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "J7170",
+  "typeVoie": "avenue",
+  "nomVoie": "Pierre Semard",
+  "fullName": "avenue Pierre Semard",
+  "statutRaw": "RD224",
+  "statutCategory": "departementale",
+  "rdCode": "RD224"
+ },
+ {
+  "codeRivoli": "J7193",
+  "typeVoie": "impasse",
+  "nomVoie": "Prudhon",
+  "fullName": "impasse Prudhon",
+  "statutRaw": "VC mais parcelles propriétés riverains, à régler dans le cadre du projet Ivry-Confluences",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "X7941",
+  "typeVoie": "rue",
+  "nomVoie": "Raspail",
+  "fullName": "rue Raspail",
+  "statutRaw": "RD223B",
+  "statutCategory": "departementale",
+  "rdCode": "RD223B"
+ },
+ {
+  "codeRivoli": "H8112",
+  "typeVoie": "rue",
+  "nomVoie": "Raymond Lefevre",
+  "fullName": "rue Raymond Lefevre",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "J8113",
+  "typeVoie": "rue",
+  "nomVoie": "René Robin",
+  "fullName": "rue René Robin",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "L8115",
+  "typeVoie": "rue",
+  "nomVoie": "René Villars",
+  "fullName": "rue René Villars",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "H8135",
+  "typeVoie": "passage",
+  "nomVoie": "Rivoli",
+  "fullName": "passage Rivoli",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "N8140",
+  "typeVoie": "rue",
+  "nomVoie": "Robert Degert",
+  "fullName": "rue Robert Degert",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "T8144",
+  "typeVoie": "rue",
+  "nomVoie": "Robert Witchitz",
+  "fullName": "rue Robert Witchitz",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "U8145",
+  "typeVoie": "rue",
+  "nomVoie": "Robespierre",
+  "fullName": "rue Robespierre",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Z0790",
+  "typeVoie": "impasse",
+  "nomVoie": "Roger Buessard",
+  "fullName": "impasse Roger Buessard",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Z8150",
+  "typeVoie": "rue",
+  "nomVoie": "Roger Buessard",
+  "fullName": "rue Roger Buessard",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "W8170",
+  "typeVoie": "rue",
+  "nomVoie": "Roger Doiret",
+  "fullName": "rue Roger Doiret",
+  "statutRaw": "RD223",
+  "statutCategory": "departementale",
+  "rdCode": "RD223"
+ },
+ {
+  "codeRivoli": "D8200",
+  "typeVoie": "allée",
+  "nomVoie": "Rosa Parks",
+  "fullName": "allée Rosa Parks",
+  "statutRaw": "VCP",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "P8210",
+  "typeVoie": "allée",
+  "nomVoie": "Rosalind Franklin",
+  "fullName": "allée Rosalind Franklin",
+  "statutRaw": "privée affectée au public- destinée à être communale projet ZAC IC",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "D8620",
+  "typeVoie": "sentier",
+  "nomVoie": "Saint-Frambourg",
+  "fullName": "sentier Saint-Frambourg",
+  "statutRaw": "CR",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "T8650",
+  "typeVoie": "rue",
+  "nomVoie": "Saint-Just",
+  "fullName": "rue Saint-Just",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Y8540",
+  "typeVoie": "rue",
+  "nomVoie": "Simon Dereure",
+  "fullName": "rue Simon Dereure",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "V8560",
+  "typeVoie": "avenue",
+  "nomVoie": "Spinoza",
+  "fullName": "avenue Spinoza",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "F8570",
+  "typeVoie": "promenée",
+  "nomVoie": "Supérieure*",
+  "fullName": "promenée Supérieure*",
+  "statutRaw": "privée affectée au public",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "D9120",
+  "typeVoie": "impasse",
+  "nomVoie": "Tellier",
+  "fullName": "impasse Tellier",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "X9160",
+  "typeVoie": "Square",
+  "nomVoie": "Toussaint Louverture",
+  "fullName": "Square Toussaint Louverture",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "D9170",
+  "typeVoie": "rue",
+  "nomVoie": "Truillot",
+  "fullName": "rue Truillot",
+  "statutRaw": "VC (en partie)",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "V9595",
+  "typeVoie": "promenée",
+  "nomVoie": "Venise Gosnat*",
+  "fullName": "promenée Venise Gosnat*",
+  "statutRaw": "privée affectée au public",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "X9620",
+  "typeVoie": "impasse",
+  "nomVoie": "Vérollot",
+  "fullName": "impasse Vérollot",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "Y9621",
+  "typeVoie": "rue",
+  "nomVoie": "Vérollot",
+  "fullName": "rue Vérollot",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "G9629",
+  "typeVoie": "impasse",
+  "nomVoie": "Victor Hugo",
+  "fullName": "impasse Victor Hugo",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "H9630",
+  "typeVoie": "rue",
+  "nomVoie": "Victor Hugo",
+  "fullName": "rue Victor Hugo",
+  "statutRaw": "RD150",
+  "statutCategory": "departementale",
+  "rdCode": "RD150"
+ },
+ {
+  "codeRivoli": "R9660",
+  "typeVoie": "passage",
+  "nomVoie": "Volta",
+  "fullName": "passage Volta",
+  "statutRaw": "propriété Ville affectée au public",
+  "statutCategory": "autre",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "V9664",
+  "typeVoie": "place",
+  "nomVoie": "Voltaire",
+  "fullName": "place Voltaire",
+  "statutRaw": "VC piétonne",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "X9666",
+  "typeVoie": "promenée",
+  "nomVoie": "Voltaire",
+  "fullName": "promenée Voltaire",
+  "statutRaw": "VC piétonne",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "R9665",
+  "typeVoie": "rue",
+  "nomVoie": "Voltaire",
+  "fullName": "rue Voltaire",
+  "statutRaw": "VC",
+  "statutCategory": "vc",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "C9740",
+  "typeVoie": "rue",
+  "nomVoie": "Westermeyer",
+  "fullName": "rue Westermeyer",
+  "statutRaw": "privée APHP affectée au public",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "T577",
+  "typeVoie": "place",
+  "nomVoie": "Allain Leprest",
+  "fullName": "place Allain Leprest",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": "R667",
+  "typeVoie": "allée",
+  "nomVoie": "Charlotte Guillard",
+  "fullName": "allée Charlotte Guillard",
+  "statutRaw": "privée",
+  "statutCategory": "privee",
+  "rdCode": null
+ },
+ {
+  "codeRivoli": null,
+  "typeVoie": null,
+  "nomVoie": "*les promenées et terrasses Jeanne Hachette, Marat et Liegat",
+  "fullName": "*les promenées et terrasses Jeanne Hachette, Marat et Liegat",
+  "statutRaw": null,
+  "statutCategory": "inconnu",
+  "rdCode": null
+ }
+]

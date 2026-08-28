@@ -12,6 +12,7 @@ import { reverseGeocode, IVRY_CITYCODE } from "./geocode.js";
 import { CATEGORIES, SEVERITIES, DEFAULT_VISION_MODEL, SUGGESTED_VISION_MODELS } from "./constants.js";
 import { getSetting, setSetting } from "./settings.js";
 import { classifyDamage } from "./vision.js";
+import { matchVoirie } from "./voirie.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const uploadsDir = path.join(__dirname, "..", "uploads");
@@ -133,7 +134,11 @@ app.get("/api/meta", (_req, res) => {
 });
 
 app.get("/api/photos", (_req, res) => {
-  res.json(selectAllStmt.all());
+  const photos = selectAllStmt.all().map((p) => ({
+    ...p,
+    voirie: matchVoirie(p.addressLabel),
+  }));
+  res.json(photos);
 });
 
 app.delete("/api/photos/:id", requireAdmin, (req, res) => {

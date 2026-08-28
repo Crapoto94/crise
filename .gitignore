@@ -8,3 +8,5 @@ app/backend/data/*.db-wal
 app/backend/data/*.db-shm
 Photos/
 *.log
+app/backend/*.xlsm
+app/backend/~$*.xlsm

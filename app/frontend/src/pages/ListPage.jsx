@@ -124,7 +124,7 @@ export default function ListPage() {
                   onClick={() => setSelected(photo)}
                 />
                 <div className="photo-list-info">
-                  <PhotoBadges category={photo.category} severity={photo.severity} />
+                  <PhotoBadges category={photo.category} severity={photo.severity} voirie={photo.voirie} />
                   <p className="address">{photo.addressLabel || "Adresse inconnue"}</p>
                   <p className="uploader">{photo.uploaderName}</p>
                   <p className="meta">
